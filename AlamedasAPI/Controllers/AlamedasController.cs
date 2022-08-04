@@ -25,4 +25,11 @@ public class AlamedasController : ControllerBase
         var response = _catalogservices.GetListUsers(); 
         return Ok(response);
     }
+
+    [HttpGet("Catalog/CondominiumList")]
+    public IActionResult GetListCondomino()
+    {
+        var response = _catalogservices.GetListCondomino(); 
+        return Ok(response);
+    }
 }
