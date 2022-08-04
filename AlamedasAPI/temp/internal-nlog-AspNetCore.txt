@@ -198,3 +198,43 @@
 2022-08-03 22:38:05.6507 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
 2022-08-03 22:38:05.7122 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
 2022-08-03 22:38:06.3115 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:45:08.8720 Info Message Template Auto Format enabled
+2022-08-03 22:45:08.9002 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:45:08.9002 Info Loading assembly: NLog.Database
+2022-08-03 22:45:08.9595 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error parsing layout appsettings
+ ---> System.ArgumentException: LayoutRenderer type-alias is unknown: 'appsettings'
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Layouts.LayoutParser.GetLayoutRenderer(String typeName, ConfigurationItemFactory configurationItemFactory, Nullable`1 throwConfigExceptions)
+   --- End of inner exception stack trace ---
+2022-08-03 22:45:09.0480 Warn Error has been raised. Exception: NLog.NLogConfigurationException: ${appsettings} cannot assign unknown property 'name='
+2022-08-03 22:45:09.1685 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-08-03 22:45:09.2248 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:45:09.8658 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:45:46.3707 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+2022-08-03 22:50:39.7900 Info Message Template Auto Format enabled
+2022-08-03 22:50:39.8324 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:50:39.8324 Info Loading assembly: NLog.Database
+2022-08-03 22:50:39.8855 Info Loading assembly: NLog.Appsettings.Standard
+2022-08-03 22:50:40.1162 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-08-03 22:50:40.1911 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:50:40.9385 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:50:42.0138 Info Configuration file change detected! Reloading in 1000ms...
+2022-08-03 22:50:43.0264 Info Reloading configuration...
+2022-08-03 22:50:43.0314 Info Loading NLog config from XML file: C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:50:43.0314 Info Message Template Auto Format enabled
+2022-08-03 22:50:43.0314 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:50:43.0314 Info Loading assembly: NLog.Database
+2022-08-03 22:50:43.0314 Info Loading assembly: NLog.Appsettings.Standard
+2022-08-03 22:50:43.0314 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-08-03 22:50:43.0498 Info Closing old configuration.
+2022-08-03 22:50:43.0671 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
