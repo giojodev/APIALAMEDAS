@@ -1,0 +1,240 @@
+2022-08-03 21:59:44.9707 Info Message Template Auto Format enabled
+2022-08-03 21:59:45.0582 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 21:59:45.1502 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 21:59:45.2346 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'lll' not found for logging rule: *.
+2022-08-03 21:59:45.3141 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 21:59:45.3894 Info Configuration file change detected! Reloading in 1000ms...
+2022-08-03 21:59:46.0619 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 21:59:46.4633 Info Reloading configuration...
+2022-08-03 21:59:46.5067 Info Loading NLog config from XML file: C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 21:59:46.5223 Info Message Template Auto Format enabled
+2022-08-03 21:59:46.5464 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 21:59:46.5520 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 21:59:46.5520 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'lll' not found for logging rule: *.
+2022-08-03 21:59:46.5520 Info Closing old configuration.
+2022-08-03 21:59:46.5717 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:04:25.4120 Info Message Template Auto Format enabled
+2022-08-03 22:04:25.5330 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:04:25.6334 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 22:04:25.7533 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'lll' not found for logging rule: *.
+2022-08-03 22:04:25.8349 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:04:26.7912 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:08:51.6019 Info Message Template Auto Format enabled
+2022-08-03 22:08:51.6698 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:08:51.8332 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 22:08:51.9359 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'lll' not found for logging rule: *.
+2022-08-03 22:08:52.0555 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:08:53.1118 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:08:56.9344 Info Configuration file change detected! Reloading in 1000ms...
+2022-08-03 22:08:57.9621 Info Reloading configuration...
+2022-08-03 22:08:57.9704 Info Loading NLog config from XML file: C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:08:57.9704 Info Message Template Auto Format enabled
+2022-08-03 22:08:57.9704 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:08:57.9704 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 22:08:57.9871 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'lll' not found for logging rule: *.
+2022-08-03 22:08:57.9871 Info Closing old configuration.
+2022-08-03 22:08:58.0058 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:10:55.3448 Info Message Template Auto Format enabled
+2022-08-03 22:10:55.6133 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 22:10:55.7471 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'lll' not found for logging rule: *.
+2022-08-03 22:10:55.8330 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:10:57.5364 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:11:03.4708 Info Configuration file change detected! Reloading in 1000ms...
+2022-08-03 22:11:04.4851 Info Reloading configuration...
+2022-08-03 22:11:04.5121 Info Loading NLog config from XML file: C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:11:04.5185 Info Message Template Auto Format enabled
+2022-08-03 22:11:04.5185 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 22:11:04.5366 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'lll' not found for logging rule: *.
+2022-08-03 22:11:04.5366 Info Closing old configuration.
+2022-08-03 22:11:04.5796 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:12:11.6251 Info Message Template Auto Format enabled
+2022-08-03 22:12:11.6486 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:12:11.7342 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 22:12:11.8720 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'lll' not found for logging rule: *.
+2022-08-03 22:12:11.9371 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:12:13.3127 Info Configuration file change detected! Reloading in 1000ms...
+2022-08-03 22:12:14.3008 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:12:14.8775 Info Reloading configuration...
+2022-08-03 22:12:14.8775 Info Loading NLog config from XML file: C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:12:14.9012 Info Message Template Auto Format enabled
+2022-08-03 22:12:14.9012 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:12:14.9012 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 22:12:14.9173 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'lll' not found for logging rule: *.
+2022-08-03 22:12:14.9232 Info Closing old configuration.
+2022-08-03 22:12:14.9391 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:12:45.6668 Info Configuration file change detected! Reloading in 1000ms...
+2022-08-03 22:12:46.6954 Info Reloading configuration...
+2022-08-03 22:12:46.7044 Info Loading NLog config from XML file: C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:12:46.7044 Info Message Template Auto Format enabled
+2022-08-03 22:12:46.7044 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:12:46.7044 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 22:12:46.7044 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'lll' not found for logging rule: *.
+2022-08-03 22:12:46.7210 Info Closing old configuration.
+2022-08-03 22:12:46.7210 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:19:07.1515 Info Message Template Auto Format enabled
+2022-08-03 22:19:07.2156 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 22:19:07.3107 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'databaseTarget' not found for logging rule: *.
+2022-08-03 22:19:07.3997 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:19:08.3000 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:25:47.4415 Info Message Template Auto Format enabled
+2022-08-03 22:25:47.6366 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 22:25:47.7399 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'databaseTarget' not found for logging rule: *.
+2022-08-03 22:25:47.8011 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:25:48.6855 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:25:49.3924 Info Configuration file change detected! Reloading in 1000ms...
+2022-08-03 22:25:50.8531 Info Reloading configuration...
+2022-08-03 22:25:50.8647 Info Loading NLog config from XML file: C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:25:50.8647 Info Message Template Auto Format enabled
+2022-08-03 22:25:50.8647 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 22:25:50.8836 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'databaseTarget' not found for logging rule: *.
+2022-08-03 22:25:50.8836 Info Closing old configuration.
+2022-08-03 22:25:50.9255 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:28:22.1569 Info Message Template Auto Format enabled
+2022-08-03 22:28:22.2069 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'exception' from section 'NLog'
+2022-08-03 22:28:22.2326 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 22:28:22.3609 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'databaseTarget' not found for logging rule: *.
+2022-08-03 22:28:22.4173 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:28:22.9335 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:29:32.3847 Info Message Template Auto Format enabled
+2022-08-03 22:29:32.4117 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:29:32.4408 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 22:29:32.4995 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'databaseTarget' not found for logging rule: *.
+2022-08-03 22:29:32.5618 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:29:33.1240 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:30:59.8583 Info Message Template Auto Format enabled
+2022-08-03 22:30:59.9338 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:30:59.9579 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Failed to create Target of type: Database
+ ---> System.ArgumentException: Target type-alias is unknown: 'Database'. Extension NLog.Database not included?
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Config.LoggingConfigurationParser.FactoryCreateInstance[T](String classType, INamedItemFactory`2 factory)
+   --- End of inner exception stack trace ---
+2022-08-03 22:31:00.0159 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'databaseTarget' not found for logging rule: *.
+2022-08-03 22:31:00.0690 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:31:00.5715 Info Validating config: Targets=0, ConfigItems=3, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:33:37.4120 Info Message Template Auto Format enabled
+2022-08-03 22:33:37.4555 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:33:37.4555 Info Loading assembly: NLog.Database
+2022-08-03 22:33:37.7640 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-08-03 22:33:37.8291 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:33:38.6677 Info Configuration file change detected! Reloading in 1000ms...
+2022-08-03 22:33:38.7190 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:33:39.6888 Info Reloading configuration...
+2022-08-03 22:33:39.6888 Info Loading NLog config from XML file: C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:33:39.6888 Info Message Template Auto Format enabled
+2022-08-03 22:33:39.6888 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:33:39.7057 Info Loading assembly: NLog.Database
+2022-08-03 22:33:39.7057 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-08-03 22:33:39.7057 Info Closing old configuration.
+2022-08-03 22:33:39.7544 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:36:40.0823 Info Message Template Auto Format enabled
+2022-08-03 22:36:40.1113 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:36:40.1113 Info Loading assembly: NLog.Database
+2022-08-03 22:36:40.3826 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-08-03 22:36:40.4428 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:36:41.3600 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:38:05.4430 Info Message Template Auto Format enabled
+2022-08-03 22:38:05.4977 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:38:05.4977 Info Loading assembly: NLog.Database
+2022-08-03 22:38:05.6507 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-08-03 22:38:05.7122 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:38:06.3115 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:45:08.8720 Info Message Template Auto Format enabled
+2022-08-03 22:45:08.9002 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:45:08.9002 Info Loading assembly: NLog.Database
+2022-08-03 22:45:08.9595 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Error parsing layout appsettings
+ ---> System.ArgumentException: LayoutRenderer type-alias is unknown: 'appsettings'
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Layouts.LayoutParser.GetLayoutRenderer(String typeName, ConfigurationItemFactory configurationItemFactory, Nullable`1 throwConfigExceptions)
+   --- End of inner exception stack trace ---
+2022-08-03 22:45:09.0480 Warn Error has been raised. Exception: NLog.NLogConfigurationException: ${appsettings} cannot assign unknown property 'name='
+2022-08-03 22:45:09.1685 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-08-03 22:45:09.2248 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:45:09.8658 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:45:46.3707 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+2022-08-03 22:50:39.7900 Info Message Template Auto Format enabled
+2022-08-03 22:50:39.8324 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:50:39.8324 Info Loading assembly: NLog.Database
+2022-08-03 22:50:39.8855 Info Loading assembly: NLog.Appsettings.Standard
+2022-08-03 22:50:40.1162 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-08-03 22:50:40.1911 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:50:40.9385 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:50:42.0138 Info Configuration file change detected! Reloading in 1000ms...
+2022-08-03 22:50:43.0264 Info Reloading configuration...
+2022-08-03 22:50:43.0314 Info Loading NLog config from XML file: C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-03 22:50:43.0314 Info Message Template Auto Format enabled
+2022-08-03 22:50:43.0314 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-03 22:50:43.0314 Info Loading assembly: NLog.Database
+2022-08-03 22:50:43.0314 Info Loading assembly: NLog.Appsettings.Standard
+2022-08-03 22:50:43.0314 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-08-03 22:50:43.0498 Info Closing old configuration.
+2022-08-03 22:50:43.0671 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config

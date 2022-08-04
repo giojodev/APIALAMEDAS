@@ -5,13 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch (web)",
+            "name": ".NET Core Launch (AlamedasAPI)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/bin/Debug/net6.0/AlamedasAPI.dll",
+            "program": "${workspaceFolder}/AlamedasAPI/bin/Debug/net6.0/AlamedasAPI.dll",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/AlamedasAPI",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",
