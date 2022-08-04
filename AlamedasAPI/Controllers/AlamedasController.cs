@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
+using AlamedasAPI.Infraestructure.Services.Alamedas.Services;
 
 namespace AlamedasAPI.Controllers;
 
@@ -9,15 +10,19 @@ namespace AlamedasAPI.Controllers;
 public class AlamedasController : ControllerBase
 {
     private readonly ILogger<AlamedasController> _logger;
+    private readonly ICatalogServices _catalogservices; 
 
-    public AlamedasController(ILogger<AlamedasController> logger)
+    public AlamedasController(ILogger<AlamedasController> logger, ICatalogServices catalogservices)
     {
         _logger = logger;
+        _catalogservices = catalogservices;
     }
 
-     [HttpGet(Name = "ProductList")]
-     public async Task<ActionResult> Foo()
+
+    [HttpGet("Catalog/UserList")]
+    public IActionResult GetListUsers()
     {
-        return BadRequest();
+        var response = _catalogservices.GetListUsers(); 
+        return Ok(response);
     }
 }

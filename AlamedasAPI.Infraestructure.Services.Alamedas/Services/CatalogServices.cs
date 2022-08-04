@@ -9,7 +9,7 @@ namespace AlamedasAPI.Infraestructure.Services.Alamedas.Services
 {
     public interface ICatalogServices
     {
-        List<Usuario> GetListUser();
+        List<Usuario> GetListUsers();
     }
 
     public class CatalogServices: ICatalogServices
@@ -20,7 +20,7 @@ namespace AlamedasAPI.Infraestructure.Services.Alamedas.Services
             _context = context;
         }
 
-        public List<Usuario> GetListUser(){
+        public List<Usuario> GetListUsers(){
             var users = _context.Usuarios.ToList();
             return users;
         }
@@ -28,9 +28,9 @@ namespace AlamedasAPI.Infraestructure.Services.Alamedas.Services
 
     public static class CatalogServicesExtensions
     {
-        public static IServiceCollection AddCatalogServices(this IServiceCollection services){
-            services.AddTransient<ICatalogServices, CatalogServices>();
-            return services;
+        public static IServiceCollection AddCatalogServices(this IServiceCollection Services){
+            Services.AddTransient<ICatalogServices, CatalogServices>();
+            return Services;
         }
     }
 }
