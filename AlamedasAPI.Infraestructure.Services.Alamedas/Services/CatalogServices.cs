@@ -1,20 +1,18 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using System.Threading.Tasks;
 
 using AlamedasAPI.Db.Models.Alamedas.Models;
 
 namespace AlamedasAPI.Infraestructure.Services.Alamedas.Services
 {
-    public Interface ICatalogServices
+    public interface ICatalogServices
     {
         List<Usuario> GetListUser();
     }
 
-    public class CatalogServices:ICatalogServices
+    public class CatalogServices: ICatalogServices
     {
         private readonly alamedascontext _context;
 
@@ -24,13 +22,14 @@ namespace AlamedasAPI.Infraestructure.Services.Alamedas.Services
 
         public List<Usuario> GetListUser(){
             var users = _context.Usuarios.ToList();
+            return users;
         }
     }
 
     public static class CatalogServicesExtensions
     {
         public static IServiceCollection AddCatalogServices(this IServiceCollection services){
-            service.AddTransient<ICatalogServices, CatalogServices>();
+            services.AddTransient<ICatalogServices, CatalogServices>();
             return services;
         }
     }
