@@ -11,6 +11,7 @@ namespace AlamedasAPI.Infraestructure.Services.Alamedas.Services
     public interface ICatalogServices
     {
         List<Usuario> GetListUsers();
+        List<Condomino>GetListCondomino(); 
     }
 
     public class CatalogServices: ICatalogServices
@@ -34,6 +35,11 @@ namespace AlamedasAPI.Infraestructure.Services.Alamedas.Services
             {
                 throw;
             }
+        }
+        public List<Condomino> GetListCondomino(){
+            // _logger.LogError(1,)
+            var condominos=_context.Condominos.ToList();
+            return condominos;
         }
     }
 
