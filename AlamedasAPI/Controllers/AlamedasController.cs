@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using AlamedasAPI.Models;
 using System;
 
 namespace AlamedasAPI.Controllers;
