@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using AlamedasAPI.Infraestructure.Alamedas;
+using AlamedasAPI.Infraestructure.Alamedas.DTO;
 
 namespace AlamedasAPI.Controllers;
 
@@ -43,6 +44,19 @@ public class AlamedasController : ControllerBase
         var response = await _transactionservices.ProdExpense_PerryCash(); 
         return Ok(response);
     }
+    [HttpPost("Transactions/ActualizarCondomino")]
+    public async Task<IActionResult> UpdateCondominium(CondominoDTO condominoDTO )
+    {
+        var response = await _transactionservices.UpdateCondominium(condominoDTO); 
+        return Ok(response);
+    }
+    [HttpPost("Transactions/ActualizarDetalleIngreso")]
+    public async Task<IActionResult> UpdateDetailIncome(DetailIncomeDTO detailIncomeDTO )
+    {
+        var response = await _transactionservices.UpdateDetailIncome(detailIncomeDTO); 
+        return Ok(response);
+    }
+
 
     //seguridad
     [HttpGet("Security/Test")]
