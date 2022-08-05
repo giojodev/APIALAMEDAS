@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlamedasAPI", "AlamedasAPI\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlamedasAPI.Db.Models.Alamedas", "AlamedasAPI.Db.Models.Alamedas\AlamedasAPI.Db.Models.Alamedas.csproj", "{D36B33C4-A88A-4217-83CA-0DA52439239D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlamedasAPI.Infraestructure.Services.Alamedas", "AlamedasAPI.Infraestructure.Services.Alamedas\AlamedasAPI.Infraestructure.Services.Alamedas.csproj", "{A14A3441-9376-415E-9EFA-8A94913DC51D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlamedasAPI.Infraestructure.Alamedas", "AlamedasAPI.Infraestructure.Alamedas\AlamedasAPI.Infraestructure.Alamedas.csproj", "{A14A3441-9376-415E-9EFA-8A94913DC51D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

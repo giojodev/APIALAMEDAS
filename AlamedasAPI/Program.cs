@@ -1,5 +1,5 @@
 using AlamedasAPI.Db.Models.Alamedas.Models;
-using AlamedasAPI.Infraestructure.Services.Alamedas.Services;
+using AlamedasAPI.Infraestructure.Alamedas;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using NLog.Web;
@@ -24,6 +24,8 @@ builder.Services.AddDbContext<alamedascontext>(x => x.UseSqlServer(connectionStr
 
 //services alamedas
 builder.Services.AddCatalogServices();
+builder.Services.AddTransactionServices();
+builder.Services.AddSecurityServices();
 
 // NLog: Setup NLog for Dependency injection
 builder.Logging.ClearProviders();
