@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 using Microsoft.Extensions.Logging;
-using AlamedasAPI.Infraestructure.Services.Alamedas.DTO;
+using AlamedasAPI.Infraestructure.Alamedas.DTO;
 using AlamedasAPI.Db.Models.Alamedas.Models;
 
-namespace AlamedasAPI.Infraestructure.Services.Alamedas.Services
+namespace AlamedasAPI.Infraestructure.Alamedas
 {
     public interface ICatalogServices
     {
         List<Usuario> GetListUsers();
-        List<Condomino>GetListCondomino(); 
+        List<Condomino>GetListCondomino();
+        List<ProductoGastoCajaChica> GetListProdExpense();
     }
 
     public class CatalogServices: ICatalogServices
@@ -25,22 +26,22 @@ namespace AlamedasAPI.Infraestructure.Services.Alamedas.Services
         }
 
         public List<Usuario> GetListUsers(){
-            try
-            {
-                 _logger.LogError(1, "NLog injected into HomeController");
-                var users = _context.Usuarios.ToList();
-                return users;
-            }
-            catch (System.Exception)
-            {
-                throw;
-            }
+            var users = _context.Usuarios.ToList();
+            return users;
         }
+
         public List<Condomino> GetListCondomino(){
-            // _logger.LogError(1,)
             var condominos=_context.Condominos.ToList();
             return condominos;
         }
+
+        public List<ProductoGastoCajaChica> GetListProdExpense()
+        {
+            var data = _context.ProductoGastoCajaChicas.ToList();
+            return data;
+        }
+
+
     }
 
     public static class CatalogServicesExtensions
