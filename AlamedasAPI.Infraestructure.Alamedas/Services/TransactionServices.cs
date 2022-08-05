@@ -11,6 +11,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
 {
     public interface ITransactionServices
     {
+        int GetConsecutiveICC();
         int GetConsecutiveGCC();
         BaseResult DeleteDetGCC(int IdConsecutive);
         Task<BaseResult> UpdateCondominium(CondominoDTO condominoDTO);
@@ -29,6 +30,24 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             _logger = logger;
         }
 
+          public int GetConsecutiveICC()
+        {
+            try
+            {
+                int number = 0;
+                var data = _context.TblIngresosCajaChicas.Select(grp =>new {number = grp.Consecutivo})
+                .OrderByDescending(x => x.number).FirstOrDefault();
+                if(data != null)
+                    number = data.number;
+                    
+                return number;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with GetConsecutiveICC", ex);
+                return -1;
+            }
+        }
           public int GetConsecutiveGCC()
         {
             try
