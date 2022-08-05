@@ -13,6 +13,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         List<Usuario> GetListUsers();
         List<Condomino>GetListCondomino();
         List<ProductoGastoCajaChica> GetListProdExpense();
+        List<ProductoIngresoCajaChica> GetListProdEntry();
     }
 
     public class CatalogServices: ICatalogServices
@@ -41,6 +42,11 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             return data;
         }
 
+        public List<ProductoIngresoCajaChica> GetListProdEntry()
+        {
+            var data = _context.ProductoIngresoCajaChicas.ToList();
+            return data;
+        }
 
     }
 
