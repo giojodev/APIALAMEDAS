@@ -23,6 +23,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AlamedasAPI.Db.Models.Alamedas\AlamedasAPI.Db.Models.Alamedas.csproj" />
-    <ProjectReference Include="..\AlamedasAPI.Infraestructure.Services.Alamedas\AlamedasAPI.Infraestructure.Services.Alamedas.csproj" />
+    <ProjectReference Include="..\AlamedasAPI.Infraestructure.Alamedas\AlamedasAPI.Infraestructure.Alamedas.csproj" />
   </ItemGroup>
 </Project>
