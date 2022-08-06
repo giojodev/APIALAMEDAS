@@ -37,6 +37,12 @@ public class AlamedasController : ControllerBase
         var response = _catalogservices.GetListCondomino(); 
         return Ok(response);
     }
+    [HttpGet("Catalog/GetDashboardDebt")]
+    public IActionResult GetDashboardDebt()
+    {
+        var response = _catalogservices.GetDashboardDebt(); 
+        return Ok(response);
+    }
 
     //CONSTRUIR GRID P_GCC
     [HttpGet("Catalog/ProdExpenseList")]
@@ -94,6 +100,14 @@ public class AlamedasController : ControllerBase
     public IActionResult DeleteDetGCC(int IdConsecutive)
     {
         var response = _transactionservices.DeleteDetGCC(IdConsecutive); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPut("Transactions/UpdateDayDebt")]
+    public async Task<IActionResult> UpdateDayDebt()
+    {
+        var response = await _transactionservices.UpdateDayDebt(); 
         if(response.Error)
             return BadRequest(response.Message);
         return Ok(response.Message);
