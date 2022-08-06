@@ -16,6 +16,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         BaseResult DeleteDetGCC(int IdConsecutive);
         Task<BaseResult> UpdateCondominium(CondominoDTO condominoDTO);
         Task<BaseResult> UpdateDetailIncome(DetailIncomeDTO detailIncomeDTO);
+        Task<BaseResult> UpdateDayDebt();
 
     }
 
@@ -129,6 +130,19 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error en el servicio", Saved = false };
             }
             
+        }
+        public async Task<BaseResult> UpdateDayDebt()
+        {
+            var debt= await _context.Moras.Where(x=>x.Estado=="Pendiente").ToListAsync();
+
+            foreach (var deb in debt)
+            {
+                deb.DiasVencido=deb.DiasVencido+1;
+                _context.Moras.Add(deb);
+                _context.SaveChanges();
+            }
+
+            return new BaseResult() { Error = false, Message = "Mora Actualizada con exito", Saved = true };
         }
     }
 
