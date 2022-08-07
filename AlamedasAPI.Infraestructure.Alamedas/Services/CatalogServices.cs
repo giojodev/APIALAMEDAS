@@ -15,6 +15,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         List<ProductoGastoCajaChica> GetListProdExpense();
         List<ProductoIngresoCajaChica> GetListProdEntry();
         decimal GetDashboardDebt();
+        decimal GetDashboardBill();
     }
 
     public class CatalogServices: ICatalogServices
@@ -53,6 +54,13 @@ namespace AlamedasAPI.Infraestructure.Alamedas
 
             return _data;
         }
+        public decimal GetDashboardBill(){
+            var _data=Convert.ToDecimal(_context.Gastos.Select(a=>a.Valor).Sum());
+            return _data;
+        }
+        // public List<>GetCondominiumDebtDashboard(){
+
+        // }
 
     }
 

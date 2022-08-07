@@ -17,6 +17,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> UpdateCondominium(CondominoDTO condominoDTO);
         Task<BaseResult> UpdateDetailIncome(DetailIncomeDTO detailIncomeDTO);
         Task<BaseResult> UpdateDayDebt();
+        Task<BaseResult> UpdateBills(BillsDTO billsDTO);
 
     }
 
@@ -143,6 +144,35 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             }
 
             return new BaseResult() { Error = false, Message = "Mora Actualizada con exito", Saved = true };
+        }
+        public async Task<BaseResult> UpdateBills(BillsDTO billsDTO)
+        {
+            try
+            {
+                var debt= await _context.Gastos.Where(x=>x.Consecutivo==billsDTO.consecutive).FirstOrDefaultAsync();
+                if(debt==null)
+                    return new BaseResult(){Message="Gasto no existe",Error=true,Saved=false};
+                
+                debt.Usuario=1;
+                debt.Gasto1=billsDTO.bills;
+                debt.Fecha=billsDTO.date;
+                debt.Concepto=billsDTO.concept;
+                debt.Valor=Convert.ToDecimal(billsDTO.value);
+                debt.Mes=billsDTO.month;
+                debt.Anio=billsDTO.year;
+
+                _context.Gastos.Add(debt);
+                _context.SaveChanges();
+
+                return new BaseResult(){Message="Registro actualizado",Saved=true,Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error en el servicio", ex);
+                return new BaseResult() { Error = true, Message = "Error en el servicio", Saved = false };
+            }
+            
+
         }
     }
 
