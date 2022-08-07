@@ -112,6 +112,14 @@ public class AlamedasController : ControllerBase
             return BadRequest(response.Message);
         return Ok(response.Message);
     }
+    [HttpPut("Transactions/UpdateBill")]
+    public async Task<IActionResult> UpdateBill(BillsDTO billsDTO)
+    {
+        var response = await _transactionservices.UpdateBills(billsDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
 
     //*********** SECURITY ***********
 
