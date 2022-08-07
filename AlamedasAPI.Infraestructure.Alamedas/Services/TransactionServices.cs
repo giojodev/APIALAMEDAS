@@ -4,14 +4,21 @@ using AlamedasAPI.Infraestructure.Alamedas.DTO;
 using AlamedasAPI.Db.Models.Alamedas.Models;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace AlamedasAPI.Infraestructure.Alamedas
 {
     public interface ITransactionServices
     {
-        Task<BaseResult> ProdExpense_PerryCash();
+        int GetConsecutiveICC();
+        int GetConsecutiveGCC();
+        BaseResult DeleteDetGCC(int IdConsecutive);
         Task<BaseResult> UpdateCondominium(CondominoDTO condominoDTO);
         Task<BaseResult> UpdateDetailIncome(DetailIncomeDTO detailIncomeDTO);
+        Task<BaseResult> UpdateDayDebt();
+        Task<BaseResult> UpdateBills(BillsDTO billsDTO);
+
     }
 
     public class TransactionServices : ITransactionServices
@@ -25,19 +32,61 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             _logger = logger;
         }
 
-        public async Task<BaseResult> ProdExpense_PerryCash()
+          public int GetConsecutiveICC()
         {
             try
             {
-                return new BaseResult() { Error = false, Message = "Servico conectado", Saved = true };
+                int number = 0;
+                var data = _context.TblIngresosCajaChicas.Select(grp =>new {number = grp.Consecutivo})
+                .OrderByDescending(x => x.number).FirstOrDefault();
+                if(data != null)
+                    number = data.number;
+                    
+                return number;
             }
             catch (Exception ex)
             {
-                _logger.LogError("Error en el servicio", ex);
-                return new BaseResult() { Error = true, Message = "Error en el servicio", Saved = false };
+                _logger.LogError("Error with GetConsecutiveICC", ex);
+                return -1;
             }
         }
-         public async Task<BaseResult> UpdateCondominium(CondominoDTO condominoDTO)
+          public int GetConsecutiveGCC()
+        {
+            try
+            {
+                int number = 0;
+                var data = _context.GastosCajaChicas.Select(grp =>new {number = grp.Consecutivo})
+                .OrderByDescending(x => x.number).FirstOrDefault();
+                if(data != null)
+                    number = data.number;
+                    
+                return number;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with GetConsecutiveGCC", ex);
+                return -1;
+            }
+        }
+
+        public BaseResult DeleteDetGCC(int IdConsecutive)
+        {
+            try
+            {
+                var det = new DetalleGastoCajachica { Consecutivo = IdConsecutive };
+                _context.Entry(det).State = EntityState.Deleted;
+                _context.SaveChanges();
+
+                return new BaseResult() { Error = false, Message = "Detalle eliminado.", Saved = true };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteDetGCC", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar detalle", Saved = false };
+            }
+        }
+
+        public async Task<BaseResult> UpdateCondominium(CondominoDTO condominoDTO)
         {
             try
             {
@@ -61,7 +110,6 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             }
             
         }
-        
         public async Task<BaseResult> UpdateDetailIncome(DetailIncomeDTO detailIncomeDTO)
         {
             try
@@ -84,9 +132,49 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             }
             
         }
+        public async Task<BaseResult> UpdateDayDebt()
+        {
+            var debt= await _context.Moras.Where(x=>x.Estado=="Pendiente").ToListAsync();
 
+            foreach (var deb in debt)
+            {
+                deb.DiasVencido=deb.DiasVencido+1;
+                _context.Moras.Add(deb);
+                _context.SaveChanges();
+            }
+
+            return new BaseResult() { Error = false, Message = "Mora Actualizada con exito", Saved = true };
+        }
+        public async Task<BaseResult> UpdateBills(BillsDTO billsDTO)
+        {
+            try
+            {
+                var debt= await _context.Gastos.Where(x=>x.Consecutivo==billsDTO.consecutive).FirstOrDefaultAsync();
+                if(debt==null)
+                    return new BaseResult(){Message="Gasto no existe",Error=true,Saved=false};
+                
+                debt.Usuario=1;
+                debt.Gasto1=billsDTO.bills;
+                debt.Fecha=billsDTO.date;
+                debt.Concepto=billsDTO.concept;
+                debt.Valor=Convert.ToDecimal(billsDTO.value);
+                debt.Mes=billsDTO.month;
+                debt.Anio=billsDTO.year;
+
+                _context.Gastos.Add(debt);
+                _context.SaveChanges();
+
+                return new BaseResult(){Message="Registro actualizado",Saved=true,Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error en el servicio", ex);
+                return new BaseResult() { Error = true, Message = "Error en el servicio", Saved = false };
+            }
+            
+
+        }
     }
-    
 
     public static class TransactionsServicesExtensions
     {

@@ -37,11 +37,18 @@ public class AlamedasController : ControllerBase
         var response = _catalogservices.GetListCondomino(); 
         return Ok(response);
     }
-    //transacciones
-    [HttpGet("Transactions/Test")]
-    public async Task<IActionResult> GetTransaction()
+    [HttpGet("Catalog/GetDashboardDebt")]
+    public IActionResult GetDashboardDebt()
     {
-        var response = await _transactionservices.ProdExpense_PerryCash(); 
+        var response = _catalogservices.GetDashboardDebt(); 
+        return Ok(response);
+    }
+
+    //CONSTRUIR GRID P_GCC
+    [HttpGet("Catalog/ProdExpenseList")]
+    public IActionResult GetListProdExpense()
+    {
+        var response = _catalogservices.GetListProdExpense(); 
         return Ok(response);
     }
     [HttpPost("Transactions/ActualizarCondomino")]
@@ -58,7 +65,64 @@ public class AlamedasController : ControllerBase
     }
 
 
-    //seguridad
+    //CONSTRUIR GRID P_ICC
+    [HttpGet("Catalog/ProdEntryList")]
+    public IActionResult GetListProdEntry()
+    {
+        var response = _catalogservices.GetListProdEntry(); 
+        return Ok(response);
+    }
+
+    //*********** TRANSACTIONS ***********
+
+    //OBTENER ULTIMO CONSECUTIVO ICC
+    [HttpGet("Transactions/ConsecutiveICC")]
+    public IActionResult GetConsecutiveICC()
+    {
+        var response = _transactionservices.GetConsecutiveICC(); 
+        if(response == -1)
+            return BadRequest(response);
+        return Ok(response);
+    }
+
+    //OBTENER ULTIMO CONSECUTIVO GCC
+    [HttpGet("Transactions/ConsecutiveGCC")]
+    public IActionResult GetConsecutiveGCC()
+    {
+        var response = _transactionservices.GetConsecutiveGCC(); 
+        if(response == -1)
+            return BadRequest(response);
+        return Ok(response);
+    }
+
+    //ELIMINARDGCC
+    [HttpPut("Transactions/DeleteDetGCC")]
+    public IActionResult DeleteDetGCC(int IdConsecutive)
+    {
+        var response = _transactionservices.DeleteDetGCC(IdConsecutive); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPut("Transactions/UpdateDayDebt")]
+    public async Task<IActionResult> UpdateDayDebt()
+    {
+        var response = await _transactionservices.UpdateDayDebt(); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPut("Transactions/UpdateBill")]
+    public async Task<IActionResult> UpdateBill(BillsDTO billsDTO)
+    {
+        var response = await _transactionservices.UpdateBills(billsDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+
+    //*********** SECURITY ***********
+
     [HttpGet("Security/Test")]
     public async Task<IActionResult> GetLogin()
     {
