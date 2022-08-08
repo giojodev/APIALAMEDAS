@@ -51,13 +51,13 @@ public class AlamedasController : ControllerBase
         var response = _catalogservices.GetListProdExpense(); 
         return Ok(response);
     }
-    [HttpPost("Transactions/ActualizarCondomino")]
+    [HttpPut("Transactions/UpdateCondominium")]
     public async Task<IActionResult> UpdateCondominium(CondominoDTO condominoDTO )
     {
         var response = await _transactionservices.UpdateCondominium(condominoDTO); 
         return Ok(response);
     }
-    [HttpPost("Transactions/ActualizarDetalleIngreso")]
+    [HttpPut("Transactions/UpdateDetailIncome")]
     public async Task<IActionResult> UpdateDetailIncome(DetailIncomeDTO detailIncomeDTO )
     {
         var response = await _transactionservices.UpdateDetailIncome(detailIncomeDTO); 
@@ -70,6 +70,14 @@ public class AlamedasController : ControllerBase
     public IActionResult GetListProdEntry()
     {
         var response = _catalogservices.GetListProdEntry(); 
+        return Ok(response);
+    }
+
+    //TOP VECINOS EN MORA
+    [HttpGet("Catalog/TopDebtDashboard")]
+    public IActionResult GetCondominiumDebtDashboard()
+    {
+        var response = _catalogservices.GetCondominiumDebtDashboard(); 
         return Ok(response);
     }
 
@@ -96,7 +104,7 @@ public class AlamedasController : ControllerBase
     }
 
     //ELIMINARDGCC
-    [HttpPut("Transactions/DeleteDetGCC")]
+    [HttpDelete("Transactions/DeleteDetGCC")]
     public IActionResult DeleteDetGCC(int IdConsecutive)
     {
         var response = _transactionservices.DeleteDetGCC(IdConsecutive); 
@@ -104,6 +112,7 @@ public class AlamedasController : ControllerBase
             return BadRequest(response.Message);
         return Ok(response.Message);
     }
+
     [HttpPut("Transactions/UpdateDayDebt")]
     public async Task<IActionResult> UpdateDayDebt()
     {

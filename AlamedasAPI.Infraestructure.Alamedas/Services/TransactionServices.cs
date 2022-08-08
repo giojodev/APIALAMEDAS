@@ -77,12 +77,12 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _context.Entry(det).State = EntityState.Deleted;
                 _context.SaveChanges();
 
-                return new BaseResult() { Error = false, Message = "Detalle eliminado.", Saved = true };
+                return new BaseResult() { Error = false, Message = "Detalle eliminado."};
             }
             catch (Exception ex)
             {
                 _logger.LogError("Error with DeleteDetGCC", ex);
-                return new BaseResult() { Error = true, Message = "Error al eliminar detalle", Saved = false };
+                return new BaseResult() { Error = true, Message = "Error al eliminar detalle"};
             }
         }
 
@@ -92,7 +92,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             {
                 var condomino= await _context.Condominos.FindAsync(condominoDTO.id);
                 if(condomino==null)
-                    return new BaseResult() { Error = true, Message = "No se encontro el condomino", Saved = false };
+                    return new BaseResult() { Error = true, Message = "No se encontro el condomino"};
                 
                 condomino.NombreCompleto=condominoDTO.nombreCompleto;
                 condomino.NombreInquilino=condominoDTO.nombreInquilino;
@@ -100,13 +100,13 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _context.Condominos.Add(condomino);
                 _context.SaveChanges();
 
-                return new BaseResult() { Error = false, Message = "Registro Guardado con exito", Saved = true };
+                return new BaseResult() { Error = false, Message = "Registro Guardado con exito"};
 
             }
             catch (Exception ex)
             {
                 _logger.LogError("Error en el servicio", ex);
-                return new BaseResult() { Error = true, Message = "Error en el servicio", Saved = false };
+                return new BaseResult() { Error = true, Message = "Error en el servicio" };
             }
             
         }
@@ -116,19 +116,19 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             {
                 var detailIncome=await _context.DetalleIngresos.FindAsync(detailIncomeDTO.idMora);
                 if(detailIncome==null)
-                    return new BaseResult() { Error = true, Message = "No se encontro el registro", Saved = false };
+                    return new BaseResult() { Error = true, Message = "No se encontro el registro"};
                 
                 detailIncome.Valor=detailIncomeDTO.total;  
                 _context.DetalleIngresos.Add(detailIncome);
                 _context.SaveChanges();
 
-                return new BaseResult() { Error = false, Message = "Registro Actualizado con exito", Saved = true };
+                return new BaseResult() { Error = false, Message = "Registro Actualizado con exito" };
 
             }
             catch (Exception ex)
             {
                 _logger.LogError("Error en el servicio", ex);
-                return new BaseResult() { Error = true, Message = "Error en el servicio", Saved = false };
+                return new BaseResult() { Error = true, Message = "Error en el servicio"};
             }
             
         }
@@ -143,7 +143,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _context.SaveChanges();
             }
 
-            return new BaseResult() { Error = false, Message = "Mora Actualizada con exito", Saved = true };
+            return new BaseResult() { Error = false, Message = "Mora Actualizada con exito"};
         }
         public async Task<BaseResult> UpdateBills(BillsDTO billsDTO)
         {
@@ -151,7 +151,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             {
                 var debt= await _context.Gastos.Where(x=>x.Consecutivo==billsDTO.consecutive).FirstOrDefaultAsync();
                 if(debt==null)
-                    return new BaseResult(){Message="Gasto no existe",Error=true,Saved=false};
+                    return new BaseResult(){Message="Gasto no existe",Error=true};
                 
                 debt.Usuario=1;
                 debt.Gasto1=billsDTO.bills;
@@ -164,12 +164,12 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _context.Gastos.Add(debt);
                 _context.SaveChanges();
 
-                return new BaseResult(){Message="Registro actualizado",Saved=true,Error=false};
+                return new BaseResult(){Message="Registro actualizado",Error=false};
             }
             catch (Exception ex)
             {
                 _logger.LogError("Error en el servicio", ex);
-                return new BaseResult() { Error = true, Message = "Error en el servicio", Saved = false };
+                return new BaseResult() { Error = true, Message = "Error en el servicio"};
             }
             
 

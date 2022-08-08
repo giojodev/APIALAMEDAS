@@ -5,18 +5,19 @@ using System.Linq;
 using Microsoft.Extensions.Logging;
 using AlamedasAPI.Infraestructure.Alamedas.DTO;
 using AlamedasAPI.Db.Models.Alamedas.Models;
+using System.Threading.Tasks;
 
 namespace AlamedasAPI.Infraestructure.Alamedas
 {
     public interface ICatalogServices
     {
         List<Usuario> GetListUsers();
-        List<CondominiumDebtDTO>GetListCondomino();
+        List<Condomino>GetListCondomino();
         List<ProductoGastoCajaChica> GetListProdExpense();
         List<ProductoIngresoCajaChica> GetListProdEntry();
         decimal GetDashboardDebt();
         decimal GetDashboardBill();
-        List<CondominiumDebtDTO>GetCondominiumDebtDashboard();
+        dynamic GetCondominiumDebtDashboard();
     }
 
     public class CatalogServices: ICatalogServices
@@ -59,24 +60,18 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             var _data=Convert.ToDecimal(_context.Gastos.Select(a=>a.Valor).Sum());
             return _data;
         }
-        public List<CondominiumDebtDTO>GetCondominiumDebtDashboard()
+        public dynamic GetCondominiumDebtDashboard()
         {
-            //var _data= _context.Moras.Join(_context.Condominos,t=>t.Condomino,g=>g.IdCondomino, (t,g)=>new{g.NombreCompleto,Count(t.Mes)});
-            CondominiumDebtDTO condominiumDebtDTO = _context.Moras
-            .Join(_context.Condominos , t=>t.Condomino,g=>g.IdCondomino ,(t,g) => new {t,g})
-            .GroupBy(x => new{ x.NombreInquilino}) 
+            var Details = _context.Condominos
+            .Join(_context.Moras , x=>x.IdCondomino,y=>y.Condomino ,(x,y) => 
+            new {Valor = y.Valor,NombreInquilino = x.NombreInquilino})
+            .GroupBy(g => g.NombreInquilino) 
             .Select(s => new{ 
-            //Meses = s.t.Mes.Count() 
-            //vMora = (s.t.Valor ?? 0).Sum())
-            //(s.t.Valor??0:s.t.Valor).Sum()
-            vMora = s.Sum(x => x.t.Valor)
-            ,NombreInquilino = s.g.NombreInquilino
+                meses = s.Count(),mora = s.Sum(xx => xx.Valor),condomino = s.Key
             })    
             .ToList();
 
-            //CondominiumDebtDTO condominiumDebtDTO=new CondominiumDebtDTO();
-            // condominiumDebtDTO= _data.ToList();
-            return condominiumDebtDTO;
+            return Details;
         }
 
     }
