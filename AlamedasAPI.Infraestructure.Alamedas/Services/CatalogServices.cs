@@ -11,11 +11,12 @@ namespace AlamedasAPI.Infraestructure.Alamedas
     public interface ICatalogServices
     {
         List<Usuario> GetListUsers();
-        List<Condomino>GetListCondomino();
+        List<CondominiumDebtDTO>GetListCondomino();
         List<ProductoGastoCajaChica> GetListProdExpense();
         List<ProductoIngresoCajaChica> GetListProdEntry();
         decimal GetDashboardDebt();
         decimal GetDashboardBill();
+        List<CondominiumDebtDTO>GetCondominiumDebtDashboard();
     }
 
     public class CatalogServices: ICatalogServices
@@ -58,9 +59,25 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             var _data=Convert.ToDecimal(_context.Gastos.Select(a=>a.Valor).Sum());
             return _data;
         }
-        // public List<>GetCondominiumDebtDashboard(){
+        public List<CondominiumDebtDTO>GetCondominiumDebtDashboard()
+        {
+            //var _data= _context.Moras.Join(_context.Condominos,t=>t.Condomino,g=>g.IdCondomino, (t,g)=>new{g.NombreCompleto,Count(t.Mes)});
+            CondominiumDebtDTO condominiumDebtDTO = _context.Moras
+            .Join(_context.Condominos , t=>t.Condomino,g=>g.IdCondomino ,(t,g) => new {t,g})
+            .GroupBy(x => new{ x.NombreInquilino}) 
+            .Select(s => new{ 
+            //Meses = s.t.Mes.Count() 
+            //vMora = (s.t.Valor ?? 0).Sum())
+            //(s.t.Valor??0:s.t.Valor).Sum()
+            vMora = s.Sum(x => x.t.Valor)
+            ,NombreInquilino = s.g.NombreInquilino
+            })    
+            .ToList();
 
-        // }
+            //CondominiumDebtDTO condominiumDebtDTO=new CondominiumDebtDTO();
+            // condominiumDebtDTO= _data.ToList();
+            return condominiumDebtDTO;
+        }
 
     }
 
