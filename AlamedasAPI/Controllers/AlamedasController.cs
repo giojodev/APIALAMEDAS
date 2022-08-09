@@ -56,6 +56,30 @@ public class AlamedasController : ControllerBase
         var response = _catalogservices.GetIncomesDashboard(); 
         return Ok(response);
     }
+    [HttpGet("Catalog/GetCondominumMontlyDeb")]
+    public IActionResult GetCondominumMontlyDeb()
+    {
+        var response = _catalogservices.GetCondominumMontlyDeb(); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetProductExpenseGrid")]
+    public IActionResult GetProductExpenseGrid()
+    {
+        var response = _catalogservices.ProductExpenseGrid(); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetGridDetailExpenses")]
+    public IActionResult GetGridDetailExpenses(int consecutive)
+    {
+        var response = _catalogservices.GetGridDetailExpenses(consecutive); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetGridDebtCondo")]
+    public IActionResult GetGridDebtCondo(int idCondomino)
+    {
+        var response = _catalogservices.GetGridDebtCondo(idCondomino); 
+        return Ok(response);
+    }
 
     //CONSTRUIR GRID GCC
     [HttpGet("Catalog/ProdExpenseList")]
