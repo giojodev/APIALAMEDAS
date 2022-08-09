@@ -74,3 +74,109 @@
 2022-08-08 19:05:52.6799 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
 2022-08-08 19:05:52.7367 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
 2022-08-08 19:05:53.5906 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-09 15:01:52.6546 Info Message Template Auto Format enabled
+2022-08-09 15:01:52.6684 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-09 15:01:52.6684 Info Loading assembly: NLog.Database
+2022-08-09 15:01:52.7276 Info Loading assembly: NLog.Appsettings.Standard
+2022-08-09 15:01:52.8433 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-08-09 15:01:52.8829 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\gvann\Documents\GitHub\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-09 15:01:54.5892 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\gvann\Documents\GitHub\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-09 15:03:27.4308 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2022-08-09 15:03:27.4511 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2022-08-09 15:03:27.4511 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2022-08-09 15:05:12.5947 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2022-08-09 15:05:12.5947 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2022-08-09 15:05:12.5947 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): No se ha encontrado la ruta de acceso de la red.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2022-08-09 15:05:24.2427 Info Message Template Auto Format enabled
+2022-08-09 15:05:24.2639 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-09 15:05:24.2639 Info Loading assembly: NLog.Database
+2022-08-09 15:05:24.2639 Info Loading assembly: NLog.Appsettings.Standard
+2022-08-09 15:05:24.3655 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-08-09 15:05:24.4031 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\gvann\Documents\GitHub\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-09 15:05:24.7718 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\gvann\Documents\GitHub\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-09 15:31:39.2603 Info Message Template Auto Format enabled
+2022-08-09 15:31:39.2768 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-09 15:31:39.2768 Info Loading assembly: NLog.Database
+2022-08-09 15:31:39.2768 Info Loading assembly: NLog.Appsettings.Standard
+2022-08-09 15:31:39.3834 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-08-09 15:31:39.4302 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\gvann\Documents\GitHub\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-09 15:31:39.7787 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\gvann\Documents\GitHub\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-09 15:32:25.6804 Info Message Template Auto Format enabled
+2022-08-09 15:32:25.6995 Info Loading assembly: NLog.Web.AspNetCore
+2022-08-09 15:32:25.6995 Info Loading assembly: NLog.Database
+2022-08-09 15:32:25.6995 Info Loading assembly: NLog.Appsettings.Standard
+2022-08-09 15:32:25.8122 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-08-09 15:32:25.8520 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\gvann\Documents\GitHub\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-08-09 15:32:26.2183 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\gvann\Documents\GitHub\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
