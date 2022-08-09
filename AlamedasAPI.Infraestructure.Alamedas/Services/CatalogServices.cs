@@ -21,6 +21,10 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         List<DetalleGastoCajachica> GetDetGCC(int IdConsecutive);
         List<DetalleIngresoCajachica> GetDetICC(int IdConsecutive);
         decimal GetIncomesDashboard();
+        dynamic GetCondominumMontlyDeb();
+        dynamic GetGridDebtCondo(int idCondomino);
+        dynamic ProductExpenseGrid();
+        dynamic GetGridDetailExpenses(int consecutive);
     }
 
     public class CatalogServices: ICatalogServices
@@ -108,6 +112,30 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             return data;
         }
 
+        public dynamic GetCondominumMontlyDeb()
+        {
+            var data= _context.Condominos.Where(x=>x.IdCondomino>=1 && x.IdCondomino<=91).OrderBy(q=>q.IdCondomino).Select(a=>new{idCondomino=a.IdCondomino});
+
+            return data;
+        }
+        public dynamic GetGridDebtCondo(int idCondomino)
+        {
+            var data=_context.Moras.Where(x=>x.Condomino==idCondomino && x.Estado=="Pendiente").Select(a=>new{idDebt=a.IdMora,Concept=a.Concepto,Year=a.Anio,DaysExpired=a.DiasVencido,value=a.Valor});
+
+            return data;
+        }
+        public dynamic GetGridDetailExpenses(int consecutive)
+        {
+            var data=_context.DetalleGastos.Where(x=>x.Consecutivo==consecutive).FirstOrDefault();
+
+            return data;
+        }
+        public dynamic ProductExpenseGrid()
+        {
+            var data=_context.ProductoGastos.ToList();
+
+            return data;
+        }
     }
 
     public static class CatalogServicesExtensions
