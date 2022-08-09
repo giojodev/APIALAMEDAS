@@ -18,6 +18,9 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> UpdateDetailIncome(DetailIncomeDTO detailIncomeDTO);
         Task<BaseResult> UpdateDayDebt();
         Task<BaseResult> UpdateBills(BillsDTO billsDTO);
+        Task<BaseResult> UpdateIncomes(IncomesDTO incomesDTO);
+        Task<BaseResult> UpdateDebt(DebtDTO debtDTO);
+        Task<BaseResult> UpdateIncomeType(IncomeTypeDTO incomeTypeDTO);
 
     }
 
@@ -171,8 +174,92 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _logger.LogError("Error en el servicio", ex);
                 return new BaseResult() { Error = true, Message = "Error en el servicio", Saved = false };
             }
-            
 
+        }
+
+        public async Task<BaseResult> UpdateIncomes(IncomesDTO incomesDTO)
+        {
+            try
+            {
+                var data= await _context.Ingresos.Where(x=>x.Consecutivo==incomesDTO.consecutive).FirstOrDefaultAsync();
+
+                if(data==null)
+                    return new BaseResult(){Message="No fue encontrada el registro",Error=true,Saved=false};
+                
+                data.Anio=incomesDTO.year;
+                data.Usuario=1;
+                data.Mes=incomesDTO.month;
+                data.Fecha=DateTime.Now;
+                data.NombreInquilino=incomesDTO.resident;
+                data.Ingreso1=incomesDTO.incometype;
+                data.Concepto=incomesDTO.concept;
+                data.Total=((double)incomesDTO.total);
+
+                _context.Entry(data).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await _context.SaveChangesAsync();
+                
+
+                return new BaseResult() {Message="Registro actualizado",Saved=true,Error=false};
+
+            }
+            catch (Exception ex)    
+            {
+                _logger.LogError("Error en el servicio", ex);
+                return new BaseResult() { Error = true, Message = "Error en el servicio", Saved = false };
+            }
+        }
+        public async Task<BaseResult> UpdateDebt(DebtDTO debtDTO)
+        {
+            try
+            {
+                var data= await _context.Moras.Where(x=>x.IdMora==debtDTO.IdMora).FirstOrDefaultAsync();
+
+                if(data==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true,Saved=false};
+
+                data.Anio=debtDTO.Anio;
+                data.Concepto=debtDTO.Concepto;
+                data.Condomino=debtDTO.Condomino;
+                data.Valor=debtDTO.Valor;
+                data.Estado=debtDTO.Estado;
+                data.DiasVencido=debtDTO.DiasVencido;
+                data.Mes=debtDTO.Mes;
+                data.Fecha=debtDTO.Fecha;
+
+                _context.Entry(data).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return new BaseResult(){Message="Registro actualizado",Saved=true,Error=false};
+            }
+            catch (Exception ex)    
+            {
+                _logger.LogError("Error en el servicio", ex);
+                return new BaseResult() { Error = true, Message = "Error en el servicio", Saved = false };
+            }
+        }
+        public async Task<BaseResult> UpdateIncomeType(IncomeTypeDTO incomeTypeDTO)
+        {
+            try
+            {
+                var data=await _context.TipoIngresos.Where(x=>x.IdIngreso==incomeTypeDTO.idIncome).FirstOrDefaultAsync();
+
+                if(data==null)
+                    return new BaseResult() {Message="No se encontro el registro",Saved=false,Error=true};
+                
+                data.NombreIngreso=incomeTypeDTO.nombreIngreso;
+                data.Activo=incomeTypeDTO.active;
+
+                _context.Entry(data).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return new BaseResult(){Message="Registro actualizado",Saved=true,Error=false};
+
+            }
+            catch (Exception ex)    
+            {
+                _logger.LogError("Error en el servicio", ex);
+                return new BaseResult() { Error = true, Message = "Error en el servicio", Saved = false };
+            }
         }
     }
 
