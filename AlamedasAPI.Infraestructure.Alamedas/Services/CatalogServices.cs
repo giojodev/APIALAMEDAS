@@ -5,6 +5,7 @@ using System.Linq;
 using Microsoft.Extensions.Logging;
 using AlamedasAPI.Infraestructure.Alamedas.DTO;
 using AlamedasAPI.Db.Models.Alamedas.Models;
+using System.Threading.Tasks;
 
 namespace AlamedasAPI.Infraestructure.Alamedas
 {
@@ -16,6 +17,10 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         List<ProductoIngresoCajaChica> GetListProdEntry();
         decimal GetDashboardDebt();
         decimal GetDashboardBill();
+        dynamic GetCondominiumDebtDashboard();
+        List<DetalleGastoCajachica> GetDetGCC(int IdConsecutive);
+        List<DetalleIngresoCajachica> GetDetICC(int IdConsecutive);
+        decimal GetIncomesDashboard();
     }
 
     public class CatalogServices: ICatalogServices
@@ -58,9 +63,50 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             var _data=Convert.ToDecimal(_context.Gastos.Select(a=>a.Valor).Sum());
             return _data;
         }
-        // public List<>GetCondominiumDebtDashboard(){
+        public decimal GetIncomesDashboard()
+        {
+            var _data=Convert.ToDecimal(_context.Ingresos.Select(a=>a.Total).Sum());
+            return _data;
+        }
+        
+        public dynamic GetCondominiumDebtDashboard()
+        {
+            var Details = _context.Condominos
+            .Join(_context.Moras , x=>x.IdCondomino,y=>y.Condomino ,(x,y) => 
+            new {Valor = y.Valor,NombreInquilino = x.NombreInquilino})
+            .GroupBy(g => g.NombreInquilino) 
+            .Select(s => new{ 
+                meses = s.Count(),mora = s.Sum(xx => xx.Valor),condomino = s.Key
+            })    
+            .ToList();
 
-        // }
+            return Details;
+        }
+         public List<DetalleGastoCajachica> GetDetGCC(int IdConsecutive){
+            
+            List<DetalleGastoCajachica> data = null;
+
+            if(IdConsecutive == 0){
+                data = _context.DetalleGastoCajachicas.ToList();
+            }else{
+                data = _context.DetalleGastoCajachicas.Where(x => x.Consecutivo == IdConsecutive).ToList();
+            };
+
+            return data;
+        }
+
+         public List<DetalleIngresoCajachica> GetDetICC(int IdConsecutive){
+            
+            List<DetalleIngresoCajachica> data = null;
+
+            if(IdConsecutive == 0){
+                data = _context.DetalleIngresoCajachicas.ToList();
+            }else{
+                data = _context.DetalleIngresoCajachicas.Where(x => x.Consecutivo == IdConsecutive).ToList();
+            };
+
+            return data;
+        }
 
     }
 

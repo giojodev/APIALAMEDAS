@@ -27,12 +27,12 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         {
             try
             {
-                return new BaseResult() { Error = false, Message = "Servico conectado", Saved = true };
+                return new BaseResult() { Error = false, Message = "Servico conectado"};
             }
             catch (Exception ex)
             {
                 _logger.LogError("Error en el servicio", ex);
-                return new BaseResult() { Error = true, Message = "Error en el servicio", Saved = false };
+                return new BaseResult() { Error = true, Message = "Error en el servicio"};
             }
         }
     }
