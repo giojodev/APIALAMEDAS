@@ -23,7 +23,12 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> InsertDetICC(DetalleIngresoCajachica model);
         BaseResult DeleteGCC(int IdConsecutive);
         Task<BaseResult> OverridGCC(int IdConsecutive);
-        Task<BaseResult> InsertGCC(GastosCajaChica GastosCajaChica);  
+        Task<BaseResult> InsertGCC(GastosCajaChica GastosCajaChica);
+        
+        Task<BaseResult> UpdateIncomes(IncomesDTO incomesDTO);
+        Task<BaseResult> UpdateDebt(DebtDTO debtDTO);
+        Task<BaseResult> UpdateIncomeType(IncomeTypeDTO incomeTypeDTO);
+
     }
 
     public class TransactionServices : ITransactionServices
@@ -121,12 +126,11 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 if(detailIncome==null)
                     return new BaseResult() { Error = true, Message = "No se encontro el registro"};
                 
-                detailIncome.Valor=detailIncomeDTO.total; 
+                detailIncome.Valor=detailIncomeDTO.total;  
+                _context.DetalleIngresos.Add(detailIncome);
+                _context.SaveChanges();
 
-                _context.Entry(detailIncome).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                await _context.SaveChangesAsync();
-
-                return new BaseResult() { Error = false, Message = "Registro Actualizado con exito" };
+                return new BaseResult() { Error = false, Message = "Registro Actualizado con exito", Saved = true };
 
             }
             catch (Exception ex)
@@ -164,16 +168,18 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 debt.Mes=billsDTO.month;
                 debt.Anio=billsDTO.year;
 
-                _context.Entry(debt).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                await _context.SaveChangesAsync();
+                _context.Gastos.Add(debt);
+                _context.SaveChanges();
 
-                return new BaseResult(){Message="Registro actualizado.",Error=false};
+                return new BaseResult(){Message="Registro actualizado",Saved=true,Error=false};
             }
-            catch (Exception ex)
+            catch (Exception ex)    
             {
                 _logger.LogError("Error en el servicio", ex);
-                return new BaseResult() { Error = true, Message = "Error en el servicio."};
+                return new BaseResult() { Error = true, Message = "Error en el servicio", Saved = false };
             }
+            
+
         }
         public async Task<BaseResult> InsertDetGCC(DetalleGastoCajachica model)
         {
@@ -308,6 +314,91 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 await _context.SaveChangesAsync();
 
                 return new BaseResult(){Message="Registro anulado.",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with OverridGCC", ex);
+                return new BaseResult() { Error = true, Message = "Error al anular GCC."};
+            }
+        }
+        // Task<BaseResult> UpdateIncomes(IncomesDTO incomesDTO);
+        // Task<BaseResult> UpdateDebt(DebtDTO debtDTO);
+        // Task<BaseResult> UpdateIncomeType(IncomeTypeDTO incomeTypeDTO);
+        public async Task<BaseResult> UpdateIncomeType(IncomeTypeDTO incomeTypeDTO)
+        {
+            try
+            {
+                var data= await _context.TipoIngresos.Where(x=>x.IdIngreso==incomeTypeDTO.idIncome).FirstOrDefaultAsync();
+
+                if(data==null)
+                    return new BaseResult(){Message="No se encontro el registro",Saved=false,Error=true};
+                
+                data.NombreIngreso=incomeTypeDTO.nombreIngreso;
+                data.Activo=incomeTypeDTO.active;
+
+                _context.Entry(data).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return new BaseResult(){Message="Registro actualizado",Error=false,Saved=true};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with OverridGCC", ex);
+                return new BaseResult() { Error = true, Message = "Error al anular GCC."};
+            }
+        }
+        public async Task<BaseResult> UpdateDebt(DebtDTO debtDTO)
+        {
+            try
+            {
+                var data=await _context.Moras.Where(x=>x.IdMora==debtDTO.IdMora).FirstOrDefaultAsync();
+
+                if(data==null)
+                    return new BaseResult(){Message="No se encontro el registro",Saved=false,Error=true};
+                
+                data.Fecha=debtDTO.Fecha;
+                data.Condomino=debtDTO.Condomino;
+                data.Concepto=debtDTO.Concepto;
+                data.Valor=debtDTO.Valor;
+                data.Estado=debtDTO.Estado;
+                data.DiasVencido=debtDTO.DiasVencido;
+                data.Mes=debtDTO.Mes;
+                data.Anio=debtDTO.Anio;
+
+                _context.Entry(data).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return new BaseResult(){Message="Registro actualizado",Error=false,Saved=true};
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with OverridGCC", ex);
+                return new BaseResult() { Error = true, Message = "Error al anular GCC."};
+            }
+        }
+        public async Task<BaseResult> UpdateIncomes(IncomesDTO incomesDTO)
+        {
+            try
+            {
+                var data = await  _context.Ingresos.Where(x=>x.Consecutivo==incomesDTO.consecutive).FirstOrDefaultAsync();
+                if(data==null)
+                    return new BaseResult(){Message="No se encontro el registro",Saved=false,Error=true};
+                
+                data.Fecha=incomesDTO.date;
+                data.Ingreso1=incomesDTO.incometype;
+                data.Usuario=incomesDTO.user;
+                data.Concepto=incomesDTO.concept;
+                data.Total=((double)incomesDTO.total);
+                data.Mes=incomesDTO.month;
+                data.Anio=incomesDTO.year;
+                data.NombreInquilino=incomesDTO.resident;
+
+                _context.Entry(data).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return new BaseResult(){Message="Registro actualizado",Error=false,Saved=true};
+                
             }
             catch (Exception ex)
             {

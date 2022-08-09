@@ -44,6 +44,18 @@ public class AlamedasController : ControllerBase
         var response = _catalogservices.GetDashboardDebt(); 
         return Ok(response);
     }
+    [HttpGet("Catalog/GetDashboardBill")]
+    public IActionResult GetDashboardBill()
+    {
+        var response = _catalogservices.GetDashboardBill(); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetIncomesDashboard")]
+    public IActionResult GetIncomesDashboard()
+    {
+        var response = _catalogservices.GetIncomesDashboard(); 
+        return Ok(response);
+    }
 
     //CONSTRUIR GRID GCC
     [HttpGet("Catalog/ProdExpenseList")]
@@ -130,6 +142,30 @@ public class AlamedasController : ControllerBase
     public async Task<IActionResult> UpdateBill(BillsDTO billsDTO)
     {
         var response = await _transactionservices.UpdateBills(billsDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPut("Transactions/UpdateIncomes")]
+    public async Task<IActionResult> UpdateIncomes(IncomesDTO incomesDTO)
+    {
+        var response = await _transactionservices.UpdateIncomes(incomesDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPut("Transactions/UpdateDebt")]
+    public async Task<IActionResult> UpdateDebt(DebtDTO debtDTO)
+    {
+        var response = await _transactionservices.UpdateDebt(debtDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPut("Transactions/UpdateIncomeType")]
+    public async Task<IActionResult> UpdateIncomeType(IncomeTypeDTO incomeTypeDTO)
+    {
+        var response = await _transactionservices.UpdateIncomeType(incomeTypeDTO); 
         if(response.Error)
             return BadRequest(response.Message);
         return Ok(response.Message);

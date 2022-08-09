@@ -6,5 +6,6 @@ namespace AlamedasAPI.Infraestructure.Alamedas.DTO
     {
         public string Message { get; set; }
         public bool Error { get; set; }
+        public bool Saved {get;set;}
     }
 }

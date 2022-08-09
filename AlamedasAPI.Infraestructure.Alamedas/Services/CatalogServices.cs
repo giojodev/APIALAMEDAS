@@ -20,6 +20,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         dynamic GetCondominiumDebtDashboard();
         List<DetalleGastoCajachica> GetDetGCC(int IdConsecutive);
         List<DetalleIngresoCajachica> GetDetICC(int IdConsecutive);
+        decimal GetIncomesDashboard();
     }
 
     public class CatalogServices: ICatalogServices
@@ -62,6 +63,12 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             var _data=Convert.ToDecimal(_context.Gastos.Select(a=>a.Valor).Sum());
             return _data;
         }
+        public decimal GetIncomesDashboard()
+        {
+            var _data=Convert.ToDecimal(_context.Ingresos.Select(a=>a.Total).Sum());
+            return _data;
+        }
+        
         public dynamic GetCondominiumDebtDashboard()
         {
             var Details = _context.Condominos
@@ -75,8 +82,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
 
             return Details;
         }
-
-        public List<DetalleGastoCajachica> GetDetGCC(int IdConsecutive){
+         public List<DetalleGastoCajachica> GetDetGCC(int IdConsecutive){
             
             List<DetalleGastoCajachica> data = null;
 
