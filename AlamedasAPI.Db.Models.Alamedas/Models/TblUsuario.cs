@@ -5,11 +5,11 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 {
     public partial class TblUsuario
     {
-        public TblUsuario()
+        /*public TblUsuario()
         {
             GastosCajaChicas = new HashSet<GastosCajaChica>();
             TblIngresosCajaChicas = new HashSet<TblIngresosCajaChica>();
-        }
+        }*/
 
         public int IdUsuario { get; set; }
         public int? IdSql { get; set; }
@@ -20,7 +20,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         public bool? Activo { get; set; }
         public bool Admin { get; set; }
 
-        public virtual ICollection<GastosCajaChica> GastosCajaChicas { get; set; }
-        public virtual ICollection<TblIngresosCajaChica> TblIngresosCajaChicas { get; set; }
+        //public virtual ICollection<GastosCajaChica> GastosCajaChicas { get; set; }
+        //public virtual ICollection<TblIngresosCajaChica> TblIngresosCajaChicas { get; set; }
     }
 }

@@ -529,7 +529,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Total).HasColumnName("TOTAL");
 
-                entity.HasOne(d => d.IdUsuarioNavigation)
+                /*entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.TblIngresosCajaChicas)
                     .HasForeignKey(d => d.IdUsuario)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -539,7 +539,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .WithMany(p => p.TblIngresosCajaChicas)
                     .HasForeignKey(d => d.TipoIngresoC)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_TIPO_INGRESO_CCHICA");
+                    .HasConstraintName("FK_TIPO_INGRESO_CCHICA");*/
             });
 
             modelBuilder.Entity<TblRole>(entity =>

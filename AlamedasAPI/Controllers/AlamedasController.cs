@@ -120,7 +120,38 @@ public class AlamedasController : ControllerBase
         var response = _catalogservices.GetDetICC(IdConsecutive); 
         return Ok(response);
     }
+
+    //OBTENER GCC
+    [HttpGet("Catalog/GccList")]
+    public IActionResult GetGCC(int IdConsecutive)
+    {
+        var response = _catalogservices.GetGCC(IdConsecutive); 
+        return Ok(response);
+    }
+
+    //OBTENER ICC
+    [HttpGet("Catalog/IccList")]
+    public IActionResult GetICC(int IdConsecutive)
+    {
+        var response = _catalogservices.GetICC(IdConsecutive); 
+        return Ok(response);
+    }
     
+    //BUSCAR TGCC
+    [HttpGet("Catalog/TgccList")]
+    public IActionResult GetTGCC(int IdTGCC)
+    {
+        var response = _catalogservices.GetTGCC(IdTGCC); 
+        return Ok(response);
+    }
+
+    //SELECCIONAR TIPO INGRESOCAJA CHICA
+    [HttpGet("Catalog/TiccList")]
+    public IActionResult GetTICC(int IdTICC)
+    {
+        var response = _catalogservices.GetTICC(IdTICC); 
+        return Ok(response);
+    }
 
     //*********** TRANSACTIONS ***********
 
@@ -149,6 +180,70 @@ public class AlamedasController : ControllerBase
     public IActionResult DeleteDetGCC(int IdConsecutive)
     {
         var response = _transactionservices.DeleteDetGCC(IdConsecutive); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpDelete("Transactions/DeleteCondominium")]
+    public async Task<IActionResult> DeleteCondominium(int idCondomino)
+    {
+        var response = await _transactionservices.DeleteCondominium(idCondomino); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpDelete("Transactions/DeleteExpenses")]
+    public async Task<IActionResult> DeleteExpenses(int idExpense)
+    {
+        var response = await _transactionservices.DeleteExpenses(idExpense); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpDelete("Transactions/DeleteDebt")]
+    public async Task<IActionResult> DeleteDebt(int consecutive)
+    {
+        var response = await _transactionservices.DeleteDebt(consecutive); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpDelete("Transactions/DeleteIncome")]
+    public async Task<IActionResult> DeleteIncome(int idDebt)
+    {
+        var response = await _transactionservices.DeleteIncome(idDebt); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpDelete("Transactions/DeleteTypeIncome")]
+    public async Task<IActionResult> DeleteTypeIncome(int IdIngreso)
+    {
+        var response = await _transactionservices.DeleteTypeIncome(IdIngreso); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpDelete("Transactions/DeleteTypeExpense")]
+    public async Task<IActionResult> DeleteTypeExpense(int idGasto)
+    {
+        var response = await _transactionservices.DeleteTypeExpense(idGasto); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertDetailIncome")]
+    public async Task<IActionResult> InsertDetailIncome(DetailIncomeDTO detailIncomeDTO)
+    {
+        var response = await _transactionservices.InsertDetailIncome(detailIncomeDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertCondominum")]
+    public async Task<IActionResult> InsertCondominum(CondominoDTO condominoDTO)
+    {
+        var response = await _transactionservices.InsertCondominum(condominoDTO); 
         if(response.Error)
             return BadRequest(response.Message);
         return Ok(response.Message);
@@ -258,12 +353,84 @@ public class AlamedasController : ControllerBase
         return Ok(response.Message);
     }
 
+    //ELIMINAR CC
+    [HttpDelete("Transactions/DeleteICC")]
+    public IActionResult DeleteICC(int IdConsecutive)
+    {
+        var response = _transactionservices.DeleteICC(IdConsecutive); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+
+    //ANULAR ICC
+    [HttpPut("Transactions/OverridICC")]
+    public async Task<IActionResult> OverridICC(int IdConsecutive)
+    {
+        var response = await _transactionservices.OverridICC(IdConsecutive); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    
+    //INGRESAR ICC
+    [HttpPost("Transactions/InsertICC")]
+    public async Task<IActionResult> InsertICC(TblIngresosCajaChica model)
+    {
+        var response = await _transactionservices.InsertICC(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+
+    //ELIMINAR TGCC
+    [HttpDelete("Transactions/DeleteTGCC")]
+    public IActionResult DeleteTGCC(int IdTGCC)
+    {
+        var response = _transactionservices.DeleteTGCC(IdTGCC); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+
+    //GRABAR TGCC
+    [HttpPost("Transactions/InsertTGCC")]
+    public async Task<IActionResult> InsertTGCC(TblGastoCajaChica model)
+    {
+        var response = await _transactionservices.InsertTGCC(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+
+    //ELIMINAR TICC
+    [HttpDelete("Transactions/DeleteTICC")]
+    public IActionResult DeleteTICC(int IdTICC)
+    {
+        var response = _transactionservices.DeleteTICC(IdTICC); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+
+    //GRABAR TICC
+    [HttpPost("Transactions/InsertTICC")]
+    public async Task<IActionResult> InsertTICC(TipoIngresoCajaChica model)
+    {
+        var response = await _transactionservices.InsertTICC(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+
     //*********** SECURITY ***********
 
-    [HttpGet("Security/Test")]
-    public async Task<IActionResult> GetLogin()
+    [HttpGet("Security/ValidateUser")]
+    public async Task<IActionResult>  GetLogin(string Login)
     {
-        var result = await _segurityservices.Login(); 
-        return Ok(result);
+        var response = await _segurityservices.ValidateUser(Login); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response);
     }
 }

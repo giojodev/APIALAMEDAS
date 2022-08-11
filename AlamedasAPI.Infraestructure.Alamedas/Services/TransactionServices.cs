@@ -24,11 +24,24 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         BaseResult DeleteGCC(int IdConsecutive);
         Task<BaseResult> OverridGCC(int IdConsecutive);
         Task<BaseResult> InsertGCC(GastosCajaChica GastosCajaChica);
-        
         Task<BaseResult> UpdateIncomes(IncomesDTO incomesDTO);
         Task<BaseResult> UpdateDebt(DebtDTO debtDTO);
         Task<BaseResult> UpdateIncomeType(IncomeTypeDTO incomeTypeDTO);
-
+        BaseResult DeleteICC(int IdConsecutive);
+        Task<BaseResult> OverridICC(int IdConsecutive);
+        Task<BaseResult> InsertICC(TblIngresosCajaChica model);
+        BaseResult DeleteTGCC(int IdTGCC);
+        Task<BaseResult> InsertTGCC(TblGastoCajaChica model);
+        BaseResult DeleteTICC(int IdTICC);
+        Task<BaseResult> InsertTICC(TipoIngresoCajaChica model);
+        Task<BaseResult> DeleteCondominium(int IdCondomino);
+        Task<BaseResult> DeleteExpenses(int idExpense);
+        Task<BaseResult> DeleteIncome(int consecutive);
+        Task<BaseResult> DeleteDebt(int idDebt);
+        Task<BaseResult> DeleteTypeExpense(int id);
+        Task<BaseResult> DeleteTypeIncome(int id);
+        Task<BaseResult> InsertDetailIncome(DetailIncomeDTO detailIncomeDTO);
+        Task<BaseResult> InsertCondominum(CondominoDTO condominoDTO);
     }
 
     public class TransactionServices : ITransactionServices
@@ -130,7 +143,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _context.DetalleIngresos.Add(detailIncome);
                 _context.SaveChanges();
 
-                return new BaseResult() { Error = false, Message = "Registro Actualizado con exito", Saved = true };
+                return new BaseResult() { Error = false, Message = "Registro Actualizado con exito"};
 
             }
             catch (Exception ex)
@@ -171,15 +184,13 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _context.Gastos.Add(debt);
                 _context.SaveChanges();
 
-                return new BaseResult(){Message="Registro actualizado",Saved=true,Error=false};
+                return new BaseResult(){Message="Registro actualizado",Error=false};
             }
             catch (Exception ex)    
             {
                 _logger.LogError("Error en el servicio", ex);
-                return new BaseResult() { Error = true, Message = "Error en el servicio", Saved = false };
+                return new BaseResult() { Error = true, Message = "Error en el servicio"};
             }
-            
-
         }
         public async Task<BaseResult> InsertDetGCC(DetalleGastoCajachica model)
         {
@@ -321,9 +332,6 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error al anular GCC."};
             }
         }
-        // Task<BaseResult> UpdateIncomes(IncomesDTO incomesDTO);
-        // Task<BaseResult> UpdateDebt(DebtDTO debtDTO);
-        // Task<BaseResult> UpdateIncomeType(IncomeTypeDTO incomeTypeDTO);
         public async Task<BaseResult> UpdateIncomeType(IncomeTypeDTO incomeTypeDTO)
         {
             try
@@ -331,7 +339,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 var data= await _context.TipoIngresos.Where(x=>x.IdIngreso==incomeTypeDTO.idIncome).FirstOrDefaultAsync();
 
                 if(data==null)
-                    return new BaseResult(){Message="No se encontro el registro",Saved=false,Error=true};
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
                 
                 data.NombreIngreso=incomeTypeDTO.nombreIngreso;
                 data.Activo=incomeTypeDTO.active;
@@ -339,7 +347,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _context.Entry(data).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
                 await _context.SaveChangesAsync();
 
-                return new BaseResult(){Message="Registro actualizado",Error=false,Saved=true};
+                return new BaseResult(){Message="Registro actualizado",Error=false};
             }
             catch (Exception ex)
             {
@@ -354,7 +362,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 var data=await _context.Moras.Where(x=>x.IdMora==debtDTO.IdMora).FirstOrDefaultAsync();
 
                 if(data==null)
-                    return new BaseResult(){Message="No se encontro el registro",Saved=false,Error=true};
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
                 
                 data.Fecha=debtDTO.Fecha;
                 data.Condomino=debtDTO.Condomino;
@@ -368,7 +376,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _context.Entry(data).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
                 await _context.SaveChangesAsync();
 
-                return new BaseResult(){Message="Registro actualizado",Error=false,Saved=true};
+                return new BaseResult(){Message="Registro actualizado",Error=false};
 
             }
             catch (Exception ex)
@@ -383,7 +391,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             {
                 var data = await  _context.Ingresos.Where(x=>x.Consecutivo==incomesDTO.consecutive).FirstOrDefaultAsync();
                 if(data==null)
-                    return new BaseResult(){Message="No se encontro el registro",Saved=false,Error=true};
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
                 
                 data.Fecha=incomesDTO.date;
                 data.Ingreso1=incomesDTO.incometype;
@@ -397,7 +405,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _context.Entry(data).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
                 await _context.SaveChangesAsync();
 
-                return new BaseResult(){Message="Registro actualizado",Error=false,Saved=true};
+                return new BaseResult(){Message="Registro actualizado",Error=false};
                 
             }
             catch (Exception ex)
@@ -423,7 +431,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                         Total = model.Total,
                         Mes = model.Mes,
                         Anio = model.Anio,
-                        Anulado = model.Anulado
+                        Anulado = false
                     };
 
                     await _context.GastosCajaChicas.AddAsync(GastosCajaChicas);
@@ -450,6 +458,381 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             {
                 _logger.LogError("Error with InsertGCC", ex);
                 return new BaseResult() { Error = true, Message = "Error al ingresar GCC"};
+            }
+        }
+        public BaseResult DeleteICC(int IdConsecutive)
+        {
+            try
+            {
+                var det = _context.TblIngresosCajaChicas.Where(d => d.Consecutivo == IdConsecutive).FirstOrDefault();
+                _context.TblIngresosCajaChicas.Remove(det);
+                _context.SaveChanges();
+
+                return new BaseResult() { Error = false, Message = "Registro eliminado."};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteICC", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+        public async Task<BaseResult> DeleteCondominium(int IdCondomino)
+        {
+            try
+            {
+                var condo= await _context.Condominos.Where(x=>x.IdCondomino==IdCondomino).FirstOrDefaultAsync();
+
+                if(condo==null)
+                    return new BaseResult(){Message="Registro no encontrado", Error=true };
+                
+                _context.Condominos.Remove(condo);
+                await _context.SaveChangesAsync();
+                
+                return new BaseResult(){Message="Registro eliminado",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteCondominium", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+            
+        }
+        public async Task<BaseResult> DeleteExpenses(int idExpense)
+        {
+            try
+            {
+                var expense=await _context.Gastos.Where(x=>x.Consecutivo==idExpense).FirstOrDefaultAsync();
+                if(expense==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
+                
+                _context.Gastos.Remove(expense);
+                await _context.SaveChangesAsync();
+                return new BaseResult(){Message="Registro eliminado",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteExpenses", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+            
+        }
+        public async Task<BaseResult> DeleteIncome(int consecutive)
+        {
+            try
+            {
+                var income=await _context.Ingresos.Where(x=>x.Consecutivo==consecutive).FirstOrDefaultAsync();
+                if(income==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
+                
+                _context.Ingresos.Remove(income);
+                await _context.SaveChangesAsync();
+                
+                var detailIncome= await _context.DetalleIngresos.Where(x=>x.Consecutivo==consecutive).FirstOrDefaultAsync();
+
+                if(detailIncome==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
+                
+                _context.DetalleIngresos.Remove(detailIncome);
+                await _context.SaveChangesAsync();
+
+
+                return new BaseResult(){Message="Registro eliminado",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteIncome", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+            
+        }
+        public async Task<BaseResult> DeleteDebt(int idDebt)
+        {
+            try
+            {
+                var debt=await _context.Moras.Where(x=>x.IdMora==idDebt).FirstOrDefaultAsync();
+                if(debt==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
+                _context.Moras.Remove(debt);
+                _context.SaveChanges();
+                return new BaseResult(){Message="Registro eliminado",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteDebt", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+        public async Task<BaseResult> DeleteTypeExpense(int id)
+        {
+            try
+            {
+                var typeExpense=await _context.TipoGastos.Where(x=>x.IdGasto==id).FirstOrDefaultAsync();
+                if(typeExpense==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
+                
+                _context.TipoGastos.Remove(typeExpense);
+                _context.SaveChanges();
+                return new BaseResult(){Message="Registro eliminado",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteTypeExpense", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+        public async Task<BaseResult> DeleteTypeIncome(int id)
+        {
+            try
+            {
+                var typeIncome=await _context.TipoIngresos.Where(x=>x.IdIngreso==id).FirstOrDefaultAsync();
+                if(typeIncome==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
+                
+                _context.TipoIngresos.Remove(typeIncome);
+                _context.SaveChanges();
+                return new BaseResult(){Message="Registro eliminado",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteTypeIncome", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+        public async Task<BaseResult> InsertDetailIncome(DetailIncomeDTO detailIncomeDTO)
+        {
+            try
+            {
+                var detailIncome= await _context.DetalleIngresos.Where(x=>x.Consecutivo==detailIncomeDTO.Consecutive).FirstOrDefaultAsync();
+                if(detailIncome==null)
+                {
+                    detailIncome.Anio=detailIncomeDTO.year;
+                    detailIncome.Mes=detailIncomeDTO.month;
+                    detailIncome.Concepto=detailIncomeDTO.concept;
+                    detailIncome.DiasVencido=detailIncomeDTO.daysExpired;
+                    detailIncome.Valor=detailIncomeDTO.total;
+                    detailIncome.IdMora=detailIncomeDTO.idMora;
+                    detailIncome.Consecutivo=detailIncomeDTO.Consecutive;
+
+                    _context.DetalleIngresos.Add(detailIncome);
+                    _context.SaveChanges();
+
+                    return new BaseResult(){Message="Se ha insertado el registro",Error=false};
+                }
+                else
+                {
+                    detailIncome.Anio=detailIncomeDTO.year;
+                    detailIncome.Mes=detailIncomeDTO.month;
+                    detailIncome.Concepto=detailIncomeDTO.concept;
+                    detailIncome.DiasVencido=detailIncomeDTO.daysExpired;
+                    detailIncome.Valor=detailIncomeDTO.total;
+                    detailIncome.IdMora=detailIncomeDTO.idMora;
+                    detailIncome.Consecutivo=detailIncomeDTO.Consecutive;
+
+                    _context.Entry(detailIncome).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    _context.SaveChanges();
+                     return new BaseResult(){Message="Se ha actualizado el registro",Error=false};
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertDetailIncome", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+        public async Task<BaseResult> InsertCondominum(CondominoDTO condominoDTO)
+        {
+            try
+            {
+                var condo= await _context.Condominos.Where(x=>x.IdCondomino==condominoDTO.id).FirstOrDefaultAsync();
+                if(condo==null)
+                {
+                    condo.Activo=condominoDTO.activo;
+                    condo.Correo=condominoDTO.correo;
+                    condo.IdCondomino=condominoDTO.id;
+                    condo.NombreCompleto=condominoDTO.nombreCompleto;
+                    condo.NombreInquilino=condominoDTO.nombreInquilino;
+                    condo.Telefono=condominoDTO.Telefono;
+
+                    _context.Condominos.Add(condo);
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro creado con exito",Error=false};
+
+                }   
+                else
+                    return new BaseResult(){Message="Ya existe un condomino en el sistema con ese ID",Error=true};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertCondominum", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+
+        public async Task<BaseResult> OverridICC(int IdConsecutive)
+        {
+            try
+            {
+                var det = _context.TblIngresosCajaChicas.Where(d => d.Consecutivo == IdConsecutive).FirstOrDefault();
+                if(det == null)
+                    return new BaseResult() { Error = true, Message = "Error el consecutivo no existe."};
+
+                det.Anulado = false;
+                _context.Entry(det).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return new BaseResult(){Message="Registro anulado.",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with OverridICC", ex);
+                return new BaseResult() { Error = true, Message = "Error al anular."};
+            }
+        }
+        public async Task<BaseResult> InsertICC(TblIngresosCajaChica model)
+        {
+            try
+            {
+                string Message = "Registro ingresado.";
+                var data = await _context.TblIngresosCajaChicas.Where(x=>x.Consecutivo == model.Consecutivo).FirstOrDefaultAsync();    
+
+                if(data == null){
+                    TblIngresosCajaChica TblIngresosCajaChicas = new TblIngresosCajaChica(){
+                        Consecutivo = model.Consecutivo,
+                        IdUsuario =  1,
+                        TipoIngresoC = model.TipoIngresoC,
+                        Fecha = model.Fecha,
+                        Concepto = model.Concepto,
+                        Total = model.Total,
+                        Mes = model.Mes,
+                        Anio = model.Anio,
+                        Anulado = false
+                    };
+
+                    await _context.TblIngresosCajaChicas.AddAsync(TblIngresosCajaChicas);
+                    await _context.SaveChangesAsync();
+                }  
+                else{
+                    
+                    data.TipoIngresoC = model.TipoIngresoC;
+                    data.Fecha = model.Fecha;
+                    data.Concepto = model.Concepto;
+                    data.Total = model.Total;
+                    data.Mes = model.Mes;
+                    data.Anio = model.Anio;
+
+                    _context.Entry(data).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    await _context.SaveChangesAsync();
+
+                    Message = "Registro actualizado.";
+                };
+
+                return new BaseResult() { Error = false, Message = Message};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertICC", ex);
+                return new BaseResult() { Error = true, Message = "Error al ingresar ICC"};
+            }
+        }
+        public BaseResult DeleteTGCC(int IdTGCC)
+        {
+            try
+            {
+                var det = _context.TblGastoCajaChicas.Where(d => d.IdGastoCajaChica == IdTGCC).FirstOrDefault();
+                _context.TblGastoCajaChicas.Remove(det);
+                _context.SaveChanges();
+
+                return new BaseResult() { Error = false, Message = "Registro eliminado."};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteTGCC", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+        public async Task<BaseResult> InsertTGCC(TblGastoCajaChica model)
+        {
+            try
+            {
+                string Message = "Registro ingresado.";
+                var data = await _context.TblGastoCajaChicas.Where(x=>x.IdGastoCajaChica == model.IdGastoCajaChica).FirstOrDefaultAsync();    
+
+                if(data == null){
+                    TblGastoCajaChica TblGastoCajaChicas = new TblGastoCajaChica(){
+                        IdGastoCajaChica = model.IdGastoCajaChica,
+                        NombreGastoCajachica =  model.NombreGastoCajachica,
+                        Activo = true
+                    };
+
+                    await _context.TblGastoCajaChicas.AddAsync(TblGastoCajaChicas);
+                    await _context.SaveChangesAsync();
+                }  
+                else{
+                    
+                    data.NombreGastoCajachica = model.NombreGastoCajachica;
+
+                    _context.Entry(data).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    await _context.SaveChangesAsync();
+
+                    Message = "Registro actualizado";
+                };
+
+                return new BaseResult() { Error = false, Message = Message};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertTGCC", ex);
+                return new BaseResult() { Error = true, Message = "Error al ingresar TGCC"};
+            }
+        }
+        public BaseResult DeleteTICC(int IdTICC)
+        {
+            try
+            {
+                var det = _context.TipoIngresoCajaChicas.Where(d => d.IdIngresoaCajaChica == IdTICC).FirstOrDefault();
+                _context.TipoIngresoCajaChicas.Remove(det);
+                _context.SaveChanges();
+
+                return new BaseResult() { Error = false, Message = "Registro eliminado."};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteTICC", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+         public async Task<BaseResult> InsertTICC(TipoIngresoCajaChica model)
+        {
+            try
+            {
+                string Message = "Registro ingresado.";
+                var data = await _context.TipoIngresoCajaChicas.Where(x=>x.IdIngresoaCajaChica == model.IdIngresoaCajaChica).FirstOrDefaultAsync();    
+
+                if(data == null){
+                    TipoIngresoCajaChica TipoIngresoCajaChicas = new TipoIngresoCajaChica(){
+                        NombreIngresoCajaChica = model.NombreIngresoCajaChica,
+                        Activo =  model.Activo,
+                    };
+
+                    await _context.TipoIngresoCajaChicas.AddAsync(TipoIngresoCajaChicas);
+                    await _context.SaveChangesAsync();
+                }  
+                else{
+                    
+                    data.NombreIngresoCajaChica = model.NombreIngresoCajaChica;
+
+                    _context.Entry(data).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    await _context.SaveChangesAsync();
+
+                    Message = "Registro actualizado.";
+                };
+
+                return new BaseResult() { Error = false, Message = Message};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertTICC", ex);
+                return new BaseResult() { Error = true, Message = "Error al ingresar TICC"};
             }
         }
     }

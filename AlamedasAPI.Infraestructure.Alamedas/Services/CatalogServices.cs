@@ -25,6 +25,10 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         dynamic GetGridDebtCondo(int idCondomino);
         dynamic ProductExpenseGrid();
         dynamic GetGridDetailExpenses(int consecutive);
+        List<GastosCajaChica> GetGCC(int IdConsecutive);
+        List<TblIngresosCajaChica> GetICC(int IdConsecutive);
+        List<TblGastoCajaChica> GetTGCC(int IdTGCC);
+        List<TipoIngresoCajaChica> GetTICC(int IdTICC);
     }
 
     public class CatalogServices: ICatalogServices
@@ -86,7 +90,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
 
             return Details;
         }
-         public List<DetalleGastoCajachica> GetDetGCC(int IdConsecutive){
+        public List<DetalleGastoCajachica> GetDetGCC(int IdConsecutive){
             
             List<DetalleGastoCajachica> data = null;
 
@@ -115,24 +119,69 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         public dynamic GetCondominumMontlyDeb()
         {
             var data= _context.Condominos.Where(x=>x.IdCondomino>=1 && x.IdCondomino<=91).OrderBy(q=>q.IdCondomino).Select(a=>new{idCondomino=a.IdCondomino});
-
             return data;
         }
         public dynamic GetGridDebtCondo(int idCondomino)
         {
             var data=_context.Moras.Where(x=>x.Condomino==idCondomino && x.Estado=="Pendiente").Select(a=>new{idDebt=a.IdMora,Concept=a.Concepto,Year=a.Anio,DaysExpired=a.DiasVencido,value=a.Valor});
-
             return data;
         }
         public dynamic GetGridDetailExpenses(int consecutive)
         {
             var data=_context.DetalleGastos.Where(x=>x.Consecutivo==consecutive).FirstOrDefault();
-
             return data;
         }
         public dynamic ProductExpenseGrid()
         {
             var data=_context.ProductoGastos.ToList();
+            return data;
+        }
+
+        public List<GastosCajaChica> GetGCC(int IdConsecutive){
+            
+            List<GastosCajaChica> data = null;
+
+            if(IdConsecutive == 0){
+                data = _context.GastosCajaChicas.ToList();
+            }else{
+                data = _context.GastosCajaChicas.Where(x => x.Consecutivo == IdConsecutive).ToList();
+            };
+
+            return data;
+        }
+        public List<TblIngresosCajaChica> GetICC(int IdConsecutive){
+            
+            List<TblIngresosCajaChica> data = null;
+
+            if(IdConsecutive == 0){
+                data = _context.TblIngresosCajaChicas.ToList();
+            }else{
+                data = _context.TblIngresosCajaChicas.Where(x => x.Consecutivo == IdConsecutive).ToList();
+            };
+
+            return data;
+        }
+        public List<TblGastoCajaChica> GetTGCC(int IdTGCC){
+            
+            List<TblGastoCajaChica> data = null;
+
+            if(IdTGCC == 0){
+                data = _context.TblGastoCajaChicas.ToList();
+            }else{
+                data = _context.TblGastoCajaChicas.Where(x => x.IdGastoCajaChica == IdTGCC).ToList();
+            };
+
+            return data;
+        }
+        public List<TipoIngresoCajaChica> GetTICC(int IdTICC){
+            
+            List<TipoIngresoCajaChica> data = null;
+
+            if(IdTICC == 0){
+                data = _context.TipoIngresoCajaChicas.ToList();
+            }else{
+                data = _context.TipoIngresoCajaChicas.Where(x => x.IdIngresoaCajaChica == IdTICC).ToList();
+            };
 
             return data;
         }
