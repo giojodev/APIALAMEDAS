@@ -454,3 +454,4 @@ $RECYCLE.BIN/
 !.vscode/extensions.json
 
 AlamedasAPI/appsettings.json
+AlamedasAPI/temp/internal-nlog-AspNetCore.txt
