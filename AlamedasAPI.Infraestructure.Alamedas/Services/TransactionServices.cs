@@ -34,6 +34,14 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> InsertTGCC(TblGastoCajaChica model);
         BaseResult DeleteTICC(int IdTICC);
         Task<BaseResult> InsertTICC(TipoIngresoCajaChica model);
+        Task<BaseResult> DeleteCondominium(int IdCondomino);
+        Task<BaseResult> DeleteExpenses(int idExpense);
+        Task<BaseResult> DeleteIncome(int consecutive);
+        Task<BaseResult> DeleteDebt(int idDebt);
+        Task<BaseResult> DeleteTypeExpense(int id);
+        Task<BaseResult> DeleteTypeIncome(int id);
+        Task<BaseResult> InsertDetailIncome(DetailIncomeDTO detailIncomeDTO);
+        Task<BaseResult> InsertCondominum(CondominoDTO condominoDTO);
     }
 
     public class TransactionServices : ITransactionServices
@@ -468,6 +476,198 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error al eliminar."};
             }
         }
+        public async Task<BaseResult> DeleteCondominium(int IdCondomino)
+        {
+            try
+            {
+                var condo= await _context.Condominos.Where(x=>x.IdCondomino==IdCondomino).FirstOrDefaultAsync();
+
+                if(condo==null)
+                    return new BaseResult(){Message="Registro no encontrado", Error=true };
+                
+                _context.Condominos.Remove(condo);
+                await _context.SaveChangesAsync();
+                
+                return new BaseResult(){Message="Registro eliminado",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteCondominium", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+            
+        }
+        public async Task<BaseResult> DeleteExpenses(int idExpense)
+        {
+            try
+            {
+                var expense=await _context.Gastos.Where(x=>x.Consecutivo==idExpense).FirstOrDefaultAsync();
+                if(expense==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
+                
+                _context.Gastos.Remove(expense);
+                await _context.SaveChangesAsync();
+                return new BaseResult(){Message="Registro eliminado",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteExpenses", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+            
+        }
+        public async Task<BaseResult> DeleteIncome(int consecutive)
+        {
+            try
+            {
+                var income=await _context.Ingresos.Where(x=>x.Consecutivo==consecutive).FirstOrDefaultAsync();
+                if(income==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
+                
+                _context.Ingresos.Remove(income);
+                await _context.SaveChangesAsync();
+                
+                var detailIncome= await _context.DetalleIngresos.Where(x=>x.Consecutivo==consecutive).FirstOrDefaultAsync();
+
+                if(detailIncome==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
+                
+                _context.DetalleIngresos.Remove(detailIncome);
+                await _context.SaveChangesAsync();
+
+
+                return new BaseResult(){Message="Registro eliminado",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteIncome", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+            
+        }
+        public async Task<BaseResult> DeleteDebt(int idDebt)
+        {
+            try
+            {
+                var debt=await _context.Moras.Where(x=>x.IdMora==idDebt).FirstOrDefaultAsync();
+                if(debt==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
+                _context.Moras.Remove(debt);
+                _context.SaveChanges();
+                return new BaseResult(){Message="Registro eliminado",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteDebt", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+        public async Task<BaseResult> DeleteTypeExpense(int id)
+        {
+            try
+            {
+                var typeExpense=await _context.TipoGastos.Where(x=>x.IdGasto==id).FirstOrDefaultAsync();
+                if(typeExpense==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
+                
+                _context.TipoGastos.Remove(typeExpense);
+                _context.SaveChanges();
+                return new BaseResult(){Message="Registro eliminado",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteTypeExpense", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+        public async Task<BaseResult> DeleteTypeIncome(int id)
+        {
+            try
+            {
+                var typeIncome=await _context.TipoIngresos.Where(x=>x.IdIngreso==id).FirstOrDefaultAsync();
+                if(typeIncome==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
+                
+                _context.TipoIngresos.Remove(typeIncome);
+                _context.SaveChanges();
+                return new BaseResult(){Message="Registro eliminado",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with DeleteTypeIncome", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+        public async Task<BaseResult> InsertDetailIncome(DetailIncomeDTO detailIncomeDTO)
+        {
+            try
+            {
+                var detailIncome= await _context.DetalleIngresos.Where(x=>x.Consecutivo==detailIncomeDTO.Consecutive).FirstOrDefaultAsync();
+                if(detailIncome==null)
+                {
+                    detailIncome.Anio=detailIncomeDTO.year;
+                    detailIncome.Mes=detailIncomeDTO.month;
+                    detailIncome.Concepto=detailIncomeDTO.concept;
+                    detailIncome.DiasVencido=detailIncomeDTO.daysExpired;
+                    detailIncome.Valor=detailIncomeDTO.total;
+                    detailIncome.IdMora=detailIncomeDTO.idMora;
+                    detailIncome.Consecutivo=detailIncomeDTO.Consecutive;
+
+                    _context.DetalleIngresos.Add(detailIncome);
+                    _context.SaveChanges();
+
+                    return new BaseResult(){Message="Se ha insertado el registro",Error=false};
+                }
+                else
+                {
+                    detailIncome.Anio=detailIncomeDTO.year;
+                    detailIncome.Mes=detailIncomeDTO.month;
+                    detailIncome.Concepto=detailIncomeDTO.concept;
+                    detailIncome.DiasVencido=detailIncomeDTO.daysExpired;
+                    detailIncome.Valor=detailIncomeDTO.total;
+                    detailIncome.IdMora=detailIncomeDTO.idMora;
+                    detailIncome.Consecutivo=detailIncomeDTO.Consecutive;
+
+                    _context.Entry(detailIncome).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    _context.SaveChanges();
+                     return new BaseResult(){Message="Se ha actualizado el registro",Error=false};
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertDetailIncome", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+        public async Task<BaseResult> InsertCondominum(CondominoDTO condominoDTO)
+        {
+            try
+            {
+                var condo= await _context.Condominos.Where(x=>x.IdCondomino==condominoDTO.id).FirstOrDefaultAsync();
+                if(condo==null)
+                {
+                    condo.Activo=condominoDTO.activo;
+                    condo.Correo=condominoDTO.correo;
+                    condo.IdCondomino=condominoDTO.id;
+                    condo.NombreCompleto=condominoDTO.nombreCompleto;
+                    condo.NombreInquilino=condominoDTO.nombreInquilino;
+                    condo.Telefono=condominoDTO.Telefono;
+
+                    _context.Condominos.Add(condo);
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro creado con exito",Error=false};
+
+                }   
+                else
+                    return new BaseResult(){Message="Ya existe un condomino en el sistema con ese ID",Error=true};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertCondominum", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+
         public async Task<BaseResult> OverridICC(int IdConsecutive)
         {
             try

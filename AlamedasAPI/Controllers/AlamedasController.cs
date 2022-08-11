@@ -184,6 +184,70 @@ public class AlamedasController : ControllerBase
             return BadRequest(response.Message);
         return Ok(response.Message);
     }
+    [HttpDelete("Transactions/DeleteCondominium")]
+    public async Task<IActionResult> DeleteCondominium(int idCondomino)
+    {
+        var response = await _transactionservices.DeleteCondominium(idCondomino); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpDelete("Transactions/DeleteExpenses")]
+    public async Task<IActionResult> DeleteExpenses(int idExpense)
+    {
+        var response = await _transactionservices.DeleteExpenses(idExpense); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpDelete("Transactions/DeleteDebt")]
+    public async Task<IActionResult> DeleteDebt(int consecutive)
+    {
+        var response = await _transactionservices.DeleteDebt(consecutive); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpDelete("Transactions/DeleteIncome")]
+    public async Task<IActionResult> DeleteIncome(int idDebt)
+    {
+        var response = await _transactionservices.DeleteIncome(idDebt); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpDelete("Transactions/DeleteTypeIncome")]
+    public async Task<IActionResult> DeleteTypeIncome(int IdIngreso)
+    {
+        var response = await _transactionservices.DeleteTypeIncome(IdIngreso); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpDelete("Transactions/DeleteTypeExpense")]
+    public async Task<IActionResult> DeleteTypeExpense(int idGasto)
+    {
+        var response = await _transactionservices.DeleteTypeExpense(idGasto); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertDetailIncome")]
+    public async Task<IActionResult> InsertDetailIncome(DetailIncomeDTO detailIncomeDTO)
+    {
+        var response = await _transactionservices.InsertDetailIncome(detailIncomeDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertCondominum")]
+    public async Task<IActionResult> InsertCondominum(CondominoDTO condominoDTO)
+    {
+        var response = await _transactionservices.InsertCondominum(condominoDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
 
     [HttpPut("Transactions/UpdateDayDebt")]
     public async Task<IActionResult> UpdateDayDebt()
