@@ -272,6 +272,46 @@ public class AlamedasController : ControllerBase
             return BadRequest(response.Message);
         return Ok(response.Message);
     }
+    [HttpPost("Transactions/InsertExpense")]
+    public async Task<IActionResult> InsertExpense(ExpenseDTO expenseDTO)
+    {
+        var response = await _transactionservices.InsertExpense(expenseDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertIncome")]
+    public async Task<IActionResult> InsertIncome(IncomesDTO incomesDTO)
+    {
+        var response = await _transactionservices.InsertIncome(incomesDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertDebt")]
+    public async Task<IActionResult> InsertDebt(DebtDTO debtDTO)
+    {
+        var response = await _transactionservices.InsertDebt(debtDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertTypeExpense")]
+    public async Task<IActionResult> InsertTypeExpense(ExpenseTypeDTO expenseTypeDTO)
+    {
+        var response = await _transactionservices.InsertTypeExpense(expenseTypeDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertTypeIncome")]
+    public async Task<IActionResult> InsertTypeIncome(IncomeTypeDTO incomeTypeDTO)
+    {
+        var response = await _transactionservices.InsertTypeIncome(incomeTypeDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
 
     [HttpPut("Transactions/UpdateDayDebt")]
     public async Task<IActionResult> UpdateDayDebt()
