@@ -248,6 +248,14 @@ public class AlamedasController : ControllerBase
             return BadRequest(response.Message);
         return Ok(response.Message);
     }
+    [HttpPost("Transactions/InsertDetailExpense")]
+    public async Task<IActionResult> InsertDetailExpense(DetailExpenseDTO detailExpenseDTO)
+    {
+        var response = await _transactionservices.InsertDetailExpense(detailExpenseDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
 
     [HttpPut("Transactions/UpdateDayDebt")]
     public async Task<IActionResult> UpdateDayDebt()
