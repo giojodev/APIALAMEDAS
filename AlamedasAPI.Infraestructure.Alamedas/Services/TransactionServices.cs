@@ -845,46 +845,65 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         }
         public async Task<BaseResult> InsertTypeExpense(ExpenseTypeDTO expenseTypeDTO)
         {
-            var tipoGasto=await _context.TipoGastos.Where(x=>x.IdGasto==expenseTypeDTO.Id).FirstOrDefaultAsync();
-
-            if(tipoGasto==null)
+            try
             {
-                tipoGasto.NombreGasto=expenseTypeDTO.name;
-                tipoGasto.Activo=true;
+                var tipoGasto=await _context.TipoGastos.Where(x=>x.IdGasto==expenseTypeDTO.Id).FirstOrDefaultAsync();
 
-                _context.TipoGastos.Add(tipoGasto);
-                _context.SaveChanges();
-                return new BaseResult(){Message="Registro creado con exito",Error=false};
+                if(tipoGasto==null)
+                {
+                    tipoGasto.NombreGasto=expenseTypeDTO.name;
+                    tipoGasto.Activo=true;
+
+                    _context.TipoGastos.Add(tipoGasto);
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro creado con exito",Error=false};
+                }
+                else
+                {
+                    tipoGasto.NombreGasto=expenseTypeDTO.name;
+                    tipoGasto.Activo=expenseTypeDTO.state;
+                    _context.Entry(tipoGasto).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+                }
             }
-            else
+            catch (Exception ex)
             {
-                tipoGasto.NombreGasto=expenseTypeDTO.name;
-                tipoGasto.Activo=expenseTypeDTO.state;
-                _context.Entry(tipoGasto).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
-                return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+                _logger.LogError("Error with InsertTypeExpense", ex);
+                return new BaseResult() { Error = true, Message = "Error al anular."};
             }
+            
         }
         public async Task<BaseResult> InsertTypeIncome(IncomeTypeDTO incomeTypeDTO)
         {
-            var tipoingreso=await _context.TipoIngresos.Where(x=>x.IdIngreso==incomeTypeDTO.idIncome).FirstOrDefaultAsync();
-
-            if(tipoingreso==null)
+            try
             {
-                tipoingreso.NombreIngreso=incomeTypeDTO.nombreIngreso;
-                tipoingreso.Activo=true;
+                var tipoingreso=await _context.TipoIngresos.Where(x=>x.IdIngreso==incomeTypeDTO.idIncome).FirstOrDefaultAsync();
 
-                _context.TipoIngresos.Add(tipoingreso);
-                _context.SaveChanges();
-                return new BaseResult(){Message="Registro creado con exito",Error=false};
+                if(tipoingreso==null)
+                {
+                    tipoingreso.NombreIngreso=incomeTypeDTO.nombreIngreso;
+                    tipoingreso.Activo=true;
+
+                    _context.TipoIngresos.Add(tipoingreso);
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro creado con exito",Error=false};
+                }
+                else
+                {
+                    tipoingreso.NombreIngreso=incomeTypeDTO.nombreIngreso;
+                    tipoingreso.Activo=incomeTypeDTO.active;
+                    _context.Entry(tipoingreso).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+                }
             }
-            else
+            catch (Exception ex)
             {
-                tipoingreso.NombreIngreso=incomeTypeDTO.nombreIngreso;
-                tipoingreso.Activo=incomeTypeDTO.active;
-                _context.Entry(tipoingreso).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
-                return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+                _logger.LogError("Error with InsertTypeIncome", ex);
+                return new BaseResult() { Error = true, Message = "Error al anular."};
             }
+            
         }
+        
         public async Task<BaseResult> OverridICC(int IdConsecutive)
         {
             try
