@@ -153,6 +153,22 @@ public class AlamedasController : ControllerBase
         return Ok(response);
     }
 
+    //OBTENER TIPO GASTO
+    [HttpGet("Catalog/ExpenseList")]
+    public IActionResult GetExpense(int IdExpenses)
+    {
+        var response = _catalogservices.GetExpense(IdExpenses); 
+        return Ok(response);
+    }
+
+    //OBTENER TINGRESO
+    [HttpGet("Catalog/IncomeList")]
+    public IActionResult GetIncome(int IdIncome)
+    {
+        var response = _catalogservices.GetIncome(IdIncome); 
+        return Ok(response);
+    }
+
     //*********** TRANSACTIONS ***********
 
     //OBTENER ULTIMO CONSECUTIVO ICC
@@ -425,6 +441,7 @@ public class AlamedasController : ControllerBase
 
     //*********** SECURITY ***********
 
+    //VALIDAR USUARIO
     [HttpGet("Security/ValidateUser")]
     public async Task<IActionResult>  GetLogin(string Login)
     {
@@ -433,4 +450,53 @@ public class AlamedasController : ControllerBase
             return BadRequest(response.Message);
         return Ok(response);
     }
+
+    //UPD USUARIOS
+    [HttpPut("Security/UpdateUser")]
+    public async Task<IActionResult>  UpdateUser(TblUsuario model)
+    {
+        var response = await _segurityservices.UpdateUser(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response);
+    }
+
+    //SEL USUARIOS
+    [HttpGet("Security/UserList")]
+    public IActionResult GetUser(int IdUser)
+    {
+        var response = _segurityservices.GetUser(IdUser); 
+        return Ok(response);
+    }
+
+    //PROC ROLES
+    [HttpPost("Security/UpdateUser")]
+    public async Task<IActionResult>  InsertRoles(TblRole model)
+    {
+        var response = await _segurityservices.InsertRoles(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response);
+    }
+
+    //ins usuarios
+    [HttpPost("Security/InsertUser")]
+    public async Task<IActionResult>  InsertUser(TblUsuario model)
+    {
+        var response = await _segurityservices.InsertUser(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response);
+    }
+
+      //[Usp_del_Usuarios]
+    [HttpPost("Security/DeleteUser")]
+    public async Task<IActionResult>  DeleteUser(int IdUser)
+    {
+        var response = await _segurityservices.DeleteUser(IdUser); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response);
+    }
+
 }
