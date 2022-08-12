@@ -56,6 +56,12 @@ public class AlamedasController : ControllerBase
         var response = _catalogservices.GetExpenses(Id); 
         return Ok(response);
     }
+    [HttpGet("Catalog/GetDebt")]
+    public IActionResult GetDebt(int Id)
+    {
+        var response = _catalogservices.GetDebt(Id); 
+        return Ok(response);
+    }
     [HttpGet("Catalog/GetExpenseCashRegister")]
     public IActionResult GetExpenseCashRegister(int Consecutive)
     {

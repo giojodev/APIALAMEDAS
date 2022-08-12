@@ -37,6 +37,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         List<GastosCajaChica> GetExpenseCashRegister(int Consecutive);
         dynamic GetIncomes(int Consecutive);
         List<Mora> GetPendingDebt(int IdMora);
+        List<Mora>GetDebt(int idMora);
     }
 
     public class CatalogServices: ICatalogServices
