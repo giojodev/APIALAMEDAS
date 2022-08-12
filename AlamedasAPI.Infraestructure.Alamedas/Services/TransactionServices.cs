@@ -42,6 +42,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> DeleteTypeIncome(int id);
         Task<BaseResult> InsertDetailIncome(DetailIncomeDTO detailIncomeDTO);
         Task<BaseResult> InsertCondominum(CondominoDTO condominoDTO);
+        Task<BaseResult> InsertDetailExpense(DetailExpenseDTO detailExpenseDTO);
     }
 
     public class TransactionServices : ITransactionServices
@@ -664,6 +665,41 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             catch (Exception ex)
             {
                 _logger.LogError("Error with InsertCondominum", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+        public async Task<BaseResult> InsertDetailExpense(DetailExpenseDTO detailExpenseDTO)
+        {
+            try
+            {
+                var detail=await _context.DetalleGastos.Where(x=>x.Consecutivo==detailExpenseDTO.consecutive && x.IdEntity==detailExpenseDTO.idEntity).FirstOrDefaultAsync();
+
+                if(detail==null)
+                {
+                    detail.Concepto=detailExpenseDTO.concept;
+                    detail.Consecutivo=detailExpenseDTO.consecutive;
+                    detail.IdEntity=detailExpenseDTO.idEntity;
+                    detail.Valor=((double)detailExpenseDTO.valor);
+
+                    _context.DetalleGastos.Add(detail);
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro creado con exito",Error=false};
+                }
+                else
+                {
+                    detail.Concepto=detailExpenseDTO.concept;
+                    detail.Consecutivo=detailExpenseDTO.consecutive;
+                    detail.IdEntity=detailExpenseDTO.idEntity;
+                    detail.Valor=((double)detailExpenseDTO.valor);
+
+                    _context.Entry(detail).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertDetailExpense", ex);
                 return new BaseResult() { Error = true, Message = "Error al eliminar."};
             }
         }
