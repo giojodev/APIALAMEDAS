@@ -38,6 +38,42 @@ public class AlamedasController : ControllerBase
         var response = _catalogservices.GetListCondomino(); 
         return Ok(response);
     }
+    [HttpGet("Catalog/GetCondomino")]
+    public IActionResult GetCondomino(int idCondomino)
+    {
+        var response = _catalogservices.GetCondomino(idCondomino); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetCondominiumDebt")]
+    public IActionResult GetCondominiumDebt(int idDebt)
+    {
+        var response = _catalogservices.GetCondominiumDebt(idDebt); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetExpenses")]
+    public IActionResult GetExpenses(int Id)
+    {
+        var response = _catalogservices.GetExpenses(Id); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetExpenseCashRegister")]
+    public IActionResult GetExpenseCashRegister(int Consecutive)
+    {
+        var response = _catalogservices.GetExpenseCashRegister(Consecutive); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetIncomes")]
+    public IActionResult GetIncomes(int Consecutive)
+    {
+        var response = _catalogservices.GetIncomes(Consecutive); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetDebtPending")]
+    public IActionResult GetDebtPending(int IdMora)
+    {
+        var response = _catalogservices.GetPendingDebt(IdMora); 
+        return Ok(response);
+    }
     [HttpGet("Catalog/GetDashboardDebt")]
     public IActionResult GetDashboardDebt()
     {

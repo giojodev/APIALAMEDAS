@@ -31,6 +31,12 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         List<TipoIngresoCajaChica> GetTICC(int IdTICC);
         List<TipoGasto> GetExpense(int IdExpenses);
         List<TipoIngreso> GetIncome(int IdIncome);
+        List<Condomino> GetCondomino(int idCondomino);
+        int GetCondominiumDebt(int idDebt);
+        List<Gasto> GetExpenses(int Id);
+        List<GastosCajaChica> GetExpenseCashRegister(int Consecutive);
+        dynamic GetIncomes(int Consecutive);
+        List<Mora> GetPendingDebt(int IdMora);
     }
 
     public class CatalogServices: ICatalogServices
@@ -52,7 +58,97 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             var condominos=_context.Condominos.ToList();
             return condominos;
         }
+        public List<Condomino> GetCondomino(int idCondomino)
+        {
+            if(idCondomino>0)
+            {
+                var data= _context.Condominos.Where(x=>x.IdCondomino==idCondomino).ToList();
+                return data;
+            }
+            else
+            {
+                var data=_context.Condominos.ToList();
+                return data;
+            }
 
+        }
+        public int GetCondominiumDebt(int idDebt)
+        {   
+            var data=_context.Moras.Where(x=>x.IdMora==idDebt).Select(s=>s.Condomino).FirstOrDefault();
+
+            return data;
+        }
+        public List<DetalleIngreso> GetIncomeDetail(int consecutive)
+        {
+            if(consecutive>0)
+            {
+                var data=_context.DetalleIngresos.Where(x=>x.Consecutivo==consecutive).ToList();
+                return data;
+            }
+            else
+            {
+                var data=_context.DetalleIngresos.ToList();
+                return data;
+            }
+        }
+        public List<Gasto> GetExpenses(int Id)
+        {
+            if(Id>0){
+                var data=_context.Gastos.Where(x=>x.Consecutivo==Id).ToList();
+                return data;
+            }
+            else{
+                var data=_context.Gastos.ToList();
+                return data;
+            }
+        }
+        public List<GastosCajaChica> GetExpenseCashRegister(int Consecutive)
+        {
+            if(Consecutive>0){
+                var data=_context.GastosCajaChicas.Where(x=>x.Consecutivo==Consecutive).ToList();
+                return data;
+            }
+            else{
+                var data=_context.GastosCajaChicas.ToList();
+                return data;
+            }
+        }
+        public dynamic GetIncomes(int Consecutive)
+        {
+            if(Consecutive>0)
+            {
+                var data=_context.Ingresos.Where(x=>x.Consecutivo==Consecutive).Select(a=>new {CONSECUTIVO=a.Consecutivo,CONCEPTO=a.Concepto,ANIO=a.Anio,FECHA=a.Fecha,MES=a.Mes,INGRESO=a.Ingreso1,TOTAL=a.Total}).ToList();
+                return data;
+            }
+            else
+            {
+                var data=_context.Ingresos.Select(a=>new {CONSECUTIVO=a.Consecutivo,CONCEPTO=a.Concepto,ANIO=a.Anio,FECHA=a.Fecha,MES=a.Mes,INGRESO=a.Ingreso1,TOTAL=a.Total}).ToList();
+                return data;
+            }
+        }
+        public List<Mora>GetDebt(int idMora)
+        {
+            if(idMora>0){
+                var data=_context.Moras.Where(x=>x.IdMora==idMora).ToList();
+                return data;
+            }
+            else{
+                var data=_context.Moras.ToList();
+                return data;
+            }
+        }
+        public List<Mora> GetPendingDebt(int IdMora)
+        {
+            if(IdMora>0){
+                var data=_context.Moras.Where(x=>x.IdMora==IdMora && x.Estado.Contains("Pendiente")).ToList();
+                return data;
+            }
+            else
+            {
+                var data=_context.Moras.ToList();
+                return data;
+            }
+        }
         public List<ProductoGastoCajaChica> GetListProdExpense()
         {
             var data = _context.ProductoGastoCajaChicas.ToList();
