@@ -38,6 +38,48 @@ public class AlamedasController : ControllerBase
         var response = _catalogservices.GetListCondomino(); 
         return Ok(response);
     }
+    [HttpGet("Catalog/GetCondomino")]
+    public IActionResult GetCondomino(int idCondomino)
+    {
+        var response = _catalogservices.GetCondomino(idCondomino); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetCondominiumDebt")]
+    public IActionResult GetCondominiumDebt(int idDebt)
+    {
+        var response = _catalogservices.GetCondominiumDebt(idDebt); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetExpenses")]
+    public IActionResult GetExpenses(int Id)
+    {
+        var response = _catalogservices.GetExpenses(Id); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetDebt")]
+    public IActionResult GetDebt(int Id)
+    {
+        var response = _catalogservices.GetDebt(Id); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetExpenseCashRegister")]
+    public IActionResult GetExpenseCashRegister(int Consecutive)
+    {
+        var response = _catalogservices.GetExpenseCashRegister(Consecutive); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetIncomes")]
+    public IActionResult GetIncomes(int Consecutive)
+    {
+        var response = _catalogservices.GetIncomes(Consecutive); 
+        return Ok(response);
+    }
+    [HttpGet("Catalog/GetDebtPending")]
+    public IActionResult GetDebtPending(int IdMora)
+    {
+        var response = _catalogservices.GetPendingDebt(IdMora); 
+        return Ok(response);
+    }
     [HttpGet("Catalog/GetDashboardDebt")]
     public IActionResult GetDashboardDebt()
     {
@@ -153,6 +195,22 @@ public class AlamedasController : ControllerBase
         return Ok(response);
     }
 
+    //OBTENER TIPO GASTO
+    [HttpGet("Catalog/ExpenseList")]
+    public IActionResult GetExpense(int IdExpenses)
+    {
+        var response = _catalogservices.GetExpense(IdExpenses); 
+        return Ok(response);
+    }
+
+    //OBTENER TINGRESO
+    [HttpGet("Catalog/IncomeList")]
+    public IActionResult GetIncome(int IdIncome)
+    {
+        var response = _catalogservices.GetIncome(IdIncome); 
+        return Ok(response);
+    }
+
     //*********** TRANSACTIONS ***********
 
     //OBTENER ULTIMO CONSECUTIVO ICC
@@ -244,6 +302,54 @@ public class AlamedasController : ControllerBase
     public async Task<IActionResult> InsertCondominum(CondominoDTO condominoDTO)
     {
         var response = await _transactionservices.InsertCondominum(condominoDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertDetailExpense")]
+    public async Task<IActionResult> InsertDetailExpense(DetailExpenseDTO detailExpenseDTO)
+    {
+        var response = await _transactionservices.InsertDetailExpense(detailExpenseDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertExpense")]
+    public async Task<IActionResult> InsertExpense(ExpenseDTO expenseDTO)
+    {
+        var response = await _transactionservices.InsertExpense(expenseDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertIncome")]
+    public async Task<IActionResult> InsertIncome(IncomesDTO incomesDTO)
+    {
+        var response = await _transactionservices.InsertIncome(incomesDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertDebt")]
+    public async Task<IActionResult> InsertDebt(DebtDTO debtDTO)
+    {
+        var response = await _transactionservices.InsertDebt(debtDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertTypeExpense")]
+    public async Task<IActionResult> InsertTypeExpense(ExpenseTypeDTO expenseTypeDTO)
+    {
+        var response = await _transactionservices.InsertTypeExpense(expenseTypeDTO); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertTypeIncome")]
+    public async Task<IActionResult> InsertTypeIncome(IncomeTypeDTO incomeTypeDTO)
+    {
+        var response = await _transactionservices.InsertTypeIncome(incomeTypeDTO); 
         if(response.Error)
             return BadRequest(response.Message);
         return Ok(response.Message);
@@ -425,6 +531,7 @@ public class AlamedasController : ControllerBase
 
     //*********** SECURITY ***********
 
+    //VALIDAR USUARIO
     [HttpGet("Security/ValidateUser")]
     public async Task<IActionResult>  GetLogin(string Login)
     {
@@ -433,4 +540,53 @@ public class AlamedasController : ControllerBase
             return BadRequest(response.Message);
         return Ok(response);
     }
+
+    //UPD USUARIOS
+    [HttpPut("Security/UpdateUser")]
+    public async Task<IActionResult>  UpdateUser(TblUsuario model)
+    {
+        var response = await _segurityservices.UpdateUser(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response);
+    }
+
+    //SEL USUARIOS
+    [HttpGet("Security/UserList")]
+    public IActionResult GetUser(int IdUser)
+    {
+        var response = _segurityservices.GetUser(IdUser); 
+        return Ok(response);
+    }
+
+    //PROC ROLES
+    [HttpPost("Security/UpdateUser")]
+    public async Task<IActionResult>  InsertRoles(TblRole model)
+    {
+        var response = await _segurityservices.InsertRoles(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response);
+    }
+
+    //ins usuarios
+    [HttpPost("Security/InsertUser")]
+    public async Task<IActionResult>  InsertUser(TblUsuario model)
+    {
+        var response = await _segurityservices.InsertUser(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response);
+    }
+
+      //[Usp_del_Usuarios]
+    [HttpPost("Security/DeleteUser")]
+    public async Task<IActionResult>  DeleteUser(int IdUser)
+    {
+        var response = await _segurityservices.DeleteUser(IdUser); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response);
+    }
+
 }

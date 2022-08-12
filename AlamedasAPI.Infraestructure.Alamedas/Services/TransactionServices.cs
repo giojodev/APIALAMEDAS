@@ -42,6 +42,12 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> DeleteTypeIncome(int id);
         Task<BaseResult> InsertDetailIncome(DetailIncomeDTO detailIncomeDTO);
         Task<BaseResult> InsertCondominum(CondominoDTO condominoDTO);
+        Task<BaseResult> InsertDetailExpense(DetailExpenseDTO detailExpenseDTO);
+        Task<BaseResult> InsertExpense(ExpenseDTO expenseDTO);
+        Task<BaseResult> InsertIncome(IncomesDTO incomesDTO);
+        Task<BaseResult> InsertDebt(DebtDTO debtDTO);
+        Task<BaseResult> InsertTypeExpense(ExpenseTypeDTO expenseTypeDTO);
+        Task<BaseResult> InsertTypeIncome(IncomeTypeDTO incomeTypeDTO);
     }
 
     public class TransactionServices : ITransactionServices
@@ -667,7 +673,237 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error al eliminar."};
             }
         }
+        public async Task<BaseResult> InsertDetailExpense(DetailExpenseDTO detailExpenseDTO)
+        {
+            try
+            {
+                var detail=await _context.DetalleGastos.Where(x=>x.Consecutivo==detailExpenseDTO.consecutive && x.IdEntity==detailExpenseDTO.idEntity).FirstOrDefaultAsync();
 
+                if(detail==null)
+                {
+                    detail.Concepto=detailExpenseDTO.concept;
+                    detail.Consecutivo=detailExpenseDTO.consecutive;
+                    detail.IdEntity=detailExpenseDTO.idEntity;
+                    detail.Valor=((double)detailExpenseDTO.valor);
+
+                    _context.DetalleGastos.Add(detail);
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro creado con exito",Error=false};
+                }
+                else
+                {
+                    detail.Concepto=detailExpenseDTO.concept;
+                    detail.Consecutivo=detailExpenseDTO.consecutive;
+                    detail.IdEntity=detailExpenseDTO.idEntity;
+                    detail.Valor=((double)detailExpenseDTO.valor);
+
+                    _context.Entry(detail).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertDetailExpense", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+
+        public async Task<BaseResult> InsertExpense(ExpenseDTO expenseDTO)
+        {
+            try
+            {
+                var expense=await _context.Gastos.Where(x=>x.Consecutivo==expenseDTO.consecutive).FirstOrDefaultAsync();
+
+                if(expense==null)
+                {
+                    expense.Consecutivo=expenseDTO.consecutive;
+                    expense.Usuario=1;
+                    expense.Gasto1=expenseDTO.expense;
+                    expense.Fecha=expenseDTO.date;
+                    expense.Concepto=expenseDTO.concept;
+                    expense.Valor=expenseDTO.value;
+                    expense.Mes=expenseDTO.month;
+                    expense.Anio=expenseDTO.year;
+
+                    _context.Gastos.Add(expense);
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro creado con exito",Error=false};
+                }
+                else
+                {
+                    expense.Consecutivo=expenseDTO.consecutive;
+                    expense.Usuario=1;
+                    expense.Gasto1=expenseDTO.expense;
+                    expense.Fecha=expenseDTO.date;
+                    expense.Concepto=expenseDTO.concept;
+                    expense.Valor=expenseDTO.value;
+                    expense.Mes=expenseDTO.month;
+                    expense.Anio=expenseDTO.year;
+                    _context.Entry(expense).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertExpense", ex);
+                return new BaseResult() { Error = true, Message = "Error al anular."};
+            }
+        }
+        public async Task<BaseResult> InsertIncome(IncomesDTO incomesDTO)
+        {
+            try
+            {
+                var ingreso= await _context.Ingresos.Where(x=>x.Consecutivo==incomesDTO.consecutive).FirstOrDefaultAsync();
+
+                if(ingreso==null)
+                {
+                    ingreso.Consecutivo=incomesDTO.consecutive;
+                    ingreso.Usuario=1;
+                    ingreso.NombreInquilino=incomesDTO.resident;
+                    ingreso.Ingreso1=incomesDTO.incometype;
+                    ingreso.Fecha=incomesDTO.date;
+                    ingreso.Concepto=incomesDTO.concept;
+                    ingreso.Total=((double)incomesDTO.total);
+                    ingreso.Mes=incomesDTO.month;
+                    ingreso.Anio=incomesDTO.year;
+                    ingreso.Anulado=false;
+
+                    _context.Ingresos.Add(ingreso);
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro creado con exito",Error=false};
+                }
+                else
+                {
+                    ingreso.Consecutivo=incomesDTO.consecutive;
+                    ingreso.Usuario=1;
+                    ingreso.NombreInquilino=incomesDTO.resident;
+                    ingreso.Ingreso1=incomesDTO.incometype;
+                    ingreso.Fecha=incomesDTO.date;
+                    ingreso.Concepto=incomesDTO.concept;
+                    ingreso.Total=((double)incomesDTO.total);
+                    ingreso.Mes=incomesDTO.month;
+                    ingreso.Anio=incomesDTO.year;
+                    ingreso.Anulado=false;
+                    _context.Entry(ingreso).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertIncome", ex);
+                return new BaseResult() { Error = true, Message = "Error al anular."};
+            }
+        }
+        public async Task<BaseResult> InsertDebt(DebtDTO debtDTO)
+        {
+            try
+            {
+                var mora=await _context.Moras.Where(x=>x.IdMora==debtDTO.IdMora).FirstOrDefaultAsync();
+
+                if(mora==null)
+                {
+                    mora.IdMora=debtDTO.IdMora;
+                    mora.Anio=debtDTO.Anio;
+                    mora.Concepto=debtDTO.Concepto;
+                    mora.Condomino=debtDTO.Condomino;
+                    mora.DiasVencido=debtDTO.DiasVencido;
+                    mora.Estado=debtDTO.Estado;
+                    mora.Fecha=debtDTO.Fecha;
+                    mora.Valor=debtDTO.Valor;
+                    mora.Mes=debtDTO.Mes;
+
+                    _context.Moras.Add(mora);
+                    _context.SaveChanges();
+
+                    return new BaseResult(){Message="Registro creado con exito",Error=false};
+                }
+                else
+                {
+                    mora.IdMora=debtDTO.IdMora;
+                    mora.Anio=debtDTO.Anio;
+                    mora.Concepto=debtDTO.Concepto;
+                    mora.Condomino=debtDTO.Condomino;
+                    mora.DiasVencido=debtDTO.DiasVencido;
+                    mora.Estado=debtDTO.Estado;
+                    mora.Fecha=debtDTO.Fecha;
+                    mora.Valor=debtDTO.Valor;
+                    mora.Mes=debtDTO.Mes;
+
+                    _context.Entry(mora).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertDebt", ex);
+                return new BaseResult() { Error = true, Message = "Error al anular."};
+            }
+        }
+        public async Task<BaseResult> InsertTypeExpense(ExpenseTypeDTO expenseTypeDTO)
+        {
+            try
+            {
+                var tipoGasto=await _context.TipoGastos.Where(x=>x.IdGasto==expenseTypeDTO.Id).FirstOrDefaultAsync();
+
+                if(tipoGasto==null)
+                {
+                    tipoGasto.NombreGasto=expenseTypeDTO.name;
+                    tipoGasto.Activo=true;
+
+                    _context.TipoGastos.Add(tipoGasto);
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro creado con exito",Error=false};
+                }
+                else
+                {
+                    tipoGasto.NombreGasto=expenseTypeDTO.name;
+                    tipoGasto.Activo=expenseTypeDTO.state;
+                    _context.Entry(tipoGasto).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertTypeExpense", ex);
+                return new BaseResult() { Error = true, Message = "Error al anular."};
+            }
+            
+        }
+        public async Task<BaseResult> InsertTypeIncome(IncomeTypeDTO incomeTypeDTO)
+        {
+            try
+            {
+                var tipoingreso=await _context.TipoIngresos.Where(x=>x.IdIngreso==incomeTypeDTO.idIncome).FirstOrDefaultAsync();
+
+                if(tipoingreso==null)
+                {
+                    tipoingreso.NombreIngreso=incomeTypeDTO.nombreIngreso;
+                    tipoingreso.Activo=true;
+
+                    _context.TipoIngresos.Add(tipoingreso);
+                    _context.SaveChanges();
+                    return new BaseResult(){Message="Registro creado con exito",Error=false};
+                }
+                else
+                {
+                    tipoingreso.NombreIngreso=incomeTypeDTO.nombreIngreso;
+                    tipoingreso.Activo=incomeTypeDTO.active;
+                    _context.Entry(tipoingreso).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertTypeIncome", ex);
+                return new BaseResult() { Error = true, Message = "Error al anular."};
+            }
+            
+        }
+        
         public async Task<BaseResult> OverridICC(int IdConsecutive)
         {
             try
