@@ -29,6 +29,8 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         List<TblIngresosCajaChica> GetICC(int IdConsecutive);
         List<TblGastoCajaChica> GetTGCC(int IdTGCC);
         List<TipoIngresoCajaChica> GetTICC(int IdTICC);
+        List<TipoGasto> GetExpense(int IdExpenses);
+        List<TipoIngreso> GetIncome(int IdIncome);
     }
 
     public class CatalogServices: ICatalogServices
@@ -181,6 +183,32 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 data = _context.TipoIngresoCajaChicas.ToList();
             }else{
                 data = _context.TipoIngresoCajaChicas.Where(x => x.IdIngresoaCajaChica == IdTICC).ToList();
+            };
+
+            return data;
+        }
+
+        public List<TipoGasto> GetExpense(int IdExpenses){
+            
+            List<TipoGasto> data = null;
+
+            if(IdExpenses == 0){
+                data = _context.TipoGastos.ToList();
+            }else{
+                data = _context.TipoGastos.Where(x => x.IdGasto == IdExpenses).ToList();
+            };
+
+            return data;
+        }
+
+        public List<TipoIngreso> GetIncome(int IdIncome){
+            
+            List<TipoIngreso> data = null;
+
+            if(IdIncome == 0){
+                data = _context.TipoIngresos.ToList();
+            }else{
+                data = _context.TipoIngresos.Where(x => x.IdIngreso == IdIncome).ToList();
             };
 
             return data;
