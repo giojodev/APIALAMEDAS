@@ -3,10 +3,11 @@ using System;
 using AlamedasAPI.Infraestructure.Alamedas;
 using AlamedasAPI.Infraestructure.Alamedas.DTO;
 using AlamedasAPI.Db.Models.Alamedas.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AlamedasAPI.Controllers;
 
-[ApiController]
+[ApiController, Authorize]
 [Route("[controller]")]
 
 public class AlamedasController : ControllerBase
