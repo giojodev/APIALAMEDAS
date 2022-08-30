@@ -29,10 +29,10 @@ namespace AlamedasAPI.Controllers
                 string[] pass;
 
                 if (login == null)
-                    return BadRequest("No se encontro usuario o contraseña");
+                    return BadRequest(new { message = "No se encontro usuario o contraseña" ,authenticate = false});
 
                 if(_appSettings.UserName == null || _appSettings.Password  == null)
-                    return BadRequest("Configuracion de usuarios no definida.");
+                    return BadRequest(new { message = "Configuracion de usuarios no definida." ,authenticate = false});
 
                 users = _appSettings.UserName.Split(',');
                 pass = _appSettings.Password.Split(',');
@@ -42,23 +42,30 @@ namespace AlamedasAPI.Controllers
                 var NameUser = lstUsers.Where(x => x.Equals(login.UserName)).FirstOrDefault();
 
                 if (NameUser == null)
-                    return Unauthorized();
+                    return BadRequest(new { message = "Username or password is incorrect",authenticate = false });
 
                 var index = Array.IndexOf(users, login.UserName);
 
                 var passUser = pass[index];
 
                 if (passUser == null)
-                    return Unauthorized();
+                    return BadRequest(new { message = "Username or password is incorrect",authenticate = false });
 
                 bool isValid = (login.Password.Equals(passUser) && login.UserName.Equals(NameUser));
 
                 if (!isValid)
-                    return Unauthorized();
+                    return BadRequest(new { message = "Username or password is incorrect",authenticate = false });
 
                 var token = TokenGenerator.GenerateTokenJwt(login.UserName);
 
-                return Ok(token);
+                return Ok(new
+                {
+                    username = login.UserName,
+                    Token = token,
+                    message = "Acceso permitido.",
+                    authenticate = true
+                });
+
             }
             catch (Exception ex)
             {
