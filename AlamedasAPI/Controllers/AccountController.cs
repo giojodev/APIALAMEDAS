@@ -7,6 +7,7 @@ namespace AlamedasAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    
     public class AccountController : ControllerBase
     {
         private readonly AppSettings _appSettings;
@@ -17,7 +18,7 @@ namespace AlamedasAPI.Controllers
             _appSettings = appSettings.Value;
             _logger = logger;
         }
-
+        
         [HttpPost("[action]")]
         public IActionResult Login(LoginRequest login)
         {

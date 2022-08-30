@@ -33,6 +33,13 @@ try
     builder.Services.AddTransactionServices();
     builder.Services.AddSecurityServices();
 
+    #region Allow-Orgin
+    builder.Services.AddCors(c =>
+    {
+        c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+    });
+    #endregion
+
     builder.Services.Configure<AppSettings>(configuration.GetSection(nameof(AppSettings)));
 
     // NLog: Setup NLog for Dependency injection
@@ -89,10 +96,10 @@ try
         app.UseSwagger();
         app.UseSwaggerUI(c => c.SwaggerEndpoint("v1/swagger.json", "AlamedasAPI v1"));
     }
-
     app.UseSwaggerUI(c => c.SwaggerEndpoint("v1/swagger.json","AlamedasAPI v1"));
     app.UseHttpsRedirection();
 
+    app.UseCors(cors => cors.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
     app.UseAuthentication();
     app.UseAuthorization();
 
