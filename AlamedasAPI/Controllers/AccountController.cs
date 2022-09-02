@@ -42,19 +42,19 @@ namespace AlamedasAPI.Controllers
                 var NameUser = lstUsers.Where(x => x.Equals(login.UserName)).FirstOrDefault();
 
                 if (NameUser == null)
-                    return BadRequest(new { message = "Username or password is incorrect",authenticate = false });
+                    return BadRequest(new { message = "Usuario o contraseña incorrecta",authenticate = false });
 
                 var index = Array.IndexOf(users, login.UserName);
 
                 var passUser = pass[index];
 
                 if (passUser == null)
-                    return BadRequest(new { message = "Username or password is incorrect",authenticate = false });
+                    return BadRequest(new { message = "Usuario o contraseña incorrecta",authenticate = false });
 
                 bool isValid = (login.Password.Equals(passUser) && login.UserName.Equals(NameUser));
 
                 if (!isValid)
-                    return BadRequest(new { message = "Username or password is incorrect",authenticate = false });
+                    return BadRequest(new { message = "Usuario o contraseña incorrecta",authenticate = false });
 
                 var token = TokenGenerator.GenerateTokenJwt(login.UserName);
 
