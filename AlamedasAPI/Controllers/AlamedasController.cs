@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace AlamedasAPI.Controllers;
 
 [ApiController, Authorize]
-[Route("[controller]")]
+[Route("api/[controller]")]
 
 public class AlamedasController : ControllerBase
 {

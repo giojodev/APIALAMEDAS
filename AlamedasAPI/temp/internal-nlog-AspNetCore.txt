@@ -1137,3 +1137,17 @@ Error Number:53,State:0,Class:20
 2022-09-02 11:50:03.7296 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
 2022-09-02 11:50:03.9494 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
 2022-09-02 11:50:07.2446 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-09-02 11:56:00.3064 Info Message Template Auto Format enabled
+2022-09-02 11:56:00.3497 Info Loading assembly: NLog.Web.AspNetCore
+2022-09-02 11:56:00.3497 Info Loading assembly: NLog.Database
+2022-09-02 11:56:00.3922 Info Loading assembly: NLog.Appsettings.Standard
+2022-09-02 11:56:00.6958 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-09-02 11:56:00.7756 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-09-02 11:56:02.1567 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-09-02 14:20:48.3343 Info Message Template Auto Format enabled
+2022-09-02 14:20:48.3876 Info Loading assembly: NLog.Web.AspNetCore
+2022-09-02 14:20:48.3876 Info Loading assembly: NLog.Database
+2022-09-02 14:20:48.4771 Info Loading assembly: NLog.Appsettings.Standard
+2022-09-02 14:20:49.0692 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-09-02 14:20:49.2255 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-09-02 14:20:50.6870 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
