@@ -670,7 +670,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             catch (Exception ex)
             {
                 _logger.LogError("Error with InsertCondominum", ex);
-                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+                return new BaseResult() { Error = true, Message = "Error al al crear el condomino."};
             }
         }
         public async Task<BaseResult> InsertDetailExpense(DetailExpenseDTO detailExpenseDTO)
