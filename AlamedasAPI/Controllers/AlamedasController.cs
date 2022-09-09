@@ -431,13 +431,17 @@ public class AlamedasController : ControllerBase
     public async Task<IActionResult> UpdateCondominium(CondominoDTO condominoDTO )
     {
         var response = await _transactionservices.UpdateCondominium(condominoDTO); 
-        return Ok(response);
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
     }
     [HttpPut("Transactions/UpdateDetailIncome")]
     public async Task<IActionResult> UpdateDetailIncome(DetailIncomeDTO detailIncomeDTO )
     {
         var response = await _transactionservices.UpdateDetailIncome(detailIncomeDTO); 
-        return Ok(response);
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
     }
 
     //ELIMINARDGCC
