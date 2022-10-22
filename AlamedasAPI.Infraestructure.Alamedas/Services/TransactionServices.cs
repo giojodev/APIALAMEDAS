@@ -33,6 +33,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         BaseResult DeleteTGCC(int IdTGCC);
         Task<BaseResult> InsertTGCC(TblGastoCajaChica model);
         BaseResult DeleteTICC(int IdTICC);
+        Task<BaseResult> UpdateTGCC(TblGastoCajaChica model);
         Task<BaseResult> InsertTICC(TipoIngresoCajaChica model);
         Task<BaseResult> DeleteCondominium(int IdCondomino);
         Task<BaseResult> DeleteExpenses(int idExpense);
@@ -988,6 +989,27 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             {
                 _logger.LogError("Error with DeleteTGCC", ex);
                 return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+        public async Task<BaseResult> UpdateTGCC(TblGastoCajaChica model)
+        {
+            try
+            {
+                var tipoGastoCajaChica= await _context.TblGastoCajaChicas.Where(x=>x.IdGastoCajaChica==model.IdGastoCajaChica).FirstOrDefaultAsync();
+                if (tipoGastoCajaChica ==null)
+                    return new BaseResult() { Error = true, Message = "No fue encontrado registro"};
+                
+                tipoGastoCajaChica.NombreGastoCajachica=model.NombreGastoCajachica;
+                tipoGastoCajaChica.Activo=model.Activo;
+                _context.Entry(tipoGastoCajaChica).State=EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return new BaseResult() { Error = false, Message = "Registro actualizado"};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with UpdateTGCC", ex);
+                return new BaseResult() { Error = true, Message = "Error al ingresar TGCC"};
             }
         }
         public async Task<BaseResult> InsertTGCC(TblGastoCajaChica model)

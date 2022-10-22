@@ -187,7 +187,12 @@ public class AlamedasController : ControllerBase
         var response = _catalogservices.GetTGCC(IdTGCC); 
         return Ok(response);
     }
-
+    [HttpPost("Catalog/UpdateTGCC")]
+    public IActionResult UpdateTGCC(TblGastoCajaChica model)
+    {
+        var response = _transactionservices.UpdateTGCC(model); 
+        return Ok(response);
+    }
     //SELECCIONAR TIPO INGRESOCAJA CHICA
     [HttpGet("Catalog/TiccList")]
     public IActionResult GetTICC(int IdTICC)
