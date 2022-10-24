@@ -3,6 +3,11 @@ using AlamedasAPI.Infraestructure.Alamedas;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using NLog.Web;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using AlamedasAPI.Settings;
+using System.Text;
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Debug("init main");
@@ -10,43 +15,97 @@ logger.Debug("init main");
 try
 {
 
-var builder = WebApplication.CreateBuilder(args);
+    var builder = WebApplication.CreateBuilder(args);
+    ConfigurationManager configuration = builder.Configuration;
 
-// Add services to the container.
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+    // Add services to the container.
+    builder.Services.AddControllers();
 
-//dbsmodels services
-var connectionString = builder.Configuration.GetConnectionString("WebApiDatabase");
-builder.Services.AddDbContext<alamedascontext>(x => x.UseSqlServer(connectionString));
+    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+    builder.Services.AddEndpointsApiExplorer();
 
-//services alamedas
-builder.Services.AddCatalogServices();
-builder.Services.AddTransactionServices();
-builder.Services.AddSecurityServices();
+    //dbsmodels services
+    var connectionString = builder.Configuration.GetConnectionString("WebApiDatabase");
+    builder.Services.AddDbContext<alamedascontext>(x => x.UseSqlServer(connectionString));
+   
+    //services alamedas
+    builder.Services.AddCatalogServices();
+    builder.Services.AddTransactionServices();
+    builder.Services.AddSecurityServices();
 
-// NLog: Setup NLog for Dependency injection
-builder.Logging.ClearProviders();
-builder.Host.UseNLog();
+    #region Allow-Orgin
+    builder.Services.AddCors(c =>
+    {
+        c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+    });
+    #endregion
 
-var app = builder.Build();
+    builder.Services.Configure<AppSettings>(configuration.GetSection(nameof(AppSettings)));
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    // NLog: Setup NLog for Dependency injection
+    builder.Logging.ClearProviders();
+    builder.Host.UseNLog();
 
-app.UseHttpsRedirection();
+    builder.Services.AddSwaggerGen(option =>
+    {
+        option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+        {
+            Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter your token in the text input below.\r\n",
+            In = ParameterLocation.Header,
+            Name = "Authorization",
+            Type = SecuritySchemeType.Http,
+            BearerFormat = "JWT",
+            Scheme = "Bearer"
+        });
 
-app.UseAuthorization();
+        option.AddSecurityRequirement(new OpenApiSecurityRequirement()
+        {
+            {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Type=ReferenceType.SecurityScheme,
+                        Id="Bearer"
+                    }
+                },
+                new string[]{}
+            }
+        });
+    });
 
-app.MapControllers();
+    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.RequireHttpsMetadata = false;
+        options.SaveToken = true;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateAudience = false,
+            ValidateIssuer = false,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtConfig.SecretKey)),
+            ClockSkew = TimeSpan.Zero
+        };
+    });
 
-app.Run();
+    var app = builder.Build();
+
+    // Configure the HTTP request pipeline.
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI(c => c.SwaggerEndpoint("v1/swagger.json", "AlamedasAPI v1"));
+    }
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("v1/swagger.json","AlamedasAPI v1"));
+    app.UseHttpsRedirection();
+
+    app.UseCors(cors => cors.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+    app.UseAuthentication();
+    app.UseAuthorization();
+
+    app.MapControllers();
+
+    app.Run();
 
 }
 catch (Exception exception)

@@ -33,6 +33,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         BaseResult DeleteTGCC(int IdTGCC);
         Task<BaseResult> InsertTGCC(TblGastoCajaChica model);
         BaseResult DeleteTICC(int IdTICC);
+        Task<BaseResult> UpdateTGCC(TblGastoCajaChica model);
         Task<BaseResult> InsertTICC(TipoIngresoCajaChica model);
         Task<BaseResult> DeleteCondominium(int IdCondomino);
         Task<BaseResult> DeleteExpenses(int idExpense);
@@ -117,12 +118,15 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         {
             try
             {
-                var condomino= await _context.Condominos.FindAsync(condominoDTO.id);
+                var condomino= await _context.Condominos.FindAsync(condominoDTO.IdCondomino);
                 if(condomino==null)
                     return new BaseResult() { Error = true, Message = "No se encontro el condomino"};
                 
                 condomino.NombreCompleto=condominoDTO.nombreCompleto;
                 condomino.NombreInquilino=condominoDTO.nombreInquilino;
+                condomino.Telefono=condominoDTO.telefono;
+                condomino.Correo=condominoDTO.correo;
+                condomino.Activo=condominoDTO.activo;
 
                 _context.Entry(condomino).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 await _context.SaveChangesAsync();
@@ -649,28 +653,29 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         {
             try
             {
-                var condo= await _context.Condominos.Where(x=>x.IdCondomino==condominoDTO.id).FirstOrDefaultAsync();
-                if(condo==null)
+                var condo= await _context.Condominos.Where(x=>x.IdCondomino==condominoDTO.IdCondomino).FirstOrDefaultAsync();
+                if( condo == null )
                 {
-                    condo.Activo=condominoDTO.activo;
-                    condo.Correo=condominoDTO.correo;
-                    condo.IdCondomino=condominoDTO.id;
-                    condo.NombreCompleto=condominoDTO.nombreCompleto;
-                    condo.NombreInquilino=condominoDTO.nombreInquilino;
-                    condo.Telefono=condominoDTO.Telefono;
+                    Condomino data = new Condomino();
+                    data.Activo=condominoDTO.activo;
+                    data.Correo=condominoDTO.correo;
+                    data.IdCondomino=condominoDTO.IdCondomino;
+                    data.NombreCompleto=condominoDTO.nombreCompleto;
+                    data.NombreInquilino=condominoDTO.nombreInquilino;
+                    data.Telefono=condominoDTO.telefono;
 
-                    _context.Condominos.Add(condo);
+                    _context.Condominos.Add(data);
                     _context.SaveChanges();
-                    return new BaseResult(){Message="Registro creado con exito",Error=false};
+                    return new BaseResult(){Message="Registro creado con exito.",Error=false};
 
                 }   
                 else
-                    return new BaseResult(){Message="Ya existe un condomino en el sistema con ese ID",Error=true};
+                    return new BaseResult(){Message="Ya existe un condomino en el sistema con este numero de casa.",Error=true};
             }
             catch (Exception ex)
             {
                 _logger.LogError("Error with InsertCondominum", ex);
-                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+                return new BaseResult() { Error = true, Message = "Error al crear el condomino."};
             }
         }
         public async Task<BaseResult> InsertDetailExpense(DetailExpenseDTO detailExpenseDTO)
@@ -984,6 +989,27 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             {
                 _logger.LogError("Error with DeleteTGCC", ex);
                 return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+        public async Task<BaseResult> UpdateTGCC(TblGastoCajaChica model)
+        {
+            try
+            {
+                var tipoGastoCajaChica= await _context.TblGastoCajaChicas.Where(x=>x.IdGastoCajaChica==model.IdGastoCajaChica).FirstOrDefaultAsync();
+                if (tipoGastoCajaChica ==null)
+                    return new BaseResult() { Error = true, Message = "No fue encontrado registro"};
+                
+                tipoGastoCajaChica.NombreGastoCajachica=model.NombreGastoCajachica;
+                tipoGastoCajaChica.Activo=model.Activo;
+                _context.Entry(tipoGastoCajaChica).State=EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return new BaseResult() { Error = false, Message = "Registro actualizado"};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with UpdateTGCC", ex);
+                return new BaseResult() { Error = true, Message = "Error al ingresar TGCC"};
             }
         }
         public async Task<BaseResult> InsertTGCC(TblGastoCajaChica model)

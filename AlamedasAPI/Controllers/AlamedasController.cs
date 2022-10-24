@@ -3,11 +3,12 @@ using System;
 using AlamedasAPI.Infraestructure.Alamedas;
 using AlamedasAPI.Infraestructure.Alamedas.DTO;
 using AlamedasAPI.Db.Models.Alamedas.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AlamedasAPI.Controllers;
 
-[ApiController]
-[Route("[controller]")]
+[ApiController, Authorize]
+[Route("api/[controller]")]
 
 public class AlamedasController : ControllerBase
 {
@@ -186,7 +187,12 @@ public class AlamedasController : ControllerBase
         var response = _catalogservices.GetTGCC(IdTGCC); 
         return Ok(response);
     }
-
+    [HttpPost("Catalog/UpdateTGCC")]
+    public IActionResult UpdateTGCC(TblGastoCajaChica model)
+    {
+        var response = _transactionservices.UpdateTGCC(model); 
+        return Ok(response);
+    }
     //SELECCIONAR TIPO INGRESOCAJA CHICA
     [HttpGet("Catalog/TiccList")]
     public IActionResult GetTICC(int IdTICC)
@@ -430,13 +436,17 @@ public class AlamedasController : ControllerBase
     public async Task<IActionResult> UpdateCondominium(CondominoDTO condominoDTO )
     {
         var response = await _transactionservices.UpdateCondominium(condominoDTO); 
-        return Ok(response);
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
     }
     [HttpPut("Transactions/UpdateDetailIncome")]
     public async Task<IActionResult> UpdateDetailIncome(DetailIncomeDTO detailIncomeDTO )
     {
         var response = await _transactionservices.UpdateDetailIncome(detailIncomeDTO); 
-        return Ok(response);
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
     }
 
     //ELIMINARDGCC
