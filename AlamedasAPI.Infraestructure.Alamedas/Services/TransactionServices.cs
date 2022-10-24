@@ -35,6 +35,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         BaseResult DeleteTICC(int IdTICC);
         Task<BaseResult> UpdateTGCC(TblGastoCajaChica model);
         Task<BaseResult> InsertTICC(TipoIngresoCajaChica model);
+        Task<BaseResult>UpdateTICC(TipoIngresoCajaChica model);
         Task<BaseResult> DeleteCondominium(int IdCondomino);
         Task<BaseResult> DeleteExpenses(int idExpense);
         Task<BaseResult> DeleteIncome(int consecutive);
@@ -1060,6 +1061,24 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             catch (Exception ex)
             {
                 _logger.LogError("Error with DeleteTICC", ex);
+                return new BaseResult() { Error = true, Message = "Error al eliminar."};
+            }
+        }
+        public async Task<BaseResult>UpdateTICC(TipoIngresoCajaChica model)
+        {
+            try{
+                var det = _context.TipoIngresoCajaChicas.Where(d => d.IdIngresoaCajaChica == model.IdIngresoaCajaChica).FirstOrDefault();
+                if(det==null)
+                    return new BaseResult(){Error=true,Message="No fue encontrado un registro"};
+                det.NombreIngresoCajaChica=model.NombreIngresoCajaChica;
+                det.Activo=model.Activo;
+                _context.Entry(det).State=EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return new BaseResult() { Error = false, Message = "Registro Actualizado."};
+            }
+            catch(Exception ex){
+                _logger.LogError("Error with UpdateTICC", ex);
                 return new BaseResult() { Error = true, Message = "Error al eliminar."};
             }
         }
