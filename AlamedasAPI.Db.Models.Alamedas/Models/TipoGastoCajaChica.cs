@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace AlamedasAPI.Db.Models.Alamedas.Models
 {
-    public partial class TblGastoCajaChica
+    public partial class TipoGastoCajaChica
     {
-        /*public TblGastoCajaChica()
+        public TipoGastoCajaChica()
         {
-            GastosCajaChicas = new HashSet<GastosCajaChica>();
-        }*/
+            TblGastosCajaChicas = new HashSet<TblGastosCajaChica>();
+        }
 
         public int IdGastoCajaChica { get; set; }
         public string NombreGastoCajachica { get; set; } = null!;
         public bool? Activo { get; set; }
 
-        //public virtual ICollection<GastosCajaChica> GastosCajaChicas { get; set; }
+        public virtual ICollection<TblGastosCajaChica> TblGastosCajaChicas { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         public int Mes { get; set; }
         public int Anio { get; set; }
 
-        //public virtual GastosCajaChica ConsecutivoNavigation { get; set; } = null!;
-        //public virtual ProductoGastoCajaChica IdProdgastoNavigation { get; set; } = null!;
+        public virtual TblGastosCajaChica ConsecutivoNavigation { get; set; } = null!;
+        public virtual ProductoGastoCajaChica IdProdgastoNavigation { get; set; } = null!;
     }
 }

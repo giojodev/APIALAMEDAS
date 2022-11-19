@@ -16,6 +16,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         {
         }
 
+        public virtual DbSet<ApiLog> ApiLogs { get; set; } = null!;
         public virtual DbSet<Condomino> Condominos { get; set; } = null!;
         public virtual DbSet<DetalleGasto> DetalleGastos { get; set; } = null!;
         public virtual DbSet<DetalleGastoCajachica> DetalleGastoCajachicas { get; set; } = null!;
@@ -23,17 +24,19 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         public virtual DbSet<DetalleIngresoCajachica> DetalleIngresoCajachicas { get; set; } = null!;
         public virtual DbSet<Error> Errors { get; set; } = null!;
         public virtual DbSet<Gasto> Gastos { get; set; } = null!;
-        public virtual DbSet<GastosCajaChica> GastosCajaChicas { get; set; } = null!;
         public virtual DbSet<Ingreso> Ingresos { get; set; } = null!;
+        public virtual DbSet<Log> Logs { get; set; } = null!;
         public virtual DbSet<Mora> Moras { get; set; } = null!;
+        public virtual DbSet<MovimientosDoc> MovimientosDocs { get; set; } = null!;
         public virtual DbSet<ProductoGasto> ProductoGastos { get; set; } = null!;
         public virtual DbSet<ProductoGastoCajaChica> ProductoGastoCajaChicas { get; set; } = null!;
         public virtual DbSet<ProductoIngresoCajaChica> ProductoIngresoCajaChicas { get; set; } = null!;
-        public virtual DbSet<TblGastoCajaChica> TblGastoCajaChicas { get; set; } = null!;
+        public virtual DbSet<TblGastosCajaChica> TblGastosCajaChicas { get; set; } = null!;
         public virtual DbSet<TblIngresosCajaChica> TblIngresosCajaChicas { get; set; } = null!;
         public virtual DbSet<TblRole> TblRoles { get; set; } = null!;
         public virtual DbSet<TblUsuario> TblUsuarios { get; set; } = null!;
         public virtual DbSet<TipoGasto> TipoGastos { get; set; } = null!;
+        public virtual DbSet<TipoGastoCajaChica> TipoGastoCajaChicas { get; set; } = null!;
         public virtual DbSet<TipoIngreso> TipoIngresos { get; set; } = null!;
         public virtual DbSet<TipoIngresoCajaChica> TipoIngresoCajaChicas { get; set; } = null!;
         public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
@@ -42,12 +45,26 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-JFGLEU7;Initial Catalog=ALAMEDASBD;Integrated Security=True");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Server=DESKTOP-JFGLEU7;Database=ALAMEDASBD;Integrated Security=True;Encrypt=False");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<ApiLog>(entity =>
+            {
+                entity.ToTable("ApiLog");
+
+                entity.Property(e => e.Level).HasMaxLength(50);
+
+                entity.Property(e => e.Logged).HasColumnType("datetime");
+
+                entity.Property(e => e.Logger).HasMaxLength(250);
+
+                entity.Property(e => e.MachineName).HasMaxLength(50);
+            });
+
             modelBuilder.Entity<Condomino>(entity =>
             {
                 entity.HasKey(e => e.IdCondomino)
@@ -140,7 +157,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Total).HasColumnName("TOTAL");
 
-                /*entity.HasOne(d => d.ConsecutivoNavigation)
+                entity.HasOne(d => d.ConsecutivoNavigation)
                     .WithMany(p => p.DetalleGastoCajachicas)
                     .HasForeignKey(d => d.Consecutivo)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -150,7 +167,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .WithMany(p => p.DetalleGastoCajachicas)
                     .HasForeignKey(d => d.IdProdgasto)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ID_PRODGASTO_CCHICA");*/
+                    .HasConstraintName("FK_ID_PRODGASTO_CCHICA");
             });
 
             modelBuilder.Entity<DetalleIngreso>(entity =>
@@ -222,7 +239,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Total).HasColumnName("TOTAL");
 
-                /*entity.HasOne(d => d.ConsecutivoNavigation)
+                entity.HasOne(d => d.ConsecutivoNavigation)
                     .WithMany(p => p.DetalleIngresoCajachicas)
                     .HasForeignKey(d => d.Consecutivo)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -232,7 +249,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .WithMany(p => p.DetalleIngresoCajachicas)
                     .HasForeignKey(d => d.IdProdgasto)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ID_PRODGASTO");*/
+                    .HasConstraintName("FK_ID_PRODGASTO");
             });
 
             modelBuilder.Entity<Error>(entity =>
@@ -297,48 +314,6 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .HasConstraintName("FK_GASTOS_USUARIO");
             });
 
-            modelBuilder.Entity<GastosCajaChica>(entity =>
-            {
-                entity.HasKey(e => e.Consecutivo)
-                    .HasName("PK__GASTOS_C__F8CAE2860AB91727");
-
-                entity.ToTable("GASTOS_CAJA_CHICA");
-
-                entity.Property(e => e.Consecutivo).HasColumnName("CONSECUTIVO");
-
-                entity.Property(e => e.Anio).HasColumnName("ANIO");
-
-                entity.Property(e => e.Anulado)
-                    .HasColumnName("ANULADO")
-                    .HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.Concepto)
-                    .IsUnicode(false)
-                    .HasColumnName("CONCEPTO");
-
-                entity.Property(e => e.Fecha)
-                    .HasColumnType("date")
-                    .HasColumnName("FECHA");
-
-                entity.Property(e => e.Mes).HasColumnName("MES");
-
-                entity.Property(e => e.TipoGastoCchica).HasColumnName("TIPO_GASTO_CCHICA");
-
-                entity.Property(e => e.Total).HasColumnName("TOTAL");
-
-                /*entity.HasOne(d => d.IdUsuarioNavigation)
-                    .WithMany(p => p.GastosCajaChicas)
-                    .HasForeignKey(d => d.IdUsuario)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_USUARIO_G_CAJA_CHICA");
-
-                entity.HasOne(d => d.TipoGastoCchicaNavigation)
-                    .WithMany(p => p.GastosCajaChicas)
-                    .HasForeignKey(d => d.TipoGastoCchica)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_TIPO_GASTO_CCHICA");*/
-            });
-
             modelBuilder.Entity<Ingreso>(entity =>
             {
                 entity.HasKey(e => e.Consecutivo)
@@ -389,6 +364,19 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .HasConstraintName("FK_INGRESOS_USUARIO");
             });
 
+            modelBuilder.Entity<Log>(entity =>
+            {
+                entity.ToTable("Log");
+
+                entity.Property(e => e.Level).HasMaxLength(50);
+
+                entity.Property(e => e.Logged).HasColumnType("datetime");
+
+                entity.Property(e => e.Logger).HasMaxLength(250);
+
+                entity.Property(e => e.MachineName).HasMaxLength(50);
+            });
+
             modelBuilder.Entity<Mora>(entity =>
             {
                 entity.HasKey(e => e.IdMora)
@@ -437,6 +425,49 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .HasConstraintName("FK_CONDOMINO_MORA");
             });
 
+            modelBuilder.Entity<MovimientosDoc>(entity =>
+            {
+                entity.HasKey(e => e.IdMovimiento);
+
+                entity.ToTable("MOVIMIENTOS_DOC");
+
+                entity.Property(e => e.IdMovimiento).ValueGeneratedNever();
+
+                entity.Property(e => e.Anulado).HasComment("ESTADO DEL MOV ");
+
+                entity.Property(e => e.FechaAnulado)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Fecha_Anulado");
+
+                entity.Property(e => e.FechaIngreso)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Fecha_Ingreso")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.IdDocumento).HasComment("CONSECUTIVO O LLAVE DEL DOCUMENTO");
+
+                entity.Property(e => e.IdUsuario).HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.Modulo)
+                    .HasMaxLength(50)
+                    .HasDefaultValueSql("(N'FACTURACION')")
+                    .HasComment("MODULO QUE DISPARA EL MOVIMIENTO CAJA CHICA / FACTURACION");
+
+                entity.Property(e => e.Tipo)
+                    .HasMaxLength(1)
+                    .HasDefaultValueSql("(N'I')")
+                    .IsFixedLength()
+                    .HasComment("TIPO DE MOVIMIENTO I - INGRESO / G - GASTO");
+
+                entity.Property(e => e.Total).HasColumnType("money");
+
+                entity.HasOne(d => d.IdUsuarioNavigation)
+                    .WithMany(p => p.MovimientosDocs)
+                    .HasForeignKey(d => d.IdUsuario)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__MOVIMIENT__IdUsu__503BEA1C");
+            });
+
             modelBuilder.Entity<ProductoGasto>(entity =>
             {
                 entity.HasKey(e => e.IdEntity)
@@ -482,22 +513,46 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                 entity.Property(e => e.Valor).HasColumnName("VALOR");
             });
 
-            modelBuilder.Entity<TblGastoCajaChica>(entity =>
+            modelBuilder.Entity<TblGastosCajaChica>(entity =>
             {
-                entity.HasKey(e => e.IdGastoCajaChica)
-                    .HasName("PK__TBL_GAST__26FF85DC26A647CE");
+                entity.HasKey(e => e.Consecutivo)
+                    .HasName("PK__GASTOS_C__F8CAE2860AB91727");
 
-                entity.ToTable("TBL_GASTO_CAJA_CHICA");
+                entity.ToTable("TBL_GASTOS_CAJA_CHICA");
 
-                entity.Property(e => e.IdGastoCajaChica).HasColumnName("ID_GASTO_CAJA_CHICA");
+                entity.Property(e => e.Consecutivo).HasColumnName("CONSECUTIVO");
 
-                entity.Property(e => e.Activo)
-                    .HasColumnName("ACTIVO")
+                entity.Property(e => e.Anio).HasColumnName("ANIO");
+
+                entity.Property(e => e.Anulado)
+                    .HasColumnName("ANULADO")
                     .HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.NombreGastoCajachica)
+                entity.Property(e => e.Concepto)
                     .IsUnicode(false)
-                    .HasColumnName("NOMBRE_GASTO_CAJACHICA");
+                    .HasColumnName("CONCEPTO");
+
+                entity.Property(e => e.Fecha)
+                    .HasColumnType("date")
+                    .HasColumnName("FECHA");
+
+                entity.Property(e => e.Mes).HasColumnName("MES");
+
+                entity.Property(e => e.TipoGastoCchica).HasColumnName("TIPO_GASTO_CCHICA");
+
+                entity.Property(e => e.Total).HasColumnName("TOTAL");
+
+                entity.HasOne(d => d.IdUsuarioNavigation)
+                    .WithMany(p => p.TblGastosCajaChicas)
+                    .HasForeignKey(d => d.IdUsuario)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_USUARIO_G_CAJA_CHICA");
+
+                entity.HasOne(d => d.TipoGastoCchicaNavigation)
+                    .WithMany(p => p.TblGastosCajaChicas)
+                    .HasForeignKey(d => d.TipoGastoCchica)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_TIPO_GASTO_CCHICA");
             });
 
             modelBuilder.Entity<TblIngresosCajaChica>(entity =>
@@ -529,7 +584,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Total).HasColumnName("TOTAL");
 
-                /*entity.HasOne(d => d.IdUsuarioNavigation)
+                entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.TblIngresosCajaChicas)
                     .HasForeignKey(d => d.IdUsuario)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -539,7 +594,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .WithMany(p => p.TblIngresosCajaChicas)
                     .HasForeignKey(d => d.TipoIngresoC)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_TIPO_INGRESO_CCHICA");*/
+                    .HasConstraintName("FK_TIPO_INGRESO_CCHICA");
             });
 
             modelBuilder.Entity<TblRole>(entity =>
@@ -591,6 +646,24 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                 entity.Property(e => e.NombreGasto)
                     .IsUnicode(false)
                     .HasColumnName("NOMBRE_GASTO");
+            });
+
+            modelBuilder.Entity<TipoGastoCajaChica>(entity =>
+            {
+                entity.HasKey(e => e.IdGastoCajaChica)
+                    .HasName("PK__TBL_GAST__26FF85DC26A647CE");
+
+                entity.ToTable("TIPO_GASTO_CAJA_CHICA");
+
+                entity.Property(e => e.IdGastoCajaChica).HasColumnName("ID_GASTO_CAJA_CHICA");
+
+                entity.Property(e => e.Activo)
+                    .HasColumnName("ACTIVO")
+                    .HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.NombreGastoCajachica)
+                    .IsUnicode(false)
+                    .HasColumnName("NOMBRE_GASTO_CAJACHICA");
             });
 
             modelBuilder.Entity<TipoIngreso>(entity =>
