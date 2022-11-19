@@ -23,7 +23,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> InsertDetICC(DetalleIngresoCajachica model);
         BaseResult DeleteGCC(int IdConsecutive);
         Task<BaseResult> OverridGCC(int IdConsecutive);
-        Task<BaseResult> InsertGCC(GastosCajaChica GastosCajaChica);
+        //Task<BaseResult> InsertGCC(GastosCajaChica GastosCajaChica);
         Task<BaseResult> UpdateIncomes(IncomesDTO incomesDTO);
         Task<BaseResult> UpdateDebt(DebtDTO debtDTO);
         Task<BaseResult> UpdateIncomeType(IncomeTypeDTO incomeTypeDTO);
@@ -31,9 +31,9 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> OverridICC(int IdConsecutive);
         Task<BaseResult> InsertICC(TblIngresosCajaChica model);
         BaseResult DeleteTGCC(int IdTGCC);
-        Task<BaseResult> InsertTGCC(TblGastoCajaChica model);
+        //Task<BaseResult> InsertTGCC(TblGastoCajaChica model);
         BaseResult DeleteTICC(int IdTICC);
-        Task<BaseResult> UpdateTGCC(TblGastoCajaChica model);
+        //Task<BaseResult> UpdateTGCC(TblGastoCajaChica model);
         Task<BaseResult> InsertTICC(TipoIngresoCajaChica model);
         Task<BaseResult>UpdateTICC(TipoIngresoCajaChica model);
         Task<BaseResult> DeleteCondominium(int IdCondomino);
@@ -86,10 +86,10 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             try
             {
                 int number = 0;
-                var data = _context.GastosCajaChicas.Select(grp =>new {number = grp.Consecutivo})
-                .OrderByDescending(x => x.number).FirstOrDefault();
-                if(data != null)
-                    number = data.number;
+                //var data = _context.GastosCajaChicas.Select(grp =>new {number = grp.Consecutivo})
+                //.OrderByDescending(x => x.number).FirstOrDefault();
+                //if(data != null)
+                  //  number = data.number;
                     
                 return number;
             }
@@ -311,9 +311,9 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         {
             try
             {
-                var det = _context.GastosCajaChicas.Where(d => d.Consecutivo == IdConsecutive).FirstOrDefault();
-                _context.GastosCajaChicas.Remove(det);
-                _context.SaveChanges();
+               // var det = _context.GastosCajaChicas.Where(d => d.Consecutivo == IdConsecutive).FirstOrDefault();
+               // _context.GastosCajaChicas.Remove(det);
+               // _context.SaveChanges();
 
                 return new BaseResult() { Error = false, Message = "Registro eliminado."};
             }
@@ -327,13 +327,13 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         {
             try
             {
-                var det = _context.GastosCajaChicas.Where(d => d.Consecutivo == IdConsecutive).FirstOrDefault();
+                /*var det = _context.GastosCajaChicas.Where(d => d.Consecutivo == IdConsecutive).FirstOrDefault();
                 if(det == null)
                     return new BaseResult() { Error = true, Message = "Error el GCC no existe."};
 
                 det.Anulado = false;
                 _context.Entry(det).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();*/
 
                 return new BaseResult(){Message="Registro anulado.",Error=false};
             }
@@ -425,7 +425,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error al anular GCC."};
             }
         }
-        public async Task<BaseResult> InsertGCC(GastosCajaChica model)
+        /*public async Task<BaseResult> InsertGCC(GastosCajaChica model)
         {
             try
             {
@@ -462,7 +462,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
 
                     Message = "Registro actualizado";
                 };
-
+                   
                 return new BaseResult() { Error = false, Message = Message};
             }
             catch (Exception ex)
@@ -470,7 +470,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _logger.LogError("Error with InsertGCC", ex);
                 return new BaseResult() { Error = true, Message = "Error al ingresar GCC"};
             }
-        }
+        } */
         public BaseResult DeleteICC(int IdConsecutive)
         {
             try
@@ -980,10 +980,10 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         {
             try
             {
-                var det = _context.TblGastoCajaChicas.Where(d => d.IdGastoCajaChica == IdTGCC).FirstOrDefault();
+               /* var det = _context.TblGastoCajaChicas.Where(d => d.IdGastoCajaChica == IdTGCC).FirstOrDefault();
                 _context.TblGastoCajaChicas.Remove(det);
                 _context.SaveChanges();
-
+                */
                 return new BaseResult() { Error = false, Message = "Registro eliminado."};
             }
             catch (Exception ex)
@@ -992,7 +992,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error al eliminar."};
             }
         }
-        public async Task<BaseResult> UpdateTGCC(TblGastoCajaChica model)
+       /* public async Task<BaseResult> UpdateTGCC(TblGastoCajaChica model)
         {
             try
             {
@@ -1012,8 +1012,8 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _logger.LogError("Error with UpdateTGCC", ex);
                 return new BaseResult() { Error = true, Message = "Error al ingresar TGCC"};
             }
-        }
-        public async Task<BaseResult> InsertTGCC(TblGastoCajaChica model)
+        }*/
+        /*public async Task<BaseResult> InsertTGCC(TblGastoCajaChica model)
         {
             try
             {
@@ -1047,7 +1047,8 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _logger.LogError("Error with InsertTGCC", ex);
                 return new BaseResult() { Error = true, Message = "Error al ingresar TGCC"};
             }
-        }
+        }*/
+
         public BaseResult DeleteTICC(int IdTICC)
         {
             try
