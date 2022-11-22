@@ -50,6 +50,8 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> InsertDebt(DebtDTO debtDTO);
         Task<BaseResult> InsertTypeExpense(ExpenseTypeDTO expenseTypeDTO);
         Task<BaseResult> InsertTypeIncome(IncomeTypeDTO incomeTypeDTO);
+        Task<BaseResult> CancelMovDoc(int IdMovimiento);
+        Task<BaseResult> InsertMovDoc(MovimientosDoc model);
     }
 
     public class TransactionServices : ITransactionServices
@@ -86,10 +88,10 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             try
             {
                 int number = 0;
-                //var data = _context.GastosCajaChicas.Select(grp =>new {number = grp.Consecutivo})
-                //.OrderByDescending(x => x.number).FirstOrDefault();
-                //if(data != null)
-                  //  number = data.number;
+                var data = _context.TblGastosCajaChicas.Select(grp =>new {number = grp.Consecutivo})
+                .OrderByDescending(x => x.number).FirstOrDefault();
+                if(data != null)
+                    number = data.number;
                     
                 return number;
             }
@@ -1120,6 +1122,62 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error al ingresar TICC"};
             }
         }
+   
+        /**
+            TABLA PARA GRABAR MOVIMIENTOS DE LOS DOCUMENTOS
+            InsertMovDoc -- inserta mov
+            CancelMovDoc -- anular mov
+        **/
+        public async Task<BaseResult> InsertMovDoc(MovimientosDoc model)
+        {
+            try
+            {
+                MovimientosDoc MovimientosDocs = new MovimientosDoc(){
+                    IdDocumento = model.IdDocumento,
+                    IdUsuario =  model.IdUsuario,
+                    Modulo = model.Modulo,
+                    Total = model.Total,
+                    Tipo = model.Tipo,
+                    FechaIngreso = model.FechaIngreso,
+                    Anulado = false,
+                    FechaAnulado = null
+                };
+
+                await _context.MovimientosDocs.AddAsync(MovimientosDocs);
+                await _context.SaveChangesAsync();
+
+                return new BaseResult() { Error = false, Message = "Registro ingresado."};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertMovDoc", ex);
+                return new BaseResult() { Error = true, Message = "Error al ingresar InsertMovDoc"};
+            }
+        }
+
+        public async Task<BaseResult> CancelMovDoc(int IdMovimiento)
+        {
+            try
+            {
+                var data = await _context.MovimientosDocs.Where(x=>x.IdMovimiento == IdMovimiento).FirstOrDefaultAsync(); 
+                if(data == null)
+                    return new BaseResult() { Error = true, Message = "El movimiento no existe."};
+
+                data.Anulado = true;
+                data.FechaAnulado = DateTime.Now;
+
+                _context.Entry(data).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return new BaseResult() { Error = false, Message = "Registro anulado."};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertTICC", ex);
+                return new BaseResult() { Error = true, Message = "Error al ingresar InsertMovDoc"};
+            }
+        }
+
     }
 
     public static class TransactionsServicesExtensions
