@@ -5,12 +5,12 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 {
     public partial class TblUsuario
     {
-        public TblUsuario()
+        /*public TblUsuario()
         {
             MovimientosDocs = new HashSet<MovimientosDoc>();
             TblGastosCajaChicas = new HashSet<TblGastosCajaChica>();
             TblIngresosCajaChicas = new HashSet<TblIngresosCajaChica>();
-        }
+        }*/
 
         public int IdUsuario { get; set; }
         public int? IdSql { get; set; }
@@ -21,8 +21,8 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         public bool? Activo { get; set; }
         public bool Admin { get; set; }
 
-        public virtual ICollection<MovimientosDoc> MovimientosDocs { get; set; }
-        public virtual ICollection<TblGastosCajaChica> TblGastosCajaChicas { get; set; }
-        public virtual ICollection<TblIngresosCajaChica> TblIngresosCajaChicas { get; set; }
+        //public virtual ICollection<MovimientosDoc> MovimientosDocs { get; set; }
+        //public virtual ICollection<TblGastosCajaChica> TblGastosCajaChicas { get; set; }
+        //public virtual ICollection<TblIngresosCajaChica> TblIngresosCajaChicas { get; set; }
     }
 }

@@ -5,10 +5,10 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 {
     public partial class Gasto
     {
-        public Gasto()
+        /*public Gasto()
         {
             DetalleGastos = new HashSet<DetalleGasto>();
-        }
+        }*/
 
         public int Consecutivo { get; set; }
         public int Usuario { get; set; }
@@ -19,8 +19,8 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         public int? Mes { get; set; }
         public int? Anio { get; set; }
 
-        public virtual TipoGasto Gasto1Navigation { get; set; } = null!;
+        /*public virtual TipoGasto Gasto1Navigation { get; set; } = null!;
         public virtual Usuario UsuarioNavigation { get; set; } = null!;
-        public virtual ICollection<DetalleGasto> DetalleGastos { get; set; }
+        public virtual ICollection<DetalleGasto> DetalleGastos { get; set; }*/
     }
 }

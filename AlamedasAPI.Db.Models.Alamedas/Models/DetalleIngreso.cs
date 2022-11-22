@@ -13,7 +13,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         public int? DiasVencido { get; set; }
         public double Valor { get; set; }
 
-        public virtual Ingreso ConsecutivoNavigation { get; set; } = null!;
-        public virtual Mora IdMoraNavigation { get; set; } = null!;
+        /*public virtual Ingreso ConsecutivoNavigation { get; set; } = null!;
+        public virtual Mora IdMoraNavigation { get; set; } = null!;*/
     }
 }

@@ -51,24 +51,24 @@ public class AlamedasController : ControllerBase
         var response = _catalogservices.GetCondominiumDebt(idDebt); 
         return Ok(response);
     }
-    /*[HttpGet("Catalog/GetExpenses")]
+    [HttpGet("Catalog/GetExpenses")]
     public IActionResult GetExpenses(int Id)
     {
         var response = _catalogservices.GetExpenses(Id); 
         return Ok(response);
-    }*/
+    }
     [HttpGet("Catalog/GetDebt")]
     public IActionResult GetDebt(int Id)
     {
         var response = _catalogservices.GetDebt(Id); 
         return Ok(response);
     }
-   /* [HttpGet("Catalog/GetExpenseCashRegister")]
+    [HttpGet("Catalog/GetExpenseCashRegister")]
     public IActionResult GetExpenseCashRegister(int Consecutive)
     {
         var response = _catalogservices.GetExpenseCashRegister(Consecutive); 
         return Ok(response);
-    }*/
+    }
     [HttpGet("Catalog/GetIncomes")]
     public IActionResult GetIncomes(int Consecutive)
     {
@@ -165,12 +165,12 @@ public class AlamedasController : ControllerBase
     }
 
     //OBTENER GCC
-    /*[HttpGet("Catalog/GccList")]
+    [HttpGet("Catalog/GccList")]
     public IActionResult GetGCC(int IdConsecutive)
     {
         var response = _catalogservices.GetGCC(IdConsecutive); 
         return Ok(response);
-    }*/
+    }
 
     //OBTENER ICC
     [HttpGet("Catalog/IccList")]
@@ -181,19 +181,22 @@ public class AlamedasController : ControllerBase
     }
     
     //BUSCAR TGCC
-   /* [HttpGet("Catalog/TgccList")]
+    [HttpGet("Catalog/TgccList")]
     public IActionResult GetTGCC(int IdTGCC)
     {
         var response = _catalogservices.GetTGCC(IdTGCC); 
         return Ok(response);
-    }*/
+    }
     
-    /*[HttpPut("Catalog/UpdateTGCC")]
-    public IActionResult UpdateTGCC(TblGastoCajaChica model)
+    [HttpPut("Catalog/UpdateTGCC")]
+    public async Task<IActionResult> UpdateTGCC(TipoGastoCajaChica model)
     {
-        var response = _transactionservices.UpdateTGCC(model); 
-        return Ok(response);
-    }*/
+        var response = await _transactionservices.UpdateTGCC(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+
     //SELECCIONAR TIPO INGRESOCAJA CHICA
     [HttpGet("Catalog/TiccList")]
     public IActionResult GetTICC(int IdTICC)
@@ -461,14 +464,14 @@ public class AlamedasController : ControllerBase
     }
 
     //GRABAR GCC
-    /*[HttpPost("Transactions/InsertGCC")]
-    public async Task<IActionResult> InsertGCC(GastosCajaChica model)
+    [HttpPost("Transactions/InsertGCC")]
+    public async Task<IActionResult> InsertGCC(TblGastosCajaChica model)
     {
         var response = await _transactionservices.InsertGCC(model); 
         if(response.Error)
             return BadRequest(response.Message);
         return Ok(response.Message);
-    }*/
+    }
 
     //ELIMINAR CC
     [HttpDelete("Transactions/DeleteICC")]
@@ -511,14 +514,14 @@ public class AlamedasController : ControllerBase
     }
 
     //GRABAR TGCC
-    /*[HttpPost("Transactions/InsertTGCC")]
-    public async Task<IActionResult> InsertTGCC(TblGastoCajaChica model)
+    [HttpPost("Transactions/InsertTGCC")]
+    public async Task<IActionResult> InsertTGCC(TipoGastoCajaChica model)
     {
         var response = await _transactionservices.InsertTGCC(model); 
         if(response.Error)
             return BadRequest(response.Message);
         return Ok(response.Message);
-    }*/
+    }
 
     //ELIMINAR TICC
     [HttpDelete("Transactions/DeleteTICC")]

@@ -5,10 +5,10 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 {
     public partial class Ingreso
     {
-        public Ingreso()
+        /*public Ingreso()
         {
             DetalleIngresos = new HashSet<DetalleIngreso>();
-        }
+        }*/
 
         public int Consecutivo { get; set; }
         public int Usuario { get; set; }
@@ -21,8 +21,8 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         public int? Anio { get; set; }
         public bool? Anulado { get; set; }
 
-        public virtual TipoIngreso Ingreso1Navigation { get; set; } = null!;
+        /*public virtual TipoIngreso Ingreso1Navigation { get; set; } = null!;
         public virtual Usuario UsuarioNavigation { get; set; } = null!;
-        public virtual ICollection<DetalleIngreso> DetalleIngresos { get; set; }
+        public virtual ICollection<DetalleIngreso> DetalleIngresos { get; set; }*/
     }
 }

@@ -10,7 +10,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         public string Concepto { get; set; } = null!;
         public double Valor { get; set; }
 
-        public virtual Gasto ConsecutivoNavigation { get; set; } = null!;
-        public virtual ProductoGasto IdEntityNavigation { get; set; } = null!;
+        /*public virtual Gasto ConsecutivoNavigation { get; set; } = null!;
+        public virtual ProductoGasto IdEntityNavigation { get; set; } = null!;*/
     }
 }

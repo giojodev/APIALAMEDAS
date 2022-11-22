@@ -23,7 +23,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> InsertDetICC(DetalleIngresoCajachica model);
         BaseResult DeleteGCC(int IdConsecutive);
         Task<BaseResult> OverridGCC(int IdConsecutive);
-        //Task<BaseResult> InsertGCC(GastosCajaChica GastosCajaChica);
+        Task<BaseResult> InsertGCC(TblGastosCajaChica TblGastosCajaChica);
         Task<BaseResult> UpdateIncomes(IncomesDTO incomesDTO);
         Task<BaseResult> UpdateDebt(DebtDTO debtDTO);
         Task<BaseResult> UpdateIncomeType(IncomeTypeDTO incomeTypeDTO);
@@ -31,9 +31,9 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> OverridICC(int IdConsecutive);
         Task<BaseResult> InsertICC(TblIngresosCajaChica model);
         BaseResult DeleteTGCC(int IdTGCC);
-        //Task<BaseResult> InsertTGCC(TblGastoCajaChica model);
+        Task<BaseResult> InsertTGCC(TipoGastoCajaChica model);
         BaseResult DeleteTICC(int IdTICC);
-        //Task<BaseResult> UpdateTGCC(TblGastoCajaChica model);
+        Task<BaseResult> UpdateTGCC(TipoGastoCajaChica model);
         Task<BaseResult> InsertTICC(TipoIngresoCajaChica model);
         Task<BaseResult>UpdateTICC(TipoIngresoCajaChica model);
         Task<BaseResult> DeleteCondominium(int IdCondomino);
@@ -425,17 +425,19 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error al anular GCC."};
             }
         }
-        /*public async Task<BaseResult> InsertGCC(GastosCajaChica model)
+
+        public async Task<BaseResult> InsertGCC(TblGastosCajaChica model)
         {
             try
             {
                 string Message = "Registro ingresado.";
-                var data = await _context.GastosCajaChicas.Where(x=>x.Consecutivo == model.Consecutivo).FirstOrDefaultAsync();    
+                var data = await _context.TblGastosCajaChicas.Where(x=>x.Consecutivo == model.Consecutivo).FirstOrDefaultAsync();    
 
                 if(data == null){
-                    GastosCajaChica GastosCajaChicas = new GastosCajaChica(){
-                        Consecutivo = model.Consecutivo,
-                        IdUsuario =  1,
+
+                    TblGastosCajaChica TblGastosCajaChicas = new TblGastosCajaChica(){
+                        //Consecutivo = model.Consecutivo,
+                        IdUsuario =  model.IdUsuario,
                         TipoGastoCchica = model.TipoGastoCchica,
                         Fecha = model.Fecha,
                         Concepto = model.Concepto,
@@ -445,7 +447,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                         Anulado = false
                     };
 
-                    await _context.GastosCajaChicas.AddAsync(GastosCajaChicas);
+                    await _context.TblGastosCajaChicas.AddAsync(TblGastosCajaChicas);
                     await _context.SaveChangesAsync();
                 }  
                 else{
@@ -470,7 +472,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _logger.LogError("Error with InsertGCC", ex);
                 return new BaseResult() { Error = true, Message = "Error al ingresar GCC"};
             }
-        } */
+        } 
         public BaseResult DeleteICC(int IdConsecutive)
         {
             try
@@ -992,17 +994,17 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error al eliminar."};
             }
         }
-       /* public async Task<BaseResult> UpdateTGCC(TblGastoCajaChica model)
+        public async Task<BaseResult> UpdateTGCC(TipoGastoCajaChica model)
         {
             try
             {
-                var tipoGastoCajaChica= await _context.TblGastoCajaChicas.Where(x=>x.IdGastoCajaChica==model.IdGastoCajaChica).FirstOrDefaultAsync();
-                if (tipoGastoCajaChica ==null)
+                var data = _context.TipoGastoCajaChicas.Where(x=>x.IdGastoCajaChica == model.IdGastoCajaChica).FirstOrDefault();
+                if (data == null)
                     return new BaseResult() { Error = true, Message = "No fue encontrado registro"};
                 
-                tipoGastoCajaChica.NombreGastoCajachica=model.NombreGastoCajachica;
-                tipoGastoCajaChica.Activo=model.Activo;
-                _context.Entry(tipoGastoCajaChica).State=EntityState.Modified;
+                data.NombreGastoCajachica = model.NombreGastoCajachica;
+                data.Activo = model.Activo;
+                _context.Entry(data).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 await _context.SaveChangesAsync();
 
                 return new BaseResult() { Error = false, Message = "Registro actualizado"};
@@ -1012,22 +1014,23 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _logger.LogError("Error with UpdateTGCC", ex);
                 return new BaseResult() { Error = true, Message = "Error al ingresar TGCC"};
             }
-        }*/
-        /*public async Task<BaseResult> InsertTGCC(TblGastoCajaChica model)
+        }
+
+        public async Task<BaseResult> InsertTGCC(TipoGastoCajaChica model)
         {
             try
             {
                 string Message = "Registro ingresado.";
-                var data = await _context.TblGastoCajaChicas.Where(x=>x.IdGastoCajaChica == model.IdGastoCajaChica).FirstOrDefaultAsync();    
+                var data = await _context.TipoGastoCajaChicas.Where(x=>x.IdGastoCajaChica == model.IdGastoCajaChica).FirstOrDefaultAsync();    
 
                 if(data == null){
-                    TblGastoCajaChica TblGastoCajaChicas = new TblGastoCajaChica(){
+                    TipoGastoCajaChica TipoGastoCajaChicas = new TipoGastoCajaChica(){
                         IdGastoCajaChica = model.IdGastoCajaChica,
                         NombreGastoCajachica =  model.NombreGastoCajachica,
                         Activo = true
                     };
 
-                    await _context.TblGastoCajaChicas.AddAsync(TblGastoCajaChicas);
+                    await _context.TipoGastoCajaChicas.AddAsync(TipoGastoCajaChicas);
                     await _context.SaveChangesAsync();
                 }  
                 else{
@@ -1047,7 +1050,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _logger.LogError("Error with InsertTGCC", ex);
                 return new BaseResult() { Error = true, Message = "Error al ingresar TGCC"};
             }
-        }*/
+        }
 
         public BaseResult DeleteTICC(int IdTICC)
         {

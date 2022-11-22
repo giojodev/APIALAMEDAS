@@ -118,7 +118,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Valor).HasColumnName("VALOR");
 
-                entity.HasOne(d => d.ConsecutivoNavigation)
+                /*entity.HasOne(d => d.ConsecutivoNavigation)
                     .WithMany(p => p.DetalleGastos)
                     .HasForeignKey(d => d.Consecutivo)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -128,7 +128,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .WithMany(p => p.DetalleGastos)
                     .HasForeignKey(d => d.IdEntity)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_DETALLE_PRODUCTO");
+                    .HasConstraintName("FK_DETALLE_PRODUCTO");*/
             });
 
             modelBuilder.Entity<DetalleGastoCajachica>(entity =>
@@ -157,7 +157,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Total).HasColumnName("TOTAL");
 
-                entity.HasOne(d => d.ConsecutivoNavigation)
+                /*entity.HasOne(d => d.ConsecutivoNavigation)
                     .WithMany(p => p.DetalleGastoCajachicas)
                     .HasForeignKey(d => d.Consecutivo)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -167,7 +167,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .WithMany(p => p.DetalleGastoCajachicas)
                     .HasForeignKey(d => d.IdProdgasto)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ID_PRODGASTO_CCHICA");
+                    .HasConstraintName("FK_ID_PRODGASTO_CCHICA");*/
             });
 
             modelBuilder.Entity<DetalleIngreso>(entity =>
@@ -200,7 +200,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Valor).HasColumnName("VALOR");
 
-                entity.HasOne(d => d.ConsecutivoNavigation)
+                /*entity.HasOne(d => d.ConsecutivoNavigation)
                     .WithMany(p => p.DetalleIngresos)
                     .HasForeignKey(d => d.Consecutivo)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -210,7 +210,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .WithMany(p => p.DetalleIngresos)
                     .HasForeignKey(d => d.IdMora)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_MORA_DETALLE");
+                    .HasConstraintName("FK_MORA_DETALLE");*/
             });
 
             modelBuilder.Entity<DetalleIngresoCajachica>(entity =>
@@ -239,7 +239,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Total).HasColumnName("TOTAL");
 
-                entity.HasOne(d => d.ConsecutivoNavigation)
+                /*entity.HasOne(d => d.ConsecutivoNavigation)
                     .WithMany(p => p.DetalleIngresoCajachicas)
                     .HasForeignKey(d => d.Consecutivo)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -249,7 +249,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .WithMany(p => p.DetalleIngresoCajachicas)
                     .HasForeignKey(d => d.IdProdgasto)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ID_PRODGASTO");
+                    .HasConstraintName("FK_ID_PRODGASTO");*/
             });
 
             modelBuilder.Entity<Error>(entity =>
@@ -301,7 +301,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .HasColumnType("money")
                     .HasColumnName("VALOR");
 
-                entity.HasOne(d => d.Gasto1Navigation)
+                /*entity.HasOne(d => d.Gasto1Navigation)
                     .WithMany(p => p.Gastos)
                     .HasForeignKey(d => d.Gasto1)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -311,7 +311,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .WithMany(p => p.Gastos)
                     .HasForeignKey(d => d.Usuario)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_GASTOS_USUARIO");
+                    .HasConstraintName("FK_GASTOS_USUARIO");*/
             });
 
             modelBuilder.Entity<Ingreso>(entity =>
@@ -351,7 +351,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Usuario).HasColumnName("USUARIO");
 
-                entity.HasOne(d => d.Ingreso1Navigation)
+                /*entity.HasOne(d => d.Ingreso1Navigation)
                     .WithMany(p => p.Ingresos)
                     .HasForeignKey(d => d.Ingreso1)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -361,7 +361,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .WithMany(p => p.Ingresos)
                     .HasForeignKey(d => d.Usuario)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_INGRESOS_USUARIO");
+                    .HasConstraintName("FK_INGRESOS_USUARIO");*/
             });
 
             modelBuilder.Entity<Log>(entity =>
@@ -418,11 +418,11 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .HasColumnType("money")
                     .HasColumnName("VALOR");
 
-                entity.HasOne(d => d.CondominoNavigation)
+                /*entity.HasOne(d => d.CondominoNavigation)
                     .WithMany(p => p.Moras)
                     .HasForeignKey(d => d.Condomino)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CONDOMINO_MORA");
+                    .HasConstraintName("FK_CONDOMINO_MORA");*/
             });
 
             modelBuilder.Entity<MovimientosDoc>(entity =>
@@ -461,11 +461,11 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Total).HasColumnType("money");
 
-                entity.HasOne(d => d.IdUsuarioNavigation)
+                /*entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.MovimientosDocs)
                     .HasForeignKey(d => d.IdUsuario)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__MOVIMIENT__IdUsu__503BEA1C");
+                    .HasConstraintName("FK__MOVIMIENT__IdUsu__503BEA1C");*/
             });
 
             modelBuilder.Entity<ProductoGasto>(entity =>
@@ -542,7 +542,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Total).HasColumnName("TOTAL");
 
-                entity.HasOne(d => d.IdUsuarioNavigation)
+                /*entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.TblGastosCajaChicas)
                     .HasForeignKey(d => d.IdUsuario)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -552,7 +552,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .WithMany(p => p.TblGastosCajaChicas)
                     .HasForeignKey(d => d.TipoGastoCchica)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_TIPO_GASTO_CCHICA");
+                    .HasConstraintName("FK_TIPO_GASTO_CCHICA");*/
             });
 
             modelBuilder.Entity<TblIngresosCajaChica>(entity =>
@@ -584,7 +584,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Total).HasColumnName("TOTAL");
 
-                entity.HasOne(d => d.IdUsuarioNavigation)
+                /*entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.TblIngresosCajaChicas)
                     .HasForeignKey(d => d.IdUsuario)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -594,7 +594,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .WithMany(p => p.TblIngresosCajaChicas)
                     .HasForeignKey(d => d.TipoIngresoC)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_TIPO_INGRESO_CCHICA");
+                    .HasConstraintName("FK_TIPO_INGRESO_CCHICA");*/
             });
 
             modelBuilder.Entity<TblRole>(entity =>
