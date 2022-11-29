@@ -25,6 +25,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> OverridGCC(int IdConsecutive);
         Task<BaseResult> InsertGCC(TblGastosCajaChica TblGastosCajaChica);
         Task<BaseResult> UpdateIncomes(IncomesDTO incomesDTO);
+        Task<BaseResult> UpdateExpense(ExpenseDTO expenseDTO);
         Task<BaseResult> UpdateDebt(DebtDTO debtDTO);
         Task<BaseResult> UpdateIncomeType(IncomeTypeDTO incomeTypeDTO);
         BaseResult DeleteICC(int IdConsecutive);
@@ -397,6 +398,30 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _logger.LogError("Error with OverridGCC", ex);
                 return new BaseResult() { Error = true, Message = "Error al anular GCC."};
             }
+        }
+        public async Task<BaseResult> UpdateExpense(ExpenseDTO expenseDTO)
+        {
+            try{
+               var data=await _context.Gastos.Where(x=>x.Consecutivo==expenseDTO.consecutive).FirstOrDefaultAsync();
+               if(data==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
+                data.Anio=expenseDTO.year;
+                data.Concepto=expenseDTO.concept;
+                data.Fecha=expenseDTO.date;
+                data.Gasto1=expenseDTO.expense;
+                data.Mes=expenseDTO.month;
+                data.Valor=expenseDTO.value;
+                data.Usuario=1;
+                _context.Entry(data).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await _context.SaveChangesAsync();
+                return new BaseResult(){Message="Registro actualizado",Error=false};
+            }
+            catch(Exception ex)
+            {
+                 _logger.LogError("Error with UpdateExpense", ex);
+                return new BaseResult() { Error = true, Message = "Error al actualizar gasto."};
+            }
+            
         }
         public async Task<BaseResult> UpdateIncomes(IncomesDTO incomesDTO)
         {
