@@ -53,6 +53,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> InsertTypeIncome(IncomeTypeDTO incomeTypeDTO);
         Task<BaseResult> CancelMovDoc(int IdMovimiento);
         Task<BaseResult> InsertMovDoc(MovimientosDoc model);
+        Task<BaseResult> InsertProdExpense(ProductoGastoCajaChica model);
     }
 
     public class TransactionServices : ITransactionServices
@@ -1200,6 +1201,42 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             {
                 _logger.LogError("Error with InsertTICC", ex);
                 return new BaseResult() { Error = true, Message = "Error al ingresar InsertMovDoc"};
+            }
+        }
+
+        public async Task<BaseResult> InsertProdExpense(ProductoGastoCajaChica model)
+        {
+            try
+            {
+                if(model.Valor <= 0)
+                    return new BaseResult(){Message="El valor no puede ser menor o igual a 0.",Error=true};
+
+                var expense = await _context.ProductoGastoCajaChicas.Where(x=>x.Id==model.Id).FirstOrDefaultAsync();
+
+                if(expense == null)
+                {
+                    expense.Concepto = model.Concepto;
+                    expense.Valor = model.Valor;
+
+                    _context.ProductoGastoCajaChicas.Add(expense);
+                    _context.SaveChanges();
+                    return new BaseResult(){Message= "Registro creado con exito",Error=false};
+                }
+                else
+                {
+                    expense.Concepto = model.Concepto;
+                    expense.Valor = model.Valor;
+
+                    _context.Entry(expense).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    _context.SaveChanges();
+
+                    return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertProdExpense", ex);
+                return new BaseResult() { Error = true, Message = "Error al anular."};
             }
         }
 

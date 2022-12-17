@@ -188,7 +188,7 @@ public class AlamedasController : ControllerBase
         return Ok(response);
     }
     
-    [HttpPut("Catalog/UpdateTGCC")]
+    [HttpPut("Transactions/UpdateTGCC")]
     public async Task<IActionResult> UpdateTGCC(TipoGastoCajaChica model)
     {
         var response = await _transactionservices.UpdateTGCC(model); 
@@ -554,6 +554,15 @@ public class AlamedasController : ControllerBase
     public async Task<IActionResult> UpdateTICC(TipoIngresoCajaChica model)
     {
         var response = await _transactionservices.UpdateTICC(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+
+    [HttpPost("Transactions/InsertProdExpense")]
+    public async Task<IActionResult> InsertProdExpense(ProductoGastoCajaChica expenseDTO)
+    {
+        var response = await _transactionservices.InsertProdExpense(expenseDTO); 
         if(response.Error)
             return BadRequest(response.Message);
         return Ok(response.Message);
