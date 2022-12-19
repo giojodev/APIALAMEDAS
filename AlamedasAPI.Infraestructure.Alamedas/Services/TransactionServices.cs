@@ -54,6 +54,9 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> CancelMovDoc(int IdMovimiento);
         Task<BaseResult> InsertMovDoc(MovimientosDoc model);
         Task<BaseResult> InsertProdExpense(ProductoGastoCajaChica model);
+        Task<BaseResult> UpdateProdExpense(ProductoGastoCajaChica model);
+        Task<BaseResult> InsertProdEntry(ProductoIngresoCajaChica model);
+        Task<BaseResult> UpdateProdEntry(ProductoIngresoCajaChica model);
     }
 
     public class TransactionServices : ITransactionServices
@@ -1211,32 +1214,100 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 if(model.Valor <= 0)
                     return new BaseResult(){Message="El valor no puede ser menor o igual a 0.",Error=true};
 
-                var expense = await _context.ProductoGastoCajaChicas.Where(x=>x.Id==model.Id).FirstOrDefaultAsync();
+                ProductoGastoCajaChica data = new ProductoGastoCajaChica(){
+                    Concepto = model.Concepto,
+                    Valor = model.Valor,
+                };
 
-                if(expense == null)
-                {
-                    expense.Concepto = model.Concepto;
-                    expense.Valor = model.Valor;
+                await _context.ProductoGastoCajaChicas.AddAsync(data);
+                await _context.SaveChangesAsync();
 
-                    _context.ProductoGastoCajaChicas.Add(expense);
-                    _context.SaveChanges();
-                    return new BaseResult(){Message= "Registro creado con exito",Error=false};
-                }
-                else
-                {
-                    expense.Concepto = model.Concepto;
-                    expense.Valor = model.Valor;
-
-                    _context.Entry(expense).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
-                    _context.SaveChanges();
-
-                    return new BaseResult(){Message="Registro actualizado con exito",Error=false};
-                }
+                return new BaseResult(){Message= "Registro creado con exito",Error=false};
             }
             catch (Exception ex)
             {
                 _logger.LogError("Error with InsertProdExpense", ex);
-                return new BaseResult() { Error = true, Message = "Error al anular."};
+                return new BaseResult() { Error = true, Message = "Error al crear producto gasto de caja chica.."};
+            }
+        }
+
+        public async Task<BaseResult> UpdateProdExpense(ProductoGastoCajaChica model)
+        {
+            try
+            {
+                if(model.Valor <= 0)
+                    return new BaseResult(){Message="El valor no puede ser menor o igual a 0.",Error=true};
+
+                var expense = await _context.ProductoGastoCajaChicas.Where(x=>x.Id==model.Id).FirstOrDefaultAsync();
+
+                if(expense == null)
+                    return new BaseResult(){Message= "EL producto no existe.",Error=false};
+
+                expense.Concepto = model.Concepto;
+                expense.Valor = model.Valor;
+
+                _context.Entry(expense).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                _context.SaveChanges();
+
+                return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with UpdateProdExpense", ex);
+                return new BaseResult() { Error = true, Message = "Error al actualizar producto gasto de caja chica."};
+            }
+        }
+
+        public async Task<BaseResult> InsertProdEntry(ProductoIngresoCajaChica model)
+        {
+            try
+            {
+                if(model.Valor <= 0)
+                    return new BaseResult(){Message="El valor no puede ser menor o igual a 0.",Error=true};
+
+                ProductoIngresoCajaChica data = new ProductoIngresoCajaChica(){
+                    Concepto = model.Concepto,
+                    Valor = model.Valor,
+                };
+
+                await _context.ProductoIngresoCajaChicas.AddAsync(data);
+                await _context.SaveChangesAsync();
+
+                return new BaseResult(){Message= "Registro creado con exito",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertProdEntry", ex);
+                return new BaseResult() { Error = true, Message = "Error al crear producto gasto de caja chica.."};
+            }
+        }
+
+        public async Task<BaseResult> UpdateProdEntry(ProductoIngresoCajaChica model)
+        {
+            try
+            {
+                if(model.Valor <= 0)
+                    return new BaseResult(){Message="El valor no puede ser menor o igual a 0.",Error=true};
+
+                var expense = await _context.ProductoIngresoCajaChicas.Where(x=>x.Id==model.Id).FirstOrDefaultAsync();
+
+                if(expense == null)
+                    return new BaseResult(){Message= "EL producto no existe.",Error=false};
+
+                expense.Concepto = model.Concepto;
+                expense.Valor = model.Valor;
+
+                _context.Entry(expense).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                _context.SaveChanges();
+
+                return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with UpdateProdEntry", ex);
+                return new BaseResult() { Error = true, Message = "Error al actualizar producto gasto de caja chica."};
             }
         }
 
