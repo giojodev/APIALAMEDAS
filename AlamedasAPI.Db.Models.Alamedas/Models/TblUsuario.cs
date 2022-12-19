@@ -13,10 +13,10 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         }*/
 
         public int IdUsuario { get; set; }
-        public int? IdSql { get; set; }
-        public string? Ulogin { get; set; }
-        public string? Unombre { get; set; }
-        public string? Correro { get; set; }
+        public string? Usuario { get; set; } //username
+        public string? Contrasena { get; set; }
+        public string? Nombre { get; set; }
+        public string? Correo { get; set; }
         public int? IdRol { get; set; }
         public bool? Activo { get; set; }
         public bool Admin { get; set; }

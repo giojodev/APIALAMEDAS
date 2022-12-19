@@ -616,18 +616,22 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.ToTable("tblUsuarios");
 
-                entity.HasIndex(e => e.Ulogin, "IX_Usuarios")
+                entity.HasIndex(e => e.Usuario, "IX_Usuarios")
                     .IsUnique();
 
-                entity.Property(e => e.Correro).HasMaxLength(256);
+                entity.Property(e => e.Correo).HasMaxLength(256);
 
-                entity.Property(e => e.Ulogin)
+                entity.Property(e => e.Usuario)
                     .HasMaxLength(50)
-                    .HasColumnName("ULogin");
+                    .HasColumnName("Usuario");
 
-                entity.Property(e => e.Unombre)
+                entity.Property(e => e.Nombre)
                     .HasMaxLength(256)
-                    .HasColumnName("UNombre");
+                    .HasColumnName("Nombre");
+                
+                entity.Property(e => e.Contrasena)
+                    .HasMaxLength(256)
+                    .HasColumnName("Contrasena");
             });
 
             modelBuilder.Entity<TipoGasto>(entity =>
