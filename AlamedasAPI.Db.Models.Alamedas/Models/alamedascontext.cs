@@ -22,19 +22,16 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         public virtual DbSet<DetalleGastoCajachica> DetalleGastoCajachicas { get; set; } = null!;
         public virtual DbSet<DetalleIngreso> DetalleIngresos { get; set; } = null!;
         public virtual DbSet<DetalleIngresoCajachica> DetalleIngresoCajachicas { get; set; } = null!;
-        public virtual DbSet<Error> Errors { get; set; } = null!;
         public virtual DbSet<Gasto> Gastos { get; set; } = null!;
         public virtual DbSet<Ingreso> Ingresos { get; set; } = null!;
-        public virtual DbSet<Log> Logs { get; set; } = null!;
         public virtual DbSet<Mora> Moras { get; set; } = null!;
         public virtual DbSet<MovimientosDoc> MovimientosDocs { get; set; } = null!;
         public virtual DbSet<ProductoGasto> ProductoGastos { get; set; } = null!;
         public virtual DbSet<ProductoGastoCajaChica> ProductoGastoCajaChicas { get; set; } = null!;
         public virtual DbSet<ProductoIngresoCajaChica> ProductoIngresoCajaChicas { get; set; } = null!;
+        public virtual DbSet<Role> Roles { get; set; } = null!;
         public virtual DbSet<TblGastosCajaChica> TblGastosCajaChicas { get; set; } = null!;
         public virtual DbSet<TblIngresosCajaChica> TblIngresosCajaChicas { get; set; } = null!;
-        public virtual DbSet<TblRole> TblRoles { get; set; } = null!;
-        public virtual DbSet<TblUsuario> TblUsuarios { get; set; } = null!;
         public virtual DbSet<TipoGasto> TipoGastos { get; set; } = null!;
         public virtual DbSet<TipoGastoCajaChica> TipoGastoCajaChicas { get; set; } = null!;
         public virtual DbSet<TipoIngreso> TipoIngresos { get; set; } = null!;
@@ -45,8 +42,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-JFGLEU7;Database=ALAMEDASBD;Integrated Security=True;Encrypt=False");
+               optionsBuilder.UseSqlServer("Data Source=DESKTOP-JFGLEU7;Initial Catalog=ALAMEDASBD;Integrated Security=True");
             }
         }
 
@@ -252,24 +248,6 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .HasConstraintName("FK_ID_PRODGASTO");*/
             });
 
-            modelBuilder.Entity<Error>(entity =>
-            {
-                entity.HasKey(e => e.IdError)
-                    .HasName("PK__ERROR__9046136ABAED8800");
-
-                entity.ToTable("ERROR");
-
-                entity.Property(e => e.IdError).HasColumnName("ID_ERROR");
-
-                entity.Property(e => e.Descripcion)
-                    .IsUnicode(false)
-                    .HasColumnName("DESCRIPCION");
-
-                entity.Property(e => e.Pantalla)
-                    .IsUnicode(false)
-                    .HasColumnName("PANTALLA");
-            });
-
             modelBuilder.Entity<Gasto>(entity =>
             {
                 entity.HasKey(e => e.Consecutivo)
@@ -293,23 +271,23 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Gasto1).HasColumnName("GASTO");
 
-                entity.Property(e => e.Mes).HasColumnName("MES");
+                entity.Property(e => e.Idusuario).HasColumnName("IDUSUARIO");
 
-                entity.Property(e => e.Usuario).HasColumnName("USUARIO");
+                entity.Property(e => e.Mes).HasColumnName("MES");
 
                 entity.Property(e => e.Valor)
                     .HasColumnType("money")
                     .HasColumnName("VALOR");
 
-                /*entity.HasOne(d => d.Gasto1Navigation)
+               /* entity.HasOne(d => d.Gasto1Navigation)
                     .WithMany(p => p.Gastos)
                     .HasForeignKey(d => d.Gasto1)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_INGRESOS_TIPOG");
 
-                entity.HasOne(d => d.UsuarioNavigation)
+                entity.HasOne(d => d.IdusuarioNavigation)
                     .WithMany(p => p.Gastos)
-                    .HasForeignKey(d => d.Usuario)
+                    .HasForeignKey(d => d.Idusuario)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_GASTOS_USUARIO");*/
             });
@@ -339,6 +317,8 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .HasColumnType("date")
                     .HasColumnName("FECHA");
 
+                entity.Property(e => e.Idusuario).HasColumnName("IDUSUARIO");
+
                 entity.Property(e => e.Ingreso1).HasColumnName("INGRESO");
 
                 entity.Property(e => e.Mes).HasColumnName("MES");
@@ -349,32 +329,17 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Total).HasColumnName("TOTAL");
 
-                entity.Property(e => e.Usuario).HasColumnName("USUARIO");
+               /* entity.HasOne(d => d.IdusuarioNavigation)
+                    .WithMany(p => p.Ingresos)
+                    .HasForeignKey(d => d.Idusuario)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_INGRESOS_USUARIO");
 
-                /*entity.HasOne(d => d.Ingreso1Navigation)
+                entity.HasOne(d => d.Ingreso1Navigation)
                     .WithMany(p => p.Ingresos)
                     .HasForeignKey(d => d.Ingreso1)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_INGRESOS_TIPO");
-
-                entity.HasOne(d => d.UsuarioNavigation)
-                    .WithMany(p => p.Ingresos)
-                    .HasForeignKey(d => d.Usuario)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_INGRESOS_USUARIO");*/
-            });
-
-            modelBuilder.Entity<Log>(entity =>
-            {
-                entity.ToTable("Log");
-
-                entity.Property(e => e.Level).HasMaxLength(50);
-
-                entity.Property(e => e.Logged).HasColumnType("datetime");
-
-                entity.Property(e => e.Logger).HasMaxLength(250);
-
-                entity.Property(e => e.MachineName).HasMaxLength(50);
+                    .HasConstraintName("FK_INGRESOS_TIPO");*/
             });
 
             modelBuilder.Entity<Mora>(entity =>
@@ -431,35 +396,47 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.ToTable("MOVIMIENTOS_DOC");
 
-                entity.Property(e => e.IdMovimiento).ValueGeneratedNever();
+                entity.Property(e => e.IdMovimiento)
+                    .ValueGeneratedNever()
+                    .HasColumnName("ID_MOVIMIENTO");
 
-                entity.Property(e => e.Anulado).HasComment("ESTADO DEL MOV ");
+                entity.Property(e => e.Anulado)
+                    .HasColumnName("ANULADO")
+                    .HasComment("ESTADO DEL MOV ");
 
                 entity.Property(e => e.FechaAnulado)
                     .HasColumnType("datetime")
-                    .HasColumnName("Fecha_Anulado");
+                    .HasColumnName("FECHA_ANULADO");
 
                 entity.Property(e => e.FechaIngreso)
                     .HasColumnType("datetime")
-                    .HasColumnName("Fecha_Ingreso")
+                    .HasColumnName("FECHA_INGRESO")
                     .HasDefaultValueSql("(getdate())");
 
-                entity.Property(e => e.IdDocumento).HasComment("CONSECUTIVO O LLAVE DEL DOCUMENTO");
+                entity.Property(e => e.IdDocumento)
+                    .HasColumnName("ID_DOCUMENTO")
+                    .HasComment("CONSECUTIVO O LLAVE DEL DOCUMENTO");
 
-                entity.Property(e => e.IdUsuario).HasDefaultValueSql("((1))");
+                entity.Property(e => e.IdUsuario)
+                    .HasColumnName("ID_USUARIO")
+                    .HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.Modulo)
                     .HasMaxLength(50)
+                    .HasColumnName("MODULO")
                     .HasDefaultValueSql("(N'FACTURACION')")
                     .HasComment("MODULO QUE DISPARA EL MOVIMIENTO CAJA CHICA / FACTURACION");
 
                 entity.Property(e => e.Tipo)
                     .HasMaxLength(1)
+                    .HasColumnName("TIPO")
                     .HasDefaultValueSql("(N'I')")
                     .IsFixedLength()
                     .HasComment("TIPO DE MOVIMIENTO I - INGRESO / G - GASTO");
 
-                entity.Property(e => e.Total).HasColumnType("money");
+                entity.Property(e => e.Total)
+                    .HasColumnType("money")
+                    .HasColumnName("TOTAL");
 
                 /*entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.MovimientosDocs)
@@ -511,6 +488,24 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .HasColumnName("CONCEPTO");
 
                 entity.Property(e => e.Valor).HasColumnName("VALOR");
+            });
+
+            modelBuilder.Entity<Role>(entity =>
+            {
+                entity.HasKey(e => e.IdRol)
+                    .HasName("PK__tblRoles__2A49584C5FCD2CC7");
+
+                entity.ToTable("ROLES");
+
+                entity.Property(e => e.IdRol).HasColumnName("ID_ROL");
+
+                entity.Property(e => e.Descripcion)
+                    .HasMaxLength(250)
+                    .HasColumnName("DESCRIPCION");
+
+                entity.Property(e => e.Nombre)
+                    .HasMaxLength(250)
+                    .HasColumnName("NOMBRE");
             });
 
             modelBuilder.Entity<TblGastosCajaChica>(entity =>
@@ -584,7 +579,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 
                 entity.Property(e => e.Total).HasColumnName("TOTAL");
 
-                /*entity.HasOne(d => d.IdUsuarioNavigation)
+               /* entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.TblIngresosCajaChicas)
                     .HasForeignKey(d => d.IdUsuario)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -595,43 +590,6 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
                     .HasForeignKey(d => d.TipoIngresoC)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_TIPO_INGRESO_CCHICA");*/
-            });
-
-            modelBuilder.Entity<TblRole>(entity =>
-            {
-                entity.HasKey(e => e.IdRol)
-                    .HasName("PK__tblRoles__2A49584C5FCD2CC7");
-
-                entity.ToTable("tblRoles");
-
-                entity.Property(e => e.Descripcion).HasMaxLength(250);
-
-                entity.Property(e => e.Nombre).HasMaxLength(250);
-            });
-
-            modelBuilder.Entity<TblUsuario>(entity =>
-            {
-                entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK_Usuarios");
-
-                entity.ToTable("tblUsuarios");
-
-                entity.HasIndex(e => e.Usuario, "IX_Usuarios")
-                    .IsUnique();
-
-                entity.Property(e => e.Correo).HasMaxLength(256);
-
-                entity.Property(e => e.Usuario)
-                    .HasMaxLength(50)
-                    .HasColumnName("Usuario");
-
-                entity.Property(e => e.Nombre)
-                    .HasMaxLength(256)
-                    .HasColumnName("Nombre");
-                
-                entity.Property(e => e.Contrasena)
-                    .HasMaxLength(256)
-                    .HasColumnName("Contrasena");
             });
 
             modelBuilder.Entity<TipoGasto>(entity =>
@@ -709,20 +667,40 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__USUARIO__91136B90FE2EC46A");
+                    .HasName("PK_Usuarios");
 
-                entity.ToTable("USUARIO");
+                entity.ToTable("USUARIOS");
+
+                entity.HasIndex(e => e.Usuario1, "IX_Usuarios")
+                    .IsUnique();
 
                 entity.Property(e => e.IdUsuario).HasColumnName("ID_USUARIO");
 
-                entity.Property(e => e.Clave)
-                    .HasMaxLength(100)
-                    .HasColumnName("CLAVE");
+                entity.Property(e => e.Activo).HasColumnName("ACTIVO");
+
+                entity.Property(e => e.Contrasena)
+                    .HasMaxLength(256)
+                    .IsUnicode(false)
+                    .HasColumnName("CONTRASENA");
+
+                entity.Property(e => e.Correo)
+                    .HasMaxLength(256)
+                    .HasColumnName("CORREO");
+
+                entity.Property(e => e.IdRol).HasColumnName("ID_ROL");
 
                 entity.Property(e => e.Nombre)
-                    .HasMaxLength(100)
-                    .IsUnicode(false)
+                    .HasMaxLength(256)
                     .HasColumnName("NOMBRE");
+
+                entity.Property(e => e.Usuario1)
+                    .HasMaxLength(50)
+                    .HasColumnName("USUARIO");
+
+                /*entity.HasOne(d => d.IdRolNavigation)
+                    .WithMany(p => p.Usuarios)
+                    .HasForeignKey(d => d.IdRol)
+                    .HasConstraintName("FK_tblUsuarios_tblroles");*/
             });
 
             OnModelCreatingPartial(modelBuilder);

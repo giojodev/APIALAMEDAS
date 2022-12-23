@@ -20,8 +20,8 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         public int? Anio { get; set; }
         public bool? Anulado { get; set; }
 
-        //public virtual TblUsuario IdUsuarioNavigation { get; set; } = null!;
-        //public virtual TipoGastoCajaChica TipoGastoCchicaNavigation { get; set; } = null!;
-       // public virtual ICollection<DetalleGastoCajachica> DetalleGastoCajachicas { get; set; }
+        /*public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
+        public virtual TipoGastoCajaChica TipoGastoCchicaNavigation { get; set; } = null!;
+        public virtual ICollection<DetalleGastoCajachica> DetalleGastoCajachicas { get; set; }*/
     }
 }

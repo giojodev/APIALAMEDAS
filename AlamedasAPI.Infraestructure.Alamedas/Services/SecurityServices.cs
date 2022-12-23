@@ -18,12 +18,14 @@ namespace AlamedasAPI.Infraestructure.Alamedas
 {
     public interface ISecurityServices
     {
-        Task<BaseResult> UpdateUser(TblUsuario model);
-        List<TblUsuario> GetUser();
-        Task<BaseResult> InsertRoles(TblRole model);
-        Task<BaseResult> InsertUser(TblUsuario model);
+        Task<BaseResult> UpdateUser(Usuario model);
+        List<Usuario> GetUser();
+        List<Role> GetRol();
+        Task<BaseResult> InsertRoles(Role model);
+        Task<BaseResult> InsertUser(Usuario model);
         Task<BaseResult> DeleteUser(int IdUser);
         UserDTO Authenticate(string UserName,string Password);
+        Task<BaseResult> UpdateRoles(Role model);
     }
 
     public class SecurityServices : ISecurityServices
@@ -41,19 +43,19 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         {
             try
             {
-                var user = _context.TblUsuarios.SingleOrDefault(x => x.Usuario == UserName);
+                var user = _context.Usuarios.SingleOrDefault(x => x.Usuario1 == UserName);
                 // verify password
                 if (user == null || !VerifyHashedPassword(Password, user.Contrasena))
                     return new UserDTO(){ Iduser = 0,Authenticate = false, Message = "Usuario o contraseña incorrecta."};
 
-                var token = GenerateTokenJwt(user.Usuario);
+                var token = GenerateTokenJwt(user.Usuario1);
                 if (token == null)
                     return new UserDTO(){ Iduser = 0,Authenticate = false, Message = "Error al generar token."};
 
                 // authentication successful
                 return new UserDTO() { 
                     Iduser = user.IdUsuario,
-                    Username = user.Usuario,
+                    Username = user.Usuario1,
                     Token = token,
                     Message = "Acceso permitido.",
                     Authenticate = true
@@ -68,26 +70,25 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         }
 
 
-        public async Task<BaseResult> UpdateUser(TblUsuario model)
+        public async Task<BaseResult> UpdateUser(Usuario model)
         {
             try
             {
                 //var commandText = "";
-                var data = await _context.TblUsuarios.Where(x=> x.IdUsuario == model.IdUsuario).FirstOrDefaultAsync();
+                var data = await _context.Usuarios.Where(x=> x.IdUsuario == model.IdUsuario).FirstOrDefaultAsync();
                 if(data == null)
                     return new BaseResult() { Error = true, Message = "Usuario no encontrado."};
 
-                var data2 = await _context.TblUsuarios.Where(x=> x.IdUsuario != model.IdUsuario && x.Usuario == model.Usuario).FirstOrDefaultAsync();
+                var data2 = await _context.Usuarios.Where(x=> x.IdUsuario != model.IdUsuario && x.Usuario1 == model.Usuario1).FirstOrDefaultAsync();
                 if(data2 != null)
                     return new BaseResult() { Error = true, Message = "El usuario ya existe en el sistema favor validar."};    
 
-                data.Usuario = model.Usuario;
+                data.Usuario1 = model.Usuario1;
                 data.Nombre = model.Nombre;
                 data.Correo = model.Correo;
                 //data.Contrasena = HashPassword(model.Contrasena);
                 data.IdRol = model.IdRol;
                 data.Activo = model.Activo;
-                data.Admin = model.Admin;
 
                 _context.Entry(data).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
                 _context.SaveChanges();
@@ -100,41 +101,26 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             }
         }
 
-        public List<TblUsuario> GetUser(){
+        public List<Usuario> GetUser(){
             
-            var data = _context.TblUsuarios.ToList();
+            var data = _context.Usuarios.ToList();
+            return data;
+        }
+
+        public List<Role> GetRol(){
+            
+            var data = _context.Roles.ToList();
             return data;
         }
    
-        public async Task<BaseResult> InsertRoles(TblRole model)
+        public async Task<BaseResult> InsertRoles(Role model)
         {
             try
             {
-                string Message = "Registro ingresado.";
-                var data = await _context.TblRoles.Where(x=>x.IdRol == model.IdRol).FirstOrDefaultAsync();
+                await _context.Roles.AddAsync(model);
+                await _context.SaveChangesAsync();
 
-                if(data == null){
-
-                    TblRole TblRoles = new TblRole(){
-                        Nombre = model.Nombre,
-                        Descripcion = model.Descripcion
-                    };
-
-                    await _context.TblRoles.AddAsync(TblRoles);
-                    await _context.SaveChangesAsync();
-                }
-                else{
-                    
-                    data.Nombre = model.Nombre;
-                    data.Descripcion = data.Descripcion;
-
-                    _context.Entry(data).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                    await _context.SaveChangesAsync();
-
-                    Message = "Registro actualizado";
-                };
-
-                return new BaseResult() { Error = false, Message = Message};
+                return new BaseResult() { Error = false, Message = "Registro ingresado."};
             }
             catch (Exception ex)
             {
@@ -142,17 +128,41 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error en el servicio."};
             }
         }
-   
-        public async Task<BaseResult> InsertUser(TblUsuario model)
+
+        public async Task<BaseResult> UpdateRoles(Role model)
         {
             try
             {
-                var data2 = await _context.TblUsuarios.Where(x=> x.Usuario == model.Usuario).FirstOrDefaultAsync();
+
+                var data = await _context.Roles.Where(x=>x.IdRol == model.IdRol).FirstOrDefaultAsync();
+                if(data == null)
+                    return new BaseResult() { Error = true, Message = "Error el rol no existe."};
+                    
+                data.Nombre = model.Nombre;
+                data.Descripcion = model.Descripcion;
+
+                _context.Entry(data).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await _context.SaveChangesAsync();
+               
+                return new BaseResult() { Error = false, Message = "Registro actualizado"};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with UpdateRoles", ex);
+                return new BaseResult() { Error = true, Message = "Error en el servicio."};
+            }
+        }
+   
+        public async Task<BaseResult> InsertUser(Usuario model)
+        {
+            try
+            {
+                var data2 = await _context.Usuarios.Where(x=> x.Usuario1 == model.Usuario1).FirstOrDefaultAsync();
                 if(data2 != null)
                     return new BaseResult() { Error = true, Message = "El usuario ya existe en el sistema favor validar."}; 
 
                 model.Contrasena = HashPassword(model.Contrasena);
-                await _context.TblUsuarios.AddAsync(model);
+                await _context.Usuarios.AddAsync(model);
                 await _context.SaveChangesAsync();
 
                 return new BaseResult() { Error = false, Message = "Registro ingresado."};
@@ -168,7 +178,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         public async Task<BaseResult> DeleteUser(int IdUser){
             try
             {
-                var data = await _context.TblUsuarios.Where(x=> x.IdUsuario == IdUser).FirstOrDefaultAsync();
+                var data = await _context.Usuarios.Where(x=> x.IdUsuario == IdUser).FirstOrDefaultAsync();
                 if(data == null)
                     return new BaseResult() { Error = true, Message = "Usuario no encontrado."};
 
@@ -176,9 +186,6 @@ namespace AlamedasAPI.Infraestructure.Alamedas
 
                 _context.Entry(data).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
                 _context.SaveChanges();
-
-                //commandText = "ALTER LOGIN [" + data.Ulogin + "] DISABLE";
-                //_context.Database.ExecuteSqlRaw(commandText);
 
                 return new BaseResult() { Error = true, Message = "Registro eliminado."};    
             }

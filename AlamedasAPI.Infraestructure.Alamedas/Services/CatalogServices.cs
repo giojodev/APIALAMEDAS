@@ -30,7 +30,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         
         List<TipoGastoCajaChica> GetTGCC(int IdTGCC);
         List<TipoIngresoCajaChica> GetTICC(int IdTICC);
-        List<TipoGasto> GetExpense(int IdExpenses);
+        List<TipoGasto> GetExpense();
         List<TipoIngreso> GetIncome(int IdIncome);
         List<Condomino> GetCondomino(int idCondomino);
         int GetCondominiumDebt(int idDebt);
@@ -286,16 +286,9 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             return data;
         }
 
-        public List<TipoGasto> GetExpense(int IdExpenses){
+        public List<TipoGasto> GetExpense(){
             
-            List<TipoGasto> data = null;
-
-            if(IdExpenses == 0){
-                data = _context.TipoGastos.ToList();
-            }else{
-                data = _context.TipoGastos.Where(x => x.IdGasto == IdExpenses).ToList();
-            };
-
+            var data = _context.TipoGastos.ToList();
             return data;
         }
 
