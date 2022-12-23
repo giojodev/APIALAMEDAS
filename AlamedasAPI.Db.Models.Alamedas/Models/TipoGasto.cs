@@ -5,7 +5,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 {
     public partial class TipoGasto
     {
-        /*public TipoGasto()
+       /* public TipoGasto()
         {
             Gastos = new HashSet<Gasto>();
         }*/
@@ -14,6 +14,6 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         public string NombreGasto { get; set; } = null!;
         public bool? Activo { get; set; }
 
-        //public virtual ICollection<Gasto> Gastos { get; set; }
+       // public virtual ICollection<Gasto> Gastos { get; set; }
     }
 }

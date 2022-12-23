@@ -5,7 +5,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 {
     public partial class ProductoGasto
     {
-        /*public ProductoGasto()
+       /* public ProductoGasto()
         {
             DetalleGastos = new HashSet<DetalleGasto>();
         }*/

@@ -5,7 +5,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 {
     public partial class TipoIngreso
     {
-        /*public TipoIngreso()
+       /* public TipoIngreso()
         {
             Ingresos = new HashSet<Ingreso>();
         }*/

@@ -5,7 +5,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 {
     public partial class Mora
     {
-        /*public Mora()
+       /* public Mora()
         {
             DetalleIngresos = new HashSet<DetalleIngreso>();
         }*/

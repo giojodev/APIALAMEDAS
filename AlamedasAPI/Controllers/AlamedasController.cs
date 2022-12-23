@@ -207,9 +207,9 @@ public class AlamedasController : ControllerBase
 
     //OBTENER TIPO GASTO
     [HttpGet("Catalog/ExpenseList")]
-    public IActionResult GetExpense(int IdExpenses)
+    public IActionResult GetExpense()
     {
-        var response = _catalogservices.GetExpense(IdExpenses); 
+        var response = _catalogservices.GetExpense(); 
         return Ok(response);
     }
 
@@ -349,17 +349,17 @@ public class AlamedasController : ControllerBase
         return Ok(response.Message);
     }
     [HttpPost("Transactions/InsertTypeExpense")]
-    public async Task<IActionResult> InsertTypeExpense(ExpenseTypeDTO expenseTypeDTO)
+    public async Task<IActionResult> InsertTypeExpense(TipoGasto model)
     {
-        var response = await _transactionservices.InsertTypeExpense(expenseTypeDTO); 
+        var response = await _transactionservices.InsertTypeExpense(model); 
         if(response.Error)
             return BadRequest(response.Message);
         return Ok(response.Message);
     }
     [HttpPost("Transactions/InsertTypeIncome")]
-    public async Task<IActionResult> InsertTypeIncome(IncomeTypeDTO incomeTypeDTO)
+    public async Task<IActionResult> InsertTypeIncome(TipoIngreso model)
     {
-        var response = await _transactionservices.InsertTypeIncome(incomeTypeDTO); 
+        var response = await _transactionservices.InsertTypeIncome(model); 
         if(response.Error)
             return BadRequest(response.Message);
         return Ok(response.Message);
@@ -599,7 +599,7 @@ public class AlamedasController : ControllerBase
 
     //UPD USUARIOS
     [HttpPut("Security/UpdateUser")]
-    public async Task<IActionResult>  UpdateUser(TblUsuario model)
+    public async Task<IActionResult>  UpdateUser(Usuario model)
     {
         var response = await _segurityservices.UpdateUser(model); 
         if(response.Error)
@@ -618,7 +618,7 @@ public class AlamedasController : ControllerBase
 
     //ins usuarios
     [HttpPost("Security/InsertUser")]
-    public async Task<IActionResult>  InsertUser(TblUsuario model)
+    public async Task<IActionResult>  InsertUser(Usuario model)
     {
         var response = await _segurityservices.InsertUser(model); 
         if(response.Error)
@@ -627,26 +627,32 @@ public class AlamedasController : ControllerBase
         return Ok(response.Message);
     }
 
-    //PROC ROLES
-    /*
-    [HttpPost("Security/UpdateUser")]
-    public async Task<IActionResult>  UpdateUser(TblUsuario model)
+    [HttpGet("Security/RoleList")]
+    public IActionResult GetRol()
     {
-        var response = await _segurityservices.UpdateUser(model); 
+        var response = _segurityservices.GetRol(); 
+        return Ok(response);
+    }
+
+    [HttpPost("Security/InsertRole")]
+    public async Task<IActionResult>  InsertRoles(Role model)
+    {
+        var response = await _segurityservices.InsertRoles(model); 
         if(response.Error)
             return BadRequest(response.Message);
 
         return Ok(response.Message);
     }
 
-      //[Usp_del_Usuarios]
-    [HttpPost("Security/DeleteUser")]
-    public async Task<IActionResult>  DeleteUser(int IdUser)
+    [HttpPut("Security/EditRole")]
+    public async Task<IActionResult>  UpdateRoles(Role model)
     {
-        var response = await _segurityservices.DeleteUser(IdUser); 
+        var response = await _segurityservices.UpdateRoles(model); 
         if(response.Error)
             return BadRequest(response.Message);
-        return Ok(response);
-    }*/
+
+        return Ok(response.Message);
+    }
+
 
 }

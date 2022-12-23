@@ -49,8 +49,8 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> InsertExpense(ExpenseDTO expenseDTO);
         Task<BaseResult> InsertIncome(IncomesDTO incomesDTO);
         Task<BaseResult> InsertDebt(DebtDTO debtDTO);
-        Task<BaseResult> InsertTypeExpense(ExpenseTypeDTO expenseTypeDTO);
-        Task<BaseResult> InsertTypeIncome(IncomeTypeDTO incomeTypeDTO);
+        Task<BaseResult> InsertTypeExpense(TipoGasto expenseTypeDTO);
+        Task<BaseResult> InsertTypeIncome(TipoIngreso incomeTypeDTO);
         Task<BaseResult> CancelMovDoc(int IdMovimiento);
         Task<BaseResult> InsertMovDoc(MovimientosDoc model);
         Task<BaseResult> InsertProdExpense(ProductoGastoCajaChica model);
@@ -191,7 +191,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 if(debt==null)
                     return new BaseResult(){Message="Gasto no existe",Error=true};
                 
-                debt.Usuario=1;
+                debt.Idusuario=1;
                 debt.Gasto1=billsDTO.bills;
                 debt.Fecha=billsDTO.date;
                 debt.Concepto=billsDTO.concept;
@@ -415,7 +415,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 data.Gasto1=expenseDTO.expense;
                 data.Mes=expenseDTO.month;
                 data.Valor=expenseDTO.value;
-                data.Usuario=1;
+                data.Idusuario=1;
                 _context.Entry(data).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
                 await _context.SaveChangesAsync();
                 return new BaseResult(){Message="Registro actualizado",Error=false};
@@ -437,7 +437,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 
                 data.Fecha=incomesDTO.date;
                 data.Ingreso1=incomesDTO.incometype;
-                data.Usuario=incomesDTO.user;
+                data.Idusuario=incomesDTO.user;
                 data.Concepto=incomesDTO.concept;
                 data.Total=((double)incomesDTO.total);
                 data.Mes=incomesDTO.month;
@@ -757,7 +757,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 if(expense==null)
                 {
                     expense.Consecutivo=expenseDTO.consecutive;
-                    expense.Usuario=1;
+                    expense.Idusuario=1;
                     expense.Gasto1=expenseDTO.expense;
                     expense.Fecha=expenseDTO.date;
                     expense.Concepto=expenseDTO.concept;
@@ -772,7 +772,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 else
                 {
                     expense.Consecutivo=expenseDTO.consecutive;
-                    expense.Usuario=1;
+                    expense.Idusuario=1;
                     expense.Gasto1=expenseDTO.expense;
                     expense.Fecha=expenseDTO.date;
                     expense.Concepto=expenseDTO.concept;
@@ -787,7 +787,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             catch (Exception ex)
             {
                 _logger.LogError("Error with InsertExpense", ex);
-                return new BaseResult() { Error = true, Message = "Error al anular."};
+                return new BaseResult() { Error = true, Message = "Error al insertar costo"};
             }
         }
         public async Task<BaseResult> InsertIncome(IncomesDTO incomesDTO)
@@ -799,7 +799,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 if(ingreso==null)
                 {
                     ingreso.Consecutivo=incomesDTO.consecutive;
-                    ingreso.Usuario=1;
+                    ingreso.Idusuario=1;
                     ingreso.NombreInquilino=incomesDTO.resident;
                     ingreso.Ingreso1=incomesDTO.incometype;
                     ingreso.Fecha=incomesDTO.date;
@@ -816,7 +816,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 else
                 {
                     ingreso.Consecutivo=incomesDTO.consecutive;
-                    ingreso.Usuario=1;
+                    ingreso.Idusuario=1;
                     ingreso.NombreInquilino=incomesDTO.resident;
                     ingreso.Ingreso1=incomesDTO.incometype;
                     ingreso.Fecha=incomesDTO.date;
@@ -882,63 +882,60 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error al anular."};
             }
         }
-        public async Task<BaseResult> InsertTypeExpense(ExpenseTypeDTO expenseTypeDTO)
+        public async Task<BaseResult> InsertTypeExpense(TipoGasto model)
         {
             try
             {
-                var tipoGasto=await _context.TipoGastos.Where(x=>x.IdGasto==expenseTypeDTO.Id).FirstOrDefaultAsync();
+                var tipoGastox=await _context.TipoGastos.Where(x=>x.IdGasto==model.IdGasto).FirstOrDefaultAsync();
 
-                if(tipoGasto==null)
+                if(tipoGastox==null)
                 {
-                    tipoGasto.NombreGasto=expenseTypeDTO.name;
-                    tipoGasto.Activo=true;
-
-                    _context.TipoGastos.Add(tipoGasto);
+                    _context.TipoGastos.Add(model);
                     _context.SaveChanges();
                     return new BaseResult(){Message="Registro creado con exito",Error=false};
                 }
                 else
                 {
-                    tipoGasto.NombreGasto=expenseTypeDTO.name;
-                    tipoGasto.Activo=expenseTypeDTO.state;
-                    _context.Entry(tipoGasto).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    tipoGastox.NombreGasto=model.NombreGasto;
+                    tipoGastox.Activo= model.Activo;
+                    _context.Entry(tipoGastox).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    await _context.SaveChangesAsync();
                     return new BaseResult(){Message="Registro actualizado con exito",Error=false};
                 }
             }
             catch (Exception ex)
             {
                 _logger.LogError("Error with InsertTypeExpense", ex);
-                return new BaseResult() { Error = true, Message = "Error al anular."};
+                return new BaseResult() { Error = true, Message = "Error al crear tipo de gasto."};
             }
             
         }
-        public async Task<BaseResult> InsertTypeIncome(IncomeTypeDTO incomeTypeDTO)
+        public async Task<BaseResult> InsertTypeIncome(TipoIngreso model)
         {
             try
             {
-                var tipoingreso=await _context.TipoIngresos.Where(x=>x.IdIngreso==incomeTypeDTO.idIncome).FirstOrDefaultAsync();
+                var tipoingreso=await _context.TipoIngresos.Where(x=>x.IdIngreso==model.IdIngreso).FirstOrDefaultAsync();
 
                 if(tipoingreso==null)
                 {
-                    tipoingreso.NombreIngreso=incomeTypeDTO.nombreIngreso;
-                    tipoingreso.Activo=true;
 
-                    _context.TipoIngresos.Add(tipoingreso);
+                    _context.TipoIngresos.Add(model);
                     _context.SaveChanges();
                     return new BaseResult(){Message="Registro creado con exito",Error=false};
                 }
                 else
                 {
-                    tipoingreso.NombreIngreso=incomeTypeDTO.nombreIngreso;
-                    tipoingreso.Activo=incomeTypeDTO.active;
+                    tipoingreso.NombreIngreso=model.NombreIngreso;
+                    tipoingreso.Activo=model.Activo;
                     _context.Entry(tipoingreso).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    await _context.SaveChangesAsync();
                     return new BaseResult(){Message="Registro actualizado con exito",Error=false};
                 }
             }
             catch (Exception ex)
             {
                 _logger.LogError("Error with InsertTypeIncome", ex);
-                return new BaseResult() { Error = true, Message = "Error al anular."};
+                return new BaseResult() { Error = true, Message = "Error al crear tipo de ingreso."};
             }
             
         }

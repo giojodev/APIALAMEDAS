@@ -27,6 +27,6 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         public bool Anulado { get; set; }
         public DateTime? FechaAnulado { get; set; }
 
-        public virtual TblUsuario IdUsuarioNavigation { get; set; } = null!;
+        //public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
     }
 }
