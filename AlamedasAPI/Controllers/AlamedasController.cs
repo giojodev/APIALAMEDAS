@@ -132,6 +132,12 @@ public class AlamedasController : ControllerBase
         return Ok(response);
     }
 
+    [HttpGet("Catalog/ProductoGastoLista")]
+    public IActionResult ProductoGastoLista(int productoGasto)
+    {
+        var response = _catalogservices.GetProductExpense(productoGasto);
+        return Ok(response);
+    }
     //CONSTRUIR GRID ICC
     [HttpGet("Catalog/ProdEntryList")]
     public IActionResult GetListProdEntry()
