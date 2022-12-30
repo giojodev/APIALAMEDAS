@@ -57,6 +57,8 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> UpdateProdExpense(ProductoGastoCajaChica model);
         Task<BaseResult> InsertProdEntry(ProductoIngresoCajaChica model);
         Task<BaseResult> UpdateProdEntry(ProductoIngresoCajaChica model);
+        Task<BaseResult> InsertProductoGasto(ProductoGasto model);
+        Task<BaseResult> UpdateProductoGasto(ProductoGasto model);
     }
 
     public class TransactionServices : ITransactionServices
@@ -1306,6 +1308,47 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _logger.LogError("Error with UpdateProdEntry", ex);
                 return new BaseResult() { Error = true, Message = "Error al actualizar producto gasto de caja chica."};
             }
+        }
+        public async Task<BaseResult> InsertProductoGasto(ProductoGasto model)
+        {
+            try
+            {
+                if(model.Valor<=0)
+                    return new BaseResult(){Message="El valor no puede ser menor o igual a 0",Error=true};
+                ProductoGasto productoGasto = new ProductoGasto()
+                {
+                    IdEntity=model.IdEntity,
+                    Concepto=model.Concepto,
+                    Valor=model.Valor
+                };
+
+                await _context.ProductoGastos.AddAsync(productoGasto);
+                await _context.SaveChangesAsync();
+
+                return new BaseResult{Message="Registro creado con éxito", Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertProdEntry", ex);
+                return new BaseResult() { Error = true, Message = "Error al crear producto gasto de caja chica.."};
+            }
+        }
+        public async Task<BaseResult> UpdateProductoGasto(ProductoGasto model)
+        {
+            if(model.Valor<=0)
+                return new BaseResult(){Message="El valor no puede ser menor o igual a 0", Error=true};
+            
+            var expense = await _context.ProductoGastos.Where(x=>x.IdEntity==model.IdEntity).FirstOrDefaultAsync();
+            if(expense==null)
+                return new BaseResult(){Message="El producto Gasto no existe", Error=true};
+            
+            expense.Concepto=model.Concepto;
+            expense.Valor=model.Valor;
+
+            _context.Entry(expense).State= Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _context.SaveChanges();
+
+            return new BaseResult(){Message="Registro actualizado con exito",Error=false};
         }
 
     }
