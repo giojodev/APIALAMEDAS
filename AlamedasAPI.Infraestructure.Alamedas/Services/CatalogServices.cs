@@ -39,6 +39,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         dynamic GetIncomes(int Consecutive);
         List<Mora> GetPendingDebt(int IdMora);
         List<Mora>GetDebt(int idMora);
+        List<ProductoGasto> GetProductExpense(int idproductExpense);
     }
 
     public class CatalogServices: ICatalogServices
@@ -90,6 +91,19 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             else
             {
                 var data=_context.DetalleIngresos.ToList();
+                return data;
+            }
+        }
+        public List<ProductoGasto> GetProductExpense(int idproductExpense)
+        {
+            if(idproductExpense>0)
+            {
+                var data= _context.ProductoGastos.Where(x=>x.IdEntity==idproductExpense).ToList();
+                return data;
+            }
+            else
+            {
+                var data=_context.ProductoGastos.ToList();
                 return data;
             }
         }
