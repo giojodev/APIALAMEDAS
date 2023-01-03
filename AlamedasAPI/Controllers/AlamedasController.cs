@@ -582,6 +582,22 @@ public class AlamedasController : ControllerBase
             return BadRequest(response.Message);
         return Ok(response.Message);
     }
+    [HttpPost("Transactions/InsertProductoGasto")]
+    public async Task<IActionResult> InsertProductoGasto(ProductoGasto productoGasto)
+    {
+        var response=await _transactionservices.InsertProductoGasto(productoGasto);
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPut("Transactions/UpdateProductoGasto")]
+    public async Task<IActionResult> UpdateProductoGasto(ProductoGasto productoGasto)
+    {
+        var response = await _transactionservices.UpdateProductoGasto(productoGasto);
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
 
     [HttpPost("Transactions/InsertProdEntry")]
     public async Task<IActionResult> InsertProdEntry(ProductoIngresoCajaChica model)
