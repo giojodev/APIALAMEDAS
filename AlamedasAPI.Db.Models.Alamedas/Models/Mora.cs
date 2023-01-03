@@ -5,10 +5,10 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 {
     public partial class Mora
     {
-        public Mora()
+       /* public Mora()
         {
             DetalleIngresos = new HashSet<DetalleIngreso>();
-        }
+        }*/
 
         public int IdMora { get; set; }
         public DateTime Fecha { get; set; }
@@ -20,7 +20,7 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         public string? Mes { get; set; }
         public string? Anio { get; set; }
 
-        public virtual Condomino CondominoNavigation { get; set; } = null!;
-        public virtual ICollection<DetalleIngreso> DetalleIngresos { get; set; }
+        /*public virtual Condomino CondominoNavigation { get; set; } = null!;
+        public virtual ICollection<DetalleIngreso> DetalleIngresos { get; set; }*/
     }
 }

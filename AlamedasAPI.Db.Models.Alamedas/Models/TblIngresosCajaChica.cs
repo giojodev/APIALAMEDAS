@@ -5,10 +5,10 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
 {
     public partial class TblIngresosCajaChica
     {
-        public TblIngresosCajaChica()
+        /*public TblIngresosCajaChica()
         {
             DetalleIngresoCajachicas = new HashSet<DetalleIngresoCajachica>();
-        }
+        }*/
 
         public int Consecutivo { get; set; }
         public int IdUsuario { get; set; }
@@ -20,8 +20,8 @@ namespace AlamedasAPI.Db.Models.Alamedas.Models
         public int? Anio { get; set; }
         public bool? Anulado { get; set; }
 
-        public virtual TblUsuario IdUsuarioNavigation { get; set; } = null!;
+        /*public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
         public virtual TipoIngresoCajaChica TipoIngresoCNavigation { get; set; } = null!;
-        public virtual ICollection<DetalleIngresoCajachica> DetalleIngresoCajachicas { get; set; }
+        public virtual ICollection<DetalleIngresoCajachica> DetalleIngresoCajachicas { get; set; }*/
     }
 }

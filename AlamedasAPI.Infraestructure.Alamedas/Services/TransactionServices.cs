@@ -23,17 +23,18 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> InsertDetICC(DetalleIngresoCajachica model);
         BaseResult DeleteGCC(int IdConsecutive);
         Task<BaseResult> OverridGCC(int IdConsecutive);
-        //Task<BaseResult> InsertGCC(GastosCajaChica GastosCajaChica);
+        Task<BaseResult> InsertGCC(TblGastosCajaChica TblGastosCajaChica);
         Task<BaseResult> UpdateIncomes(IncomesDTO incomesDTO);
+        Task<BaseResult> UpdateExpense(ExpenseDTO expenseDTO);
         Task<BaseResult> UpdateDebt(DebtDTO debtDTO);
         Task<BaseResult> UpdateIncomeType(IncomeTypeDTO incomeTypeDTO);
         BaseResult DeleteICC(int IdConsecutive);
         Task<BaseResult> OverridICC(int IdConsecutive);
         Task<BaseResult> InsertICC(TblIngresosCajaChica model);
         BaseResult DeleteTGCC(int IdTGCC);
-        //Task<BaseResult> InsertTGCC(TblGastoCajaChica model);
+        Task<BaseResult> InsertTGCC(TipoGastoCajaChica model);
         BaseResult DeleteTICC(int IdTICC);
-        //Task<BaseResult> UpdateTGCC(TblGastoCajaChica model);
+        Task<BaseResult> UpdateTGCC(TipoGastoCajaChica model);
         Task<BaseResult> InsertTICC(TipoIngresoCajaChica model);
         Task<BaseResult>UpdateTICC(TipoIngresoCajaChica model);
         Task<BaseResult> DeleteCondominium(int IdCondomino);
@@ -48,8 +49,16 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> InsertExpense(ExpenseDTO expenseDTO);
         Task<BaseResult> InsertIncome(IncomesDTO incomesDTO);
         Task<BaseResult> InsertDebt(DebtDTO debtDTO);
-        Task<BaseResult> InsertTypeExpense(ExpenseTypeDTO expenseTypeDTO);
-        Task<BaseResult> InsertTypeIncome(IncomeTypeDTO incomeTypeDTO);
+        Task<BaseResult> InsertTypeExpense(TipoGasto expenseTypeDTO);
+        Task<BaseResult> InsertTypeIncome(TipoIngreso incomeTypeDTO);
+        Task<BaseResult> CancelMovDoc(int IdMovimiento);
+        Task<BaseResult> InsertMovDoc(MovimientosDoc model);
+        Task<BaseResult> InsertProdExpense(ProductoGastoCajaChica model);
+        Task<BaseResult> UpdateProdExpense(ProductoGastoCajaChica model);
+        Task<BaseResult> InsertProdEntry(ProductoIngresoCajaChica model);
+        Task<BaseResult> UpdateProdEntry(ProductoIngresoCajaChica model);
+        Task<BaseResult> InsertProductoGasto(ProductoGasto model);
+        Task<BaseResult> UpdateProductoGasto(ProductoGasto model);
     }
 
     public class TransactionServices : ITransactionServices
@@ -86,10 +95,10 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             try
             {
                 int number = 0;
-                //var data = _context.GastosCajaChicas.Select(grp =>new {number = grp.Consecutivo})
-                //.OrderByDescending(x => x.number).FirstOrDefault();
-                //if(data != null)
-                  //  number = data.number;
+                var data = _context.TblGastosCajaChicas.Select(grp =>new {number = grp.Consecutivo})
+                .OrderByDescending(x => x.number).FirstOrDefault();
+                if(data != null)
+                    number = data.number;
                     
                 return number;
             }
@@ -184,7 +193,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 if(debt==null)
                     return new BaseResult(){Message="Gasto no existe",Error=true};
                 
-                debt.Usuario=1;
+                debt.Idusuario=1;
                 debt.Gasto1=billsDTO.bills;
                 debt.Fecha=billsDTO.date;
                 debt.Concepto=billsDTO.concept;
@@ -396,6 +405,30 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error al anular GCC."};
             }
         }
+        public async Task<BaseResult> UpdateExpense(ExpenseDTO expenseDTO)
+        {
+            try{
+               var data=await _context.Gastos.Where(x=>x.Consecutivo==expenseDTO.consecutive).FirstOrDefaultAsync();
+               if(data==null)
+                    return new BaseResult(){Message="No se encontro el registro",Error=true};
+                data.Anio=expenseDTO.year;
+                data.Concepto=expenseDTO.concept;
+                data.Fecha=expenseDTO.date;
+                data.Gasto1=expenseDTO.expense;
+                data.Mes=expenseDTO.month;
+                data.Valor=expenseDTO.value;
+                data.Idusuario=1;
+                _context.Entry(data).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await _context.SaveChangesAsync();
+                return new BaseResult(){Message="Registro actualizado",Error=false};
+            }
+            catch(Exception ex)
+            {
+                 _logger.LogError("Error with UpdateExpense", ex);
+                return new BaseResult() { Error = true, Message = "Error al actualizar gasto."};
+            }
+            
+        }
         public async Task<BaseResult> UpdateIncomes(IncomesDTO incomesDTO)
         {
             try
@@ -406,7 +439,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 
                 data.Fecha=incomesDTO.date;
                 data.Ingreso1=incomesDTO.incometype;
-                data.Usuario=incomesDTO.user;
+                data.Idusuario=incomesDTO.user;
                 data.Concepto=incomesDTO.concept;
                 data.Total=((double)incomesDTO.total);
                 data.Mes=incomesDTO.month;
@@ -425,17 +458,19 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error al anular GCC."};
             }
         }
-        /*public async Task<BaseResult> InsertGCC(GastosCajaChica model)
+
+        public async Task<BaseResult> InsertGCC(TblGastosCajaChica model)
         {
             try
             {
                 string Message = "Registro ingresado.";
-                var data = await _context.GastosCajaChicas.Where(x=>x.Consecutivo == model.Consecutivo).FirstOrDefaultAsync();    
+                var data = await _context.TblGastosCajaChicas.Where(x=>x.Consecutivo == model.Consecutivo).FirstOrDefaultAsync();    
 
                 if(data == null){
-                    GastosCajaChica GastosCajaChicas = new GastosCajaChica(){
-                        Consecutivo = model.Consecutivo,
-                        IdUsuario =  1,
+
+                    TblGastosCajaChica TblGastosCajaChicas = new TblGastosCajaChica(){
+                        //Consecutivo = model.Consecutivo,
+                        IdUsuario =  model.IdUsuario,
                         TipoGastoCchica = model.TipoGastoCchica,
                         Fecha = model.Fecha,
                         Concepto = model.Concepto,
@@ -445,7 +480,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                         Anulado = false
                     };
 
-                    await _context.GastosCajaChicas.AddAsync(GastosCajaChicas);
+                    await _context.TblGastosCajaChicas.AddAsync(TblGastosCajaChicas);
                     await _context.SaveChangesAsync();
                 }  
                 else{
@@ -470,7 +505,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _logger.LogError("Error with InsertGCC", ex);
                 return new BaseResult() { Error = true, Message = "Error al ingresar GCC"};
             }
-        } */
+        } 
         public BaseResult DeleteICC(int IdConsecutive)
         {
             try
@@ -724,7 +759,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 if(expense==null)
                 {
                     expense.Consecutivo=expenseDTO.consecutive;
-                    expense.Usuario=1;
+                    expense.Idusuario=1;
                     expense.Gasto1=expenseDTO.expense;
                     expense.Fecha=expenseDTO.date;
                     expense.Concepto=expenseDTO.concept;
@@ -739,7 +774,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 else
                 {
                     expense.Consecutivo=expenseDTO.consecutive;
-                    expense.Usuario=1;
+                    expense.Idusuario=1;
                     expense.Gasto1=expenseDTO.expense;
                     expense.Fecha=expenseDTO.date;
                     expense.Concepto=expenseDTO.concept;
@@ -754,7 +789,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             catch (Exception ex)
             {
                 _logger.LogError("Error with InsertExpense", ex);
-                return new BaseResult() { Error = true, Message = "Error al anular."};
+                return new BaseResult() { Error = true, Message = "Error al insertar costo"};
             }
         }
         public async Task<BaseResult> InsertIncome(IncomesDTO incomesDTO)
@@ -766,7 +801,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 if(ingreso==null)
                 {
                     ingreso.Consecutivo=incomesDTO.consecutive;
-                    ingreso.Usuario=1;
+                    ingreso.Idusuario=1;
                     ingreso.NombreInquilino=incomesDTO.resident;
                     ingreso.Ingreso1=incomesDTO.incometype;
                     ingreso.Fecha=incomesDTO.date;
@@ -783,7 +818,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 else
                 {
                     ingreso.Consecutivo=incomesDTO.consecutive;
-                    ingreso.Usuario=1;
+                    ingreso.Idusuario=1;
                     ingreso.NombreInquilino=incomesDTO.resident;
                     ingreso.Ingreso1=incomesDTO.incometype;
                     ingreso.Fecha=incomesDTO.date;
@@ -849,63 +884,60 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error al anular."};
             }
         }
-        public async Task<BaseResult> InsertTypeExpense(ExpenseTypeDTO expenseTypeDTO)
+        public async Task<BaseResult> InsertTypeExpense(TipoGasto model)
         {
             try
             {
-                var tipoGasto=await _context.TipoGastos.Where(x=>x.IdGasto==expenseTypeDTO.Id).FirstOrDefaultAsync();
+                var tipoGastox=await _context.TipoGastos.Where(x=>x.IdGasto==model.IdGasto).FirstOrDefaultAsync();
 
-                if(tipoGasto==null)
+                if(tipoGastox==null)
                 {
-                    tipoGasto.NombreGasto=expenseTypeDTO.name;
-                    tipoGasto.Activo=true;
-
-                    _context.TipoGastos.Add(tipoGasto);
+                    _context.TipoGastos.Add(model);
                     _context.SaveChanges();
                     return new BaseResult(){Message="Registro creado con exito",Error=false};
                 }
                 else
                 {
-                    tipoGasto.NombreGasto=expenseTypeDTO.name;
-                    tipoGasto.Activo=expenseTypeDTO.state;
-                    _context.Entry(tipoGasto).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    tipoGastox.NombreGasto=model.NombreGasto;
+                    tipoGastox.Activo= model.Activo;
+                    _context.Entry(tipoGastox).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    await _context.SaveChangesAsync();
                     return new BaseResult(){Message="Registro actualizado con exito",Error=false};
                 }
             }
             catch (Exception ex)
             {
                 _logger.LogError("Error with InsertTypeExpense", ex);
-                return new BaseResult() { Error = true, Message = "Error al anular."};
+                return new BaseResult() { Error = true, Message = "Error al crear tipo de gasto."};
             }
             
         }
-        public async Task<BaseResult> InsertTypeIncome(IncomeTypeDTO incomeTypeDTO)
+        public async Task<BaseResult> InsertTypeIncome(TipoIngreso model)
         {
             try
             {
-                var tipoingreso=await _context.TipoIngresos.Where(x=>x.IdIngreso==incomeTypeDTO.idIncome).FirstOrDefaultAsync();
+                var tipoingreso=await _context.TipoIngresos.Where(x=>x.IdIngreso==model.IdIngreso).FirstOrDefaultAsync();
 
                 if(tipoingreso==null)
                 {
-                    tipoingreso.NombreIngreso=incomeTypeDTO.nombreIngreso;
-                    tipoingreso.Activo=true;
 
-                    _context.TipoIngresos.Add(tipoingreso);
+                    _context.TipoIngresos.Add(model);
                     _context.SaveChanges();
                     return new BaseResult(){Message="Registro creado con exito",Error=false};
                 }
                 else
                 {
-                    tipoingreso.NombreIngreso=incomeTypeDTO.nombreIngreso;
-                    tipoingreso.Activo=incomeTypeDTO.active;
+                    tipoingreso.NombreIngreso=model.NombreIngreso;
+                    tipoingreso.Activo=model.Activo;
                     _context.Entry(tipoingreso).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    await _context.SaveChangesAsync();
                     return new BaseResult(){Message="Registro actualizado con exito",Error=false};
                 }
             }
             catch (Exception ex)
             {
                 _logger.LogError("Error with InsertTypeIncome", ex);
-                return new BaseResult() { Error = true, Message = "Error al anular."};
+                return new BaseResult() { Error = true, Message = "Error al crear tipo de ingreso."};
             }
             
         }
@@ -992,17 +1024,17 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error al eliminar."};
             }
         }
-       /* public async Task<BaseResult> UpdateTGCC(TblGastoCajaChica model)
+        public async Task<BaseResult> UpdateTGCC(TipoGastoCajaChica model)
         {
             try
             {
-                var tipoGastoCajaChica= await _context.TblGastoCajaChicas.Where(x=>x.IdGastoCajaChica==model.IdGastoCajaChica).FirstOrDefaultAsync();
-                if (tipoGastoCajaChica ==null)
+                var data = _context.TipoGastoCajaChicas.Where(x=>x.IdGastoCajaChica == model.IdGastoCajaChica).FirstOrDefault();
+                if (data == null)
                     return new BaseResult() { Error = true, Message = "No fue encontrado registro"};
                 
-                tipoGastoCajaChica.NombreGastoCajachica=model.NombreGastoCajachica;
-                tipoGastoCajaChica.Activo=model.Activo;
-                _context.Entry(tipoGastoCajaChica).State=EntityState.Modified;
+                data.NombreGastoCajachica = model.NombreGastoCajachica;
+                data.Activo = model.Activo;
+                _context.Entry(data).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 await _context.SaveChangesAsync();
 
                 return new BaseResult() { Error = false, Message = "Registro actualizado"};
@@ -1012,22 +1044,23 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _logger.LogError("Error with UpdateTGCC", ex);
                 return new BaseResult() { Error = true, Message = "Error al ingresar TGCC"};
             }
-        }*/
-        /*public async Task<BaseResult> InsertTGCC(TblGastoCajaChica model)
+        }
+
+        public async Task<BaseResult> InsertTGCC(TipoGastoCajaChica model)
         {
             try
             {
                 string Message = "Registro ingresado.";
-                var data = await _context.TblGastoCajaChicas.Where(x=>x.IdGastoCajaChica == model.IdGastoCajaChica).FirstOrDefaultAsync();    
+                var data = await _context.TipoGastoCajaChicas.Where(x=>x.IdGastoCajaChica == model.IdGastoCajaChica).FirstOrDefaultAsync();    
 
                 if(data == null){
-                    TblGastoCajaChica TblGastoCajaChicas = new TblGastoCajaChica(){
+                    TipoGastoCajaChica TipoGastoCajaChicas = new TipoGastoCajaChica(){
                         IdGastoCajaChica = model.IdGastoCajaChica,
                         NombreGastoCajachica =  model.NombreGastoCajachica,
                         Activo = true
                     };
 
-                    await _context.TblGastoCajaChicas.AddAsync(TblGastoCajaChicas);
+                    await _context.TipoGastoCajaChicas.AddAsync(TipoGastoCajaChicas);
                     await _context.SaveChangesAsync();
                 }  
                 else{
@@ -1047,7 +1080,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 _logger.LogError("Error with InsertTGCC", ex);
                 return new BaseResult() { Error = true, Message = "Error al ingresar TGCC"};
             }
-        }*/
+        }
 
         public BaseResult DeleteTICC(int IdTICC)
         {
@@ -1117,6 +1150,207 @@ namespace AlamedasAPI.Infraestructure.Alamedas
                 return new BaseResult() { Error = true, Message = "Error al ingresar TICC"};
             }
         }
+   
+        /**
+            TABLA PARA GRABAR MOVIMIENTOS DE LOS DOCUMENTOS
+            InsertMovDoc -- inserta mov
+            CancelMovDoc -- anular mov
+        **/
+        public async Task<BaseResult> InsertMovDoc(MovimientosDoc model)
+        {
+            try
+            {
+                MovimientosDoc MovimientosDocs = new MovimientosDoc(){
+                    IdDocumento = model.IdDocumento,
+                    IdUsuario =  model.IdUsuario,
+                    Modulo = model.Modulo,
+                    Total = model.Total,
+                    Tipo = model.Tipo,
+                    FechaIngreso = model.FechaIngreso,
+                    Anulado = false,
+                    FechaAnulado = null
+                };
+
+                await _context.MovimientosDocs.AddAsync(MovimientosDocs);
+                await _context.SaveChangesAsync();
+
+                return new BaseResult() { Error = false, Message = "Registro ingresado."};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertMovDoc", ex);
+                return new BaseResult() { Error = true, Message = "Error al ingresar InsertMovDoc"};
+            }
+        }
+
+        public async Task<BaseResult> CancelMovDoc(int IdMovimiento)
+        {
+            try
+            {
+                var data = await _context.MovimientosDocs.Where(x=>x.IdMovimiento == IdMovimiento).FirstOrDefaultAsync(); 
+                if(data == null)
+                    return new BaseResult() { Error = true, Message = "El movimiento no existe."};
+
+                data.Anulado = true;
+                data.FechaAnulado = DateTime.Now;
+
+                _context.Entry(data).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return new BaseResult() { Error = false, Message = "Registro anulado."};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertTICC", ex);
+                return new BaseResult() { Error = true, Message = "Error al ingresar InsertMovDoc"};
+            }
+        }
+
+        public async Task<BaseResult> InsertProdExpense(ProductoGastoCajaChica model)
+        {
+            try
+            {
+                if(model.Valor <= 0)
+                    return new BaseResult(){Message="El valor no puede ser menor o igual a 0.",Error=true};
+
+                ProductoGastoCajaChica data = new ProductoGastoCajaChica(){
+                    Concepto = model.Concepto,
+                    Valor = model.Valor,
+                };
+
+                await _context.ProductoGastoCajaChicas.AddAsync(data);
+                await _context.SaveChangesAsync();
+
+                return new BaseResult(){Message= "Registro creado con exito",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertProdExpense", ex);
+                return new BaseResult() { Error = true, Message = "Error al crear producto gasto de caja chica.."};
+            }
+        }
+
+        public async Task<BaseResult> UpdateProdExpense(ProductoGastoCajaChica model)
+        {
+            try
+            {
+                if(model.Valor <= 0)
+                    return new BaseResult(){Message="El valor no puede ser menor o igual a 0.",Error=true};
+
+                var expense = await _context.ProductoGastoCajaChicas.Where(x=>x.Id==model.Id).FirstOrDefaultAsync();
+
+                if(expense == null)
+                    return new BaseResult(){Message= "EL producto no existe.",Error=false};
+
+                expense.Concepto = model.Concepto;
+                expense.Valor = model.Valor;
+
+                _context.Entry(expense).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                _context.SaveChanges();
+
+                return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with UpdateProdExpense", ex);
+                return new BaseResult() { Error = true, Message = "Error al actualizar producto gasto de caja chica."};
+            }
+        }
+
+        public async Task<BaseResult> InsertProdEntry(ProductoIngresoCajaChica model)
+        {
+            try
+            {
+                if(model.Valor <= 0)
+                    return new BaseResult(){Message="El valor no puede ser menor o igual a 0.",Error=true};
+
+                ProductoIngresoCajaChica data = new ProductoIngresoCajaChica(){
+                    Concepto = model.Concepto,
+                    Valor = model.Valor,
+                };
+
+                await _context.ProductoIngresoCajaChicas.AddAsync(data);
+                await _context.SaveChangesAsync();
+
+                return new BaseResult(){Message= "Registro creado con exito",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertProdEntry", ex);
+                return new BaseResult() { Error = true, Message = "Error al crear producto gasto de caja chica.."};
+            }
+        }
+
+        public async Task<BaseResult> UpdateProdEntry(ProductoIngresoCajaChica model)
+        {
+            try
+            {
+                if(model.Valor <= 0)
+                    return new BaseResult(){Message="El valor no puede ser menor o igual a 0.",Error=true};
+
+                var expense = await _context.ProductoIngresoCajaChicas.Where(x=>x.Id==model.Id).FirstOrDefaultAsync();
+
+                if(expense == null)
+                    return new BaseResult(){Message= "EL producto no existe.",Error=false};
+
+                expense.Concepto = model.Concepto;
+                expense.Valor = model.Valor;
+
+                _context.Entry(expense).State=Microsoft.EntityFrameworkCore.EntityState.Modified;
+                _context.SaveChanges();
+
+                return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with UpdateProdEntry", ex);
+                return new BaseResult() { Error = true, Message = "Error al actualizar producto gasto de caja chica."};
+            }
+        }
+        public async Task<BaseResult> InsertProductoGasto(ProductoGasto model)
+        {
+            try
+            {
+                if(model.Valor<=0)
+                    return new BaseResult(){Message="El valor no puede ser menor o igual a 0",Error=true};
+                ProductoGasto productoGasto = new ProductoGasto()
+                {
+                    IdEntity=model.IdEntity,
+                    Concepto=model.Concepto,
+                    Valor=model.Valor
+                };
+
+                await _context.ProductoGastos.AddAsync(productoGasto);
+                await _context.SaveChangesAsync();
+
+                return new BaseResult{Message="Registro creado con éxito", Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertProdEntry", ex);
+                return new BaseResult() { Error = true, Message = "Error al crear producto gasto de caja chica.."};
+            }
+        }
+        public async Task<BaseResult> UpdateProductoGasto(ProductoGasto model)
+        {
+            if(model.Valor<=0)
+                return new BaseResult(){Message="El valor no puede ser menor o igual a 0", Error=true};
+            
+            var expense = await _context.ProductoGastos.Where(x=>x.IdEntity==model.IdEntity).FirstOrDefaultAsync();
+            if(expense==null)
+                return new BaseResult(){Message="El producto Gasto no existe", Error=true};
+            
+            expense.Concepto=model.Concepto;
+            expense.Valor=model.Valor;
+
+            _context.Entry(expense).State= Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _context.SaveChanges();
+
+            return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+        }
+
     }
 
     public static class TransactionsServicesExtensions

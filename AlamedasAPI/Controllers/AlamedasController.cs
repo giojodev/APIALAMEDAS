@@ -51,24 +51,24 @@ public class AlamedasController : ControllerBase
         var response = _catalogservices.GetCondominiumDebt(idDebt); 
         return Ok(response);
     }
-    /*[HttpGet("Catalog/GetExpenses")]
+    [HttpGet("Catalog/GetExpenses")]
     public IActionResult GetExpenses(int Id)
     {
         var response = _catalogservices.GetExpenses(Id); 
         return Ok(response);
-    }*/
+    }
     [HttpGet("Catalog/GetDebt")]
     public IActionResult GetDebt(int Id)
     {
         var response = _catalogservices.GetDebt(Id); 
         return Ok(response);
     }
-   /* [HttpGet("Catalog/GetExpenseCashRegister")]
+    [HttpGet("Catalog/GetExpenseCashRegister")]
     public IActionResult GetExpenseCashRegister(int Consecutive)
     {
         var response = _catalogservices.GetExpenseCashRegister(Consecutive); 
         return Ok(response);
-    }*/
+    }
     [HttpGet("Catalog/GetIncomes")]
     public IActionResult GetIncomes(int Consecutive)
     {
@@ -132,6 +132,12 @@ public class AlamedasController : ControllerBase
         return Ok(response);
     }
 
+    [HttpGet("Catalog/ProductoGastoLista")]
+    public IActionResult ProductoGastoLista(int productoGasto)
+    {
+        var response = _catalogservices.GetProductExpense(productoGasto);
+        return Ok(response);
+    }
     //CONSTRUIR GRID ICC
     [HttpGet("Catalog/ProdEntryList")]
     public IActionResult GetListProdEntry()
@@ -165,12 +171,12 @@ public class AlamedasController : ControllerBase
     }
 
     //OBTENER GCC
-    /*[HttpGet("Catalog/GccList")]
+    [HttpGet("Catalog/GccList")]
     public IActionResult GetGCC(int IdConsecutive)
     {
         var response = _catalogservices.GetGCC(IdConsecutive); 
         return Ok(response);
-    }*/
+    }
 
     //OBTENER ICC
     [HttpGet("Catalog/IccList")]
@@ -181,19 +187,22 @@ public class AlamedasController : ControllerBase
     }
     
     //BUSCAR TGCC
-   /* [HttpGet("Catalog/TgccList")]
+    [HttpGet("Catalog/TgccList")]
     public IActionResult GetTGCC(int IdTGCC)
     {
         var response = _catalogservices.GetTGCC(IdTGCC); 
         return Ok(response);
-    }*/
+    }
     
-    /*[HttpPut("Catalog/UpdateTGCC")]
-    public IActionResult UpdateTGCC(TblGastoCajaChica model)
+    [HttpPut("Transactions/UpdateTGCC")]
+    public async Task<IActionResult> UpdateTGCC(TipoGastoCajaChica model)
     {
-        var response = _transactionservices.UpdateTGCC(model); 
-        return Ok(response);
-    }*/
+        var response = await _transactionservices.UpdateTGCC(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+
     //SELECCIONAR TIPO INGRESOCAJA CHICA
     [HttpGet("Catalog/TiccList")]
     public IActionResult GetTICC(int IdTICC)
@@ -204,9 +213,9 @@ public class AlamedasController : ControllerBase
 
     //OBTENER TIPO GASTO
     [HttpGet("Catalog/ExpenseList")]
-    public IActionResult GetExpense(int IdExpenses)
+    public IActionResult GetExpense()
     {
-        var response = _catalogservices.GetExpense(IdExpenses); 
+        var response = _catalogservices.GetExpense(); 
         return Ok(response);
     }
 
@@ -346,17 +355,17 @@ public class AlamedasController : ControllerBase
         return Ok(response.Message);
     }
     [HttpPost("Transactions/InsertTypeExpense")]
-    public async Task<IActionResult> InsertTypeExpense(ExpenseTypeDTO expenseTypeDTO)
+    public async Task<IActionResult> InsertTypeExpense(TipoGasto model)
     {
-        var response = await _transactionservices.InsertTypeExpense(expenseTypeDTO); 
+        var response = await _transactionservices.InsertTypeExpense(model); 
         if(response.Error)
             return BadRequest(response.Message);
         return Ok(response.Message);
     }
     [HttpPost("Transactions/InsertTypeIncome")]
-    public async Task<IActionResult> InsertTypeIncome(IncomeTypeDTO incomeTypeDTO)
+    public async Task<IActionResult> InsertTypeIncome(TipoIngreso model)
     {
-        var response = await _transactionservices.InsertTypeIncome(incomeTypeDTO); 
+        var response = await _transactionservices.InsertTypeIncome(model); 
         if(response.Error)
             return BadRequest(response.Message);
         return Ok(response.Message);
@@ -377,6 +386,14 @@ public class AlamedasController : ControllerBase
         if(response.Error)
             return BadRequest(response.Message);
         return Ok(response.Message);
+    }
+    [HttpPut("Transactions/UpdateExpense")]
+    public async Task<IActionResult> UpdateExpense(ExpenseDTO expenseDTO)
+    {
+        var response = await _transactionservices.UpdateExpense(expenseDTO);
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response);
     }
     [HttpPut("Transactions/UpdateIncomes")]
     public async Task<IActionResult> UpdateIncomes(IncomesDTO incomesDTO)
@@ -461,14 +478,14 @@ public class AlamedasController : ControllerBase
     }
 
     //GRABAR GCC
-    /*[HttpPost("Transactions/InsertGCC")]
-    public async Task<IActionResult> InsertGCC(GastosCajaChica model)
+    [HttpPost("Transactions/InsertGCC")]
+    public async Task<IActionResult> InsertGCC(TblGastosCajaChica model)
     {
         var response = await _transactionservices.InsertGCC(model); 
         if(response.Error)
             return BadRequest(response.Message);
         return Ok(response.Message);
-    }*/
+    }
 
     //ELIMINAR CC
     [HttpDelete("Transactions/DeleteICC")]
@@ -511,14 +528,14 @@ public class AlamedasController : ControllerBase
     }
 
     //GRABAR TGCC
-    /*[HttpPost("Transactions/InsertTGCC")]
-    public async Task<IActionResult> InsertTGCC(TblGastoCajaChica model)
+    [HttpPost("Transactions/InsertTGCC")]
+    public async Task<IActionResult> InsertTGCC(TipoGastoCajaChica model)
     {
         var response = await _transactionservices.InsertTGCC(model); 
         if(response.Error)
             return BadRequest(response.Message);
         return Ok(response.Message);
-    }*/
+    }
 
     //ELIMINAR TICC
     [HttpDelete("Transactions/DeleteTICC")]
@@ -548,64 +565,116 @@ public class AlamedasController : ControllerBase
         return Ok(response.Message);
     }
 
-    //*********** SECURITY ***********
-
-    //VALIDAR USUARIO
-    [HttpGet("Security/ValidateUser")]
-    public async Task<IActionResult>  GetLogin(string Login)
+    [HttpPost("Transactions/InsertProdExpense")]
+    public async Task<IActionResult> InsertProdExpense(ProductoGastoCajaChica model)
     {
-        var response = await _segurityservices.ValidateUser(Login); 
+        var response = await _transactionservices.InsertProdExpense(model); 
         if(response.Error)
             return BadRequest(response.Message);
-        return Ok(response);
+        return Ok(response.Message);
     }
+
+    [HttpPut("Transactions/UpdateProdExpense")]
+    public async Task<IActionResult> UpdateProdExpense(ProductoGastoCajaChica model)
+    {
+        var response = await _transactionservices.UpdateProdExpense(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPost("Transactions/InsertProductoGasto")]
+    public async Task<IActionResult> InsertProductoGasto(ProductoGasto productoGasto)
+    {
+        var response=await _transactionservices.InsertProductoGasto(productoGasto);
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+    [HttpPut("Transactions/UpdateProductoGasto")]
+    public async Task<IActionResult> UpdateProductoGasto(ProductoGasto productoGasto)
+    {
+        var response = await _transactionservices.UpdateProductoGasto(productoGasto);
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+
+    [HttpPost("Transactions/InsertProdEntry")]
+    public async Task<IActionResult> InsertProdEntry(ProductoIngresoCajaChica model)
+    {
+        var response = await _transactionservices.InsertProdEntry(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+
+    [HttpPut("Transactions/UpdateProdEntry")]
+    public async Task<IActionResult> UpdateProdEntry(ProductoIngresoCajaChica model)
+    {
+        var response = await _transactionservices.UpdateProdEntry(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+        return Ok(response.Message);
+    }
+
+    //*********** SECURITY ***********
 
     //UPD USUARIOS
     [HttpPut("Security/UpdateUser")]
-    public async Task<IActionResult>  UpdateUser(TblUsuario model)
+    public async Task<IActionResult>  UpdateUser(Usuario model)
     {
         var response = await _segurityservices.UpdateUser(model); 
         if(response.Error)
             return BadRequest(response.Message);
-        return Ok(response);
+
+        return Ok(response.Message);
     }
 
     //SEL USUARIOS
     [HttpGet("Security/UserList")]
-    public IActionResult GetUser(int IdUser)
+    public IActionResult GetUser()
     {
-        var response = _segurityservices.GetUser(IdUser); 
-        return Ok(response);
-    }
-
-    //PROC ROLES
-    [HttpPost("Security/UpdateUser")]
-    public async Task<IActionResult>  InsertRoles(TblRole model)
-    {
-        var response = await _segurityservices.InsertRoles(model); 
-        if(response.Error)
-            return BadRequest(response.Message);
+        var response = _segurityservices.GetUser(); 
         return Ok(response);
     }
 
     //ins usuarios
     [HttpPost("Security/InsertUser")]
-    public async Task<IActionResult>  InsertUser(TblUsuario model)
+    public async Task<IActionResult>  InsertUser(Usuario model)
     {
         var response = await _segurityservices.InsertUser(model); 
         if(response.Error)
             return BadRequest(response.Message);
+
+        return Ok(response.Message);
+    }
+
+    [HttpGet("Security/RoleList")]
+    public IActionResult GetRol()
+    {
+        var response = _segurityservices.GetRol(); 
         return Ok(response);
     }
 
-      //[Usp_del_Usuarios]
-    [HttpPost("Security/DeleteUser")]
-    public async Task<IActionResult>  DeleteUser(int IdUser)
+    [HttpPost("Security/InsertRole")]
+    public async Task<IActionResult>  InsertRoles(Role model)
     {
-        var response = await _segurityservices.DeleteUser(IdUser); 
+        var response = await _segurityservices.InsertRoles(model); 
         if(response.Error)
             return BadRequest(response.Message);
-        return Ok(response);
+
+        return Ok(response.Message);
     }
+
+    [HttpPut("Security/EditRole")]
+    public async Task<IActionResult>  UpdateRoles(Role model)
+    {
+        var response = await _segurityservices.UpdateRoles(model); 
+        if(response.Error)
+            return BadRequest(response.Message);
+
+        return Ok(response.Message);
+    }
+
 
 }

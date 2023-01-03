@@ -1312,3 +1312,855 @@ Error Number:53,State:0,Class:20
 2022-11-19 13:11:05.0028 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
 2022-11-19 13:11:05.2573 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
 2022-11-19 13:11:11.2368 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 19:44:21.0878 Info Message Template Auto Format enabled
+2022-11-21 19:44:21.1588 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 19:44:21.1588 Info Loading assembly: NLog.Database
+2022-11-21 19:44:21.4188 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 19:44:22.0410 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 19:44:22.1516 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 19:44:24.9399 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:09:56.7855 Info Message Template Auto Format enabled
+2022-11-21 20:09:56.8116 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:09:56.8137 Info Loading assembly: NLog.Database
+2022-11-21 20:09:56.9344 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:09:57.1377 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:09:57.2068 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:09:58.3360 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:12:09.7496 Info Message Template Auto Format enabled
+2022-11-21 20:12:09.7844 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:12:09.7844 Info Loading assembly: NLog.Database
+2022-11-21 20:12:09.8052 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:12:09.9582 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:12:10.0342 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:12:10.9225 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:13:00.9237 Info Message Template Auto Format enabled
+2022-11-21 20:13:00.9608 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:13:00.9608 Info Loading assembly: NLog.Database
+2022-11-21 20:13:00.9844 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:13:01.1675 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:13:01.2489 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:13:01.9112 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:16:58.9381 Info Message Template Auto Format enabled
+2022-11-21 20:16:58.9840 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:16:58.9840 Info Loading assembly: NLog.Database
+2022-11-21 20:16:59.0192 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:16:59.7179 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:17:00.2218 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:17:02.8076 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:23:28.5521 Info Message Template Auto Format enabled
+2022-11-21 20:23:28.5820 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:23:28.5820 Info Loading assembly: NLog.Database
+2022-11-21 20:23:28.6039 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:23:28.8155 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:23:28.9011 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:23:29.8119 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:25:04.4420 Info Message Template Auto Format enabled
+2022-11-21 20:25:04.4962 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:25:04.4962 Info Loading assembly: NLog.Database
+2022-11-21 20:25:04.5449 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:25:04.9032 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:25:05.0395 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:25:06.6874 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:28:29.1471 Info Message Template Auto Format enabled
+2022-11-21 20:28:29.1784 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:28:29.1784 Info Loading assembly: NLog.Database
+2022-11-21 20:28:29.2020 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:28:29.3570 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:28:29.4233 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:28:30.3384 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:29:48.3754 Info Message Template Auto Format enabled
+2022-11-21 20:29:48.4033 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:29:48.4033 Info Loading assembly: NLog.Database
+2022-11-21 20:29:48.4237 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:29:48.7336 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:29:48.8611 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:29:49.8637 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:38:11.5114 Info Message Template Auto Format enabled
+2022-11-21 20:38:11.5438 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:38:11.5438 Info Loading assembly: NLog.Database
+2022-11-21 20:38:11.5681 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:38:11.7729 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:38:11.8573 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:38:13.3500 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:41:51.7892 Info Message Template Auto Format enabled
+2022-11-21 20:41:51.8264 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:41:51.8286 Info Loading assembly: NLog.Database
+2022-11-21 20:41:51.8541 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:41:52.0725 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:41:52.1543 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:41:53.3200 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:44:51.8307 Info Message Template Auto Format enabled
+2022-11-21 20:44:51.8832 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:44:51.8917 Info Loading assembly: NLog.Database
+2022-11-21 20:44:51.9171 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:44:52.0866 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:44:52.1999 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:44:53.4308 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:47:01.0543 Info Message Template Auto Format enabled
+2022-11-21 20:47:01.1051 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:47:01.1119 Info Loading assembly: NLog.Database
+2022-11-21 20:47:01.1658 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:47:01.5992 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:47:01.7024 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:47:02.8870 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:52:42.8722 Info Message Template Auto Format enabled
+2022-11-21 20:52:42.9215 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:52:42.9215 Info Loading assembly: NLog.Database
+2022-11-21 20:52:42.9582 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:52:43.1680 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:52:43.2515 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:52:44.0889 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:53:44.6324 Info Message Template Auto Format enabled
+2022-11-21 20:53:44.6770 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:53:44.6770 Info Loading assembly: NLog.Database
+2022-11-21 20:53:44.7326 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:53:45.0741 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:53:45.1826 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:53:47.1928 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:57:57.3669 Info Message Template Auto Format enabled
+2022-11-21 20:57:57.3941 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 20:57:57.3941 Info Loading assembly: NLog.Database
+2022-11-21 20:57:57.4139 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 20:57:57.5808 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 20:57:57.6805 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 20:57:58.3900 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 21:00:35.1264 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: System.InvalidOperationException: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+2022-11-21 21:00:35.3456 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: SSL Provider, error: 0 - Tiempo de espera de la operación de espera agotado.)
+ ---> System.ComponentModel.Win32Exception (258): Tiempo de espera de la operación de espera agotado.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:e1eb3be7-16bd-4fba-b554-9819230ef408
+Error Number:258,State:0,Class:20
+2022-11-21 21:00:35.3456 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: SSL Provider, error: 0 - Tiempo de espera de la operación de espera agotado.)
+ ---> System.ComponentModel.Win32Exception (258): Tiempo de espera de la operación de espera agotado.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:e1eb3be7-16bd-4fba-b554-9819230ef408
+Error Number:258,State:0,Class:20
+2022-11-21 21:00:35.3612 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: SSL Provider, error: 0 - Tiempo de espera de la operación de espera agotado.)
+ ---> System.ComponentModel.Win32Exception (258): Tiempo de espera de la operación de espera agotado.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:e1eb3be7-16bd-4fba-b554-9819230ef408
+Error Number:258,State:0,Class:20
+2022-11-21 21:00:55.0996 Info Message Template Auto Format enabled
+2022-11-21 21:00:55.1264 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 21:00:55.1264 Info Loading assembly: NLog.Database
+2022-11-21 21:00:55.1438 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 21:00:55.3007 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 21:00:55.3926 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 21:00:56.3831 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 21:05:43.7299 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: System.InvalidOperationException: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+2022-11-21 21:05:44.1214 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: SSL Provider, error: 0 - Tiempo de espera de la operación de espera agotado.)
+ ---> System.ComponentModel.Win32Exception (258): Tiempo de espera de la operación de espera agotado.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:28f34f9f-a108-46a6-b7c9-2e9aabb6d7de
+Error Number:258,State:0,Class:20
+2022-11-21 21:05:44.1666 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: SSL Provider, error: 0 - Tiempo de espera de la operación de espera agotado.)
+ ---> System.ComponentModel.Win32Exception (258): Tiempo de espera de la operación de espera agotado.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:28f34f9f-a108-46a6-b7c9-2e9aabb6d7de
+Error Number:258,State:0,Class:20
+2022-11-21 21:05:44.1803 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: SSL Provider, error: 0 - Tiempo de espera de la operación de espera agotado.)
+ ---> System.ComponentModel.Win32Exception (258): Tiempo de espera de la operación de espera agotado.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:28f34f9f-a108-46a6-b7c9-2e9aabb6d7de
+Error Number:258,State:0,Class:20
+2022-11-21 21:08:19.2841 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: System.InvalidOperationException: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+2022-11-21 21:08:29.4385 Info Message Template Auto Format enabled
+2022-11-21 21:08:29.5530 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 21:08:29.5716 Info Loading assembly: NLog.Database
+2022-11-21 21:08:29.6883 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 21:08:29.8571 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 21:08:29.9148 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 21:08:30.4817 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 21:12:50.6887 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: System.InvalidOperationException: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+2022-11-21 21:13:44.7694 Info Message Template Auto Format enabled
+2022-11-21 21:13:44.7939 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 21:13:44.7939 Info Loading assembly: NLog.Database
+2022-11-21 21:13:44.8163 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-21 21:13:45.0890 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-21 21:13:45.2135 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-21 21:13:45.9725 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 07:47:29.4770 Info Message Template Auto Format enabled
+2022-11-22 07:47:29.5307 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-22 07:47:29.5325 Info Loading assembly: NLog.Database
+2022-11-22 07:47:29.5574 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-22 07:47:29.8138 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-22 07:47:30.0350 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 07:47:31.7764 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 07:51:55.9067 Info Message Template Auto Format enabled
+2022-11-22 07:51:55.9351 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-22 07:51:55.9376 Info Loading assembly: NLog.Database
+2022-11-22 07:51:55.9590 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-22 07:51:56.1314 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-22 07:51:56.1910 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 07:51:56.9257 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 07:52:32.1610 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: System.InvalidOperationException: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+2022-11-22 07:52:32.2547 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: SSL Provider, error: 0 - Tiempo de espera de la operación de espera agotado.)
+ ---> System.ComponentModel.Win32Exception (258): Tiempo de espera de la operación de espera agotado.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:af031ea1-0268-4418-bb64-6b4c64025eb3
+Error Number:258,State:0,Class:20
+2022-11-22 07:52:32.2547 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: SSL Provider, error: 0 - Tiempo de espera de la operación de espera agotado.)
+ ---> System.ComponentModel.Win32Exception (258): Tiempo de espera de la operación de espera agotado.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:af031ea1-0268-4418-bb64-6b4c64025eb3
+Error Number:258,State:0,Class:20
+2022-11-22 07:52:32.2652 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: SSL Provider, error: 0 - Tiempo de espera de la operación de espera agotado.)
+ ---> System.ComponentModel.Win32Exception (258): Tiempo de espera de la operación de espera agotado.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:af031ea1-0268-4418-bb64-6b4c64025eb3
+Error Number:258,State:0,Class:20
+2022-11-22 07:54:37.6979 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: System.InvalidOperationException: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+2022-11-22 08:07:34.1416 Info Message Template Auto Format enabled
+2022-11-22 08:07:34.1859 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-22 08:07:34.1903 Info Loading assembly: NLog.Database
+2022-11-22 08:07:34.2315 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-22 08:07:34.4555 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-22 08:07:34.5362 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 08:07:35.2972 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 08:24:37.0718 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: System.InvalidOperationException: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+2022-11-22 08:24:37.2313 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: SSL Provider, error: 0 - Tiempo de espera de la operación de espera agotado.)
+ ---> System.ComponentModel.Win32Exception (258): Tiempo de espera de la operación de espera agotado.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:55a303eb-87d2-4d6f-aacc-287f7066170b
+Error Number:258,State:0,Class:20
+2022-11-22 08:24:37.2400 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: SSL Provider, error: 0 - Tiempo de espera de la operación de espera agotado.)
+ ---> System.ComponentModel.Win32Exception (258): Tiempo de espera de la operación de espera agotado.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:55a303eb-87d2-4d6f-aacc-287f7066170b
+Error Number:258,State:0,Class:20
+2022-11-22 08:24:37.2400 Error DatabaseTarget(Name=databaseTarget_wrapped): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: SSL Provider, error: 0 - Tiempo de espera de la operación de espera agotado.)
+ ---> System.ComponentModel.Win32Exception (258): Tiempo de espera de la operación de espera agotado.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:55a303eb-87d2-4d6f-aacc-287f7066170b
+Error Number:258,State:0,Class:20
+2022-11-22 08:27:49.0215 Info Message Template Auto Format enabled
+2022-11-22 08:27:49.0454 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-22 08:27:49.0454 Info Loading assembly: NLog.Database
+2022-11-22 08:27:49.0645 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-22 08:27:49.1972 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-22 08:27:49.2536 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 08:27:49.8864 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 08:41:40.6675 Info Message Template Auto Format enabled
+2022-11-22 08:41:40.6912 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-22 08:41:40.6912 Info Loading assembly: NLog.Database
+2022-11-22 08:41:40.7100 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-22 08:41:40.8510 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-22 08:41:40.9058 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 08:41:41.5057 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 08:58:25.4430 Info Message Template Auto Format enabled
+2022-11-22 08:58:25.4655 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-22 08:58:25.4655 Info Loading assembly: NLog.Database
+2022-11-22 08:58:25.4852 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-22 08:58:25.6114 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-22 08:58:25.6685 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 08:58:26.3306 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 09:03:48.8981 Info Message Template Auto Format enabled
+2022-11-22 09:03:48.9289 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-22 09:03:48.9289 Info Loading assembly: NLog.Database
+2022-11-22 09:03:48.9516 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-22 09:03:49.1041 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-22 09:03:49.1729 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 09:03:49.8567 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 09:04:42.5674 Info Message Template Auto Format enabled
+2022-11-22 09:04:42.5904 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-22 09:04:42.5904 Info Loading assembly: NLog.Database
+2022-11-22 09:04:42.6104 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-22 09:04:42.7580 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-22 09:04:42.8324 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 09:04:43.8405 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 09:05:40.2941 Info Message Template Auto Format enabled
+2022-11-22 09:05:40.3248 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-22 09:05:40.3248 Info Loading assembly: NLog.Database
+2022-11-22 09:05:40.3424 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-22 09:05:40.4634 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-22 09:05:40.5239 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 09:05:41.5121 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 09:19:21.9885 Info Message Template Auto Format enabled
+2022-11-22 09:19:22.0337 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-22 09:19:22.0337 Info Loading assembly: NLog.Database
+2022-11-22 09:19:22.0685 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-22 09:19:22.3485 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-22 09:19:22.4321 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 09:19:23.3428 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 09:21:54.7240 Info Message Template Auto Format enabled
+2022-11-22 09:21:54.7495 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-22 09:21:54.7512 Info Loading assembly: NLog.Database
+2022-11-22 09:21:54.7674 Info Loading assembly: NLog.Appsettings.Standard
+2022-11-22 09:21:54.9453 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-11-22 09:21:55.0259 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-11-22 09:21:55.6627 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 09:44:41.5531 Info Message Template Auto Format enabled
+2022-12-17 09:44:41.6029 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 09:44:41.6029 Info Loading assembly: NLog.Database
+2022-12-17 09:44:41.7934 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 09:44:42.0586 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 09:44:42.1487 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 09:44:43.5375 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 11:38:43.8046 Info Message Template Auto Format enabled
+2022-12-17 11:38:43.8460 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 11:38:43.8460 Info Loading assembly: NLog.Database
+2022-12-17 11:38:43.9326 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 11:38:44.1728 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 11:38:44.2880 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 11:38:45.4737 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 12:40:43.6529 Info Message Template Auto Format enabled
+2022-12-17 12:40:44.5796 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 12:40:44.5796 Info Loading assembly: NLog.Database
+2022-12-17 12:40:45.3888 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 12:40:46.0395 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 12:40:46.3933 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 12:40:49.0652 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:18:35.0273 Info Message Template Auto Format enabled
+2022-12-17 13:18:35.0563 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 13:18:35.0563 Info Loading assembly: NLog.Database
+2022-12-17 13:18:35.0873 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 13:18:35.2863 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 13:18:35.3624 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:18:36.4290 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:19:12.4338 Info Message Template Auto Format enabled
+2022-12-17 13:19:12.4583 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 13:19:12.4583 Info Loading assembly: NLog.Database
+2022-12-17 13:19:12.4811 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 13:19:12.6323 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 13:19:12.6980 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:19:13.4299 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:24:27.1920 Info Message Template Auto Format enabled
+2022-12-17 13:24:27.2214 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 13:24:27.2214 Info Loading assembly: NLog.Database
+2022-12-17 13:24:27.2407 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 13:24:27.3932 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 13:24:27.5052 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:24:28.5661 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:48:52.5371 Info Message Template Auto Format enabled
+2022-12-17 13:48:52.6158 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 13:48:52.6331 Info Loading assembly: NLog.Database
+2022-12-17 13:48:52.7097 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 13:48:52.9300 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 13:48:53.0382 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:48:54.4887 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:50:51.9342 Info Message Template Auto Format enabled
+2022-12-17 13:50:51.9562 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 13:50:51.9562 Info Loading assembly: NLog.Database
+2022-12-17 13:50:51.9737 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 13:50:52.0961 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 13:50:52.1494 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:50:52.7502 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:51:30.8720 Info Message Template Auto Format enabled
+2022-12-17 13:51:30.9083 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 13:51:30.9083 Info Loading assembly: NLog.Database
+2022-12-17 13:51:30.9381 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 13:51:31.1315 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 13:51:31.2058 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:51:32.0286 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:55:41.1656 Info Message Template Auto Format enabled
+2022-12-17 13:55:41.2083 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 13:55:41.2083 Info Loading assembly: NLog.Database
+2022-12-17 13:55:41.2384 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 13:55:41.4210 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 13:55:41.4897 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:55:42.5465 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:58:27.6784 Info Message Template Auto Format enabled
+2022-12-17 13:58:27.7010 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 13:58:27.7010 Info Loading assembly: NLog.Database
+2022-12-17 13:58:27.7181 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 13:58:28.0698 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 13:58:28.1663 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:58:29.0340 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:59:54.6143 Info Message Template Auto Format enabled
+2022-12-17 13:59:54.6575 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 13:59:54.6575 Info Loading assembly: NLog.Database
+2022-12-17 13:59:54.6896 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 13:59:54.9236 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 13:59:55.1501 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 13:59:56.1327 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 14:00:27.5155 Info Message Template Auto Format enabled
+2022-12-17 14:00:27.5404 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 14:00:27.5404 Info Loading assembly: NLog.Database
+2022-12-17 14:00:27.5598 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 14:00:27.6842 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 14:00:27.7393 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 14:00:28.3115 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 14:32:44.1492 Info Message Template Auto Format enabled
+2022-12-17 14:32:44.3032 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 14:32:44.3032 Info Loading assembly: NLog.Database
+2022-12-17 14:32:44.3491 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 14:32:44.6272 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 14:32:44.7446 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 14:32:45.6052 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 14:34:31.5078 Info Message Template Auto Format enabled
+2022-12-17 14:34:31.5463 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 14:34:31.5480 Info Loading assembly: NLog.Database
+2022-12-17 14:34:31.5797 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 14:34:31.8990 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 14:34:32.0626 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 14:34:33.0496 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 14:36:39.3325 Info Message Template Auto Format enabled
+2022-12-17 14:36:39.3572 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 14:36:39.3572 Info Loading assembly: NLog.Database
+2022-12-17 14:36:39.3768 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 14:36:39.5148 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 14:36:39.5804 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 14:36:40.2333 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 14:52:57.1489 Info Message Template Auto Format enabled
+2022-12-17 14:52:57.1876 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-17 14:52:57.1893 Info Loading assembly: NLog.Database
+2022-12-17 14:52:57.2050 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-17 14:52:57.3472 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-17 14:52:57.4171 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-17 14:52:58.0577 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 13:36:24.5843 Info Message Template Auto Format enabled
+2022-12-18 13:36:24.6095 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 13:36:24.6112 Info Loading assembly: NLog.Database
+2022-12-18 13:36:24.6290 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 13:36:24.7863 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 13:36:24.8477 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 13:36:25.5034 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 14:04:32.8123 Info Message Template Auto Format enabled
+2022-12-18 14:04:32.8497 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 14:04:32.8497 Info Loading assembly: NLog.Database
+2022-12-18 14:04:32.8723 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 14:04:33.0757 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 14:04:33.1563 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 14:04:34.5924 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 14:05:27.4982 Info Message Template Auto Format enabled
+2022-12-18 14:05:27.5662 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 14:05:27.5662 Info Loading assembly: NLog.Database
+2022-12-18 14:05:27.6120 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 14:05:27.8200 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 14:05:27.9249 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 14:05:28.6628 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 14:17:58.3099 Info Message Template Auto Format enabled
+2022-12-18 14:17:58.3658 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 14:17:58.3658 Info Loading assembly: NLog.Database
+2022-12-18 14:17:58.3963 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 14:17:58.6510 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 14:17:58.7712 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 14:18:00.5676 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 14:19:20.9901 Info Message Template Auto Format enabled
+2022-12-18 14:19:21.0262 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 14:19:21.0262 Info Loading assembly: NLog.Database
+2022-12-18 14:19:21.0501 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 14:19:21.2217 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 14:19:21.2996 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 14:19:22.0358 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 14:20:52.0685 Info Message Template Auto Format enabled
+2022-12-18 14:20:52.2433 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 14:20:52.2433 Info Loading assembly: NLog.Database
+2022-12-18 14:20:52.5123 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 14:20:53.4326 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 14:20:53.5973 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 14:20:58.9316 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 14:58:03.2044 Info Message Template Auto Format enabled
+2022-12-18 14:58:03.2366 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 14:58:03.2366 Info Loading assembly: NLog.Database
+2022-12-18 14:58:03.2640 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 14:58:03.4507 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 14:58:03.5259 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 14:58:04.3311 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 15:02:06.6052 Info Message Template Auto Format enabled
+2022-12-18 15:02:06.6396 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 15:02:06.6396 Info Loading assembly: NLog.Database
+2022-12-18 15:02:06.6796 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 15:02:07.1043 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 15:02:07.4826 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 15:02:08.7726 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 15:21:16.8590 Info Message Template Auto Format enabled
+2022-12-18 15:21:16.9271 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 15:21:16.9271 Info Loading assembly: NLog.Database
+2022-12-18 15:21:16.9745 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 15:21:17.1805 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 15:21:17.2641 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 15:21:18.0502 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 16:40:08.1553 Info Message Template Auto Format enabled
+2022-12-18 16:40:08.1951 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 16:40:08.1951 Info Loading assembly: NLog.Database
+2022-12-18 16:40:08.3242 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 16:40:08.6423 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 16:40:08.7736 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 16:40:09.8801 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 16:58:09.8345 Info Message Template Auto Format enabled
+2022-12-18 16:58:09.8732 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 16:58:09.8732 Info Loading assembly: NLog.Database
+2022-12-18 16:58:09.9160 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 16:58:10.2527 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 16:58:10.3314 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 16:58:11.1763 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 17:15:36.3849 Info Message Template Auto Format enabled
+2022-12-18 17:15:36.4227 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 17:15:36.4246 Info Loading assembly: NLog.Database
+2022-12-18 17:15:36.4538 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 17:15:36.7525 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 17:15:37.1800 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 17:15:38.5078 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 17:16:40.8507 Info Message Template Auto Format enabled
+2022-12-18 17:16:40.8841 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 17:16:40.8841 Info Loading assembly: NLog.Database
+2022-12-18 17:16:40.9172 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 17:16:41.1784 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 17:16:41.2549 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 17:16:42.1796 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 17:46:05.8153 Info Message Template Auto Format enabled
+2022-12-18 17:46:05.8592 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 17:46:05.8592 Info Loading assembly: NLog.Database
+2022-12-18 17:46:05.8909 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 17:46:06.1471 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 17:46:06.2206 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 17:46:07.0360 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 17:47:28.2859 Info Message Template Auto Format enabled
+2022-12-18 17:47:28.3106 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 17:47:28.3106 Info Loading assembly: NLog.Database
+2022-12-18 17:47:28.3291 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 17:47:28.5539 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 17:47:28.6658 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 17:47:29.5146 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 17:49:07.3204 Info Message Template Auto Format enabled
+2022-12-18 17:49:07.3514 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 17:49:07.3514 Info Loading assembly: NLog.Database
+2022-12-18 17:49:07.3720 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 17:49:07.5201 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 17:49:07.5979 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 17:49:08.5636 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 17:56:09.9699 Info Message Template Auto Format enabled
+2022-12-18 17:56:09.9919 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 17:56:09.9919 Info Loading assembly: NLog.Database
+2022-12-18 17:56:10.0110 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 17:56:10.1561 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 17:56:10.2564 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 17:56:10.9377 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 17:59:44.1020 Info Message Template Auto Format enabled
+2022-12-18 17:59:44.1289 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 17:59:44.1289 Info Loading assembly: NLog.Database
+2022-12-18 17:59:44.1469 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 17:59:44.2751 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 17:59:44.3336 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 17:59:44.9744 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 18:03:21.8678 Info Message Template Auto Format enabled
+2022-12-18 18:03:21.8949 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 18:03:21.8949 Info Loading assembly: NLog.Database
+2022-12-18 18:03:21.9162 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 18:03:22.1049 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 18:03:22.1758 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 18:03:23.0052 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 18:03:33.9600 Info Message Template Auto Format enabled
+2022-12-18 18:03:33.9891 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 18:03:33.9891 Info Loading assembly: NLog.Database
+2022-12-18 18:03:34.0109 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 18:03:34.2333 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 18:03:34.2972 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 18:03:35.1597 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 18:06:47.0132 Info Message Template Auto Format enabled
+2022-12-18 18:06:47.0359 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 18:06:47.0359 Info Loading assembly: NLog.Database
+2022-12-18 18:06:47.0529 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 18:06:47.1768 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 18:06:47.2316 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 18:06:47.9288 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 18:08:25.7943 Info Message Template Auto Format enabled
+2022-12-18 18:08:25.8200 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-18 18:08:25.8200 Info Loading assembly: NLog.Database
+2022-12-18 18:08:25.8399 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-18 18:08:25.9632 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-18 18:08:26.0256 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-18 18:08:26.6762 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 22:04:10.6462 Info Message Template Auto Format enabled
+2022-12-22 22:04:10.6956 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-22 22:04:10.6956 Info Loading assembly: NLog.Database
+2022-12-22 22:04:10.8454 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-22 22:04:11.0573 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-22 22:04:11.1326 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 22:04:12.5104 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 22:14:42.0992 Info Message Template Auto Format enabled
+2022-12-22 22:14:42.1931 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-22 22:14:42.2091 Info Loading assembly: NLog.Database
+2022-12-22 22:14:42.2613 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-22 22:14:42.5109 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-22 22:14:42.6118 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 22:14:43.9638 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 22:15:18.4409 Info Message Template Auto Format enabled
+2022-12-22 22:15:18.4678 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-22 22:15:18.4701 Info Loading assembly: NLog.Database
+2022-12-22 22:15:18.4865 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-22 22:15:18.7533 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-22 22:15:18.8537 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 22:15:19.5720 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 22:20:15.7443 Info Message Template Auto Format enabled
+2022-12-22 22:20:15.7742 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-22 22:20:15.7742 Info Loading assembly: NLog.Database
+2022-12-22 22:20:15.7967 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-22 22:20:15.9874 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-22 22:20:16.0631 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 22:20:16.8614 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 22:55:26.9683 Info Message Template Auto Format enabled
+2022-12-22 22:55:27.0029 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-22 22:55:27.0029 Info Loading assembly: NLog.Database
+2022-12-22 22:55:27.0347 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-22 22:55:27.2376 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-22 22:55:27.3224 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 22:55:28.1517 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:18:48.0562 Info Message Template Auto Format enabled
+2022-12-22 23:18:48.1007 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-22 23:18:48.1007 Info Loading assembly: NLog.Database
+2022-12-22 23:18:48.1373 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-22 23:18:48.3826 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-22 23:18:48.5052 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:18:49.6813 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:22:44.7081 Info Message Template Auto Format enabled
+2022-12-22 23:22:44.7383 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-22 23:22:44.7383 Info Loading assembly: NLog.Database
+2022-12-22 23:22:44.7647 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-22 23:22:45.3215 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-22 23:22:45.4504 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:22:47.1956 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:23:49.7981 Info Message Template Auto Format enabled
+2022-12-22 23:23:49.8370 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-22 23:23:49.8370 Info Loading assembly: NLog.Database
+2022-12-22 23:23:49.8802 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-22 23:23:50.0926 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-22 23:23:50.1776 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:23:51.6076 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:33:01.6137 Info Message Template Auto Format enabled
+2022-12-22 23:33:01.6431 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-22 23:33:01.6431 Info Loading assembly: NLog.Database
+2022-12-22 23:33:01.6670 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-22 23:33:01.8308 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-22 23:33:01.9114 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:33:02.7590 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:35:33.2385 Info Message Template Auto Format enabled
+2022-12-22 23:35:33.2778 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-22 23:35:33.2778 Info Loading assembly: NLog.Database
+2022-12-22 23:35:33.3054 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-22 23:35:33.4794 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-22 23:35:33.5607 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:35:34.2870 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:42:48.8943 Info Message Template Auto Format enabled
+2022-12-22 23:42:49.1111 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-22 23:42:49.1389 Info Loading assembly: NLog.Database
+2022-12-22 23:42:49.3328 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-22 23:42:49.7728 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-22 23:42:49.8572 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:42:50.9205 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:44:19.5998 Info Message Template Auto Format enabled
+2022-12-22 23:44:19.6270 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-22 23:44:19.6270 Info Loading assembly: NLog.Database
+2022-12-22 23:44:19.6479 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-22 23:44:19.7887 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-22 23:44:19.8818 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:44:20.6779 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:46:40.6323 Info Message Template Auto Format enabled
+2022-12-22 23:46:40.6582 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-22 23:46:40.6582 Info Loading assembly: NLog.Database
+2022-12-22 23:46:40.6800 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-22 23:46:40.8481 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-22 23:46:40.9363 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:46:41.6389 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:52:48.8639 Info Message Template Auto Format enabled
+2022-12-22 23:52:48.8860 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-22 23:52:48.8860 Info Loading assembly: NLog.Database
+2022-12-22 23:52:48.9041 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-22 23:52:49.0468 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-22 23:52:49.1073 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-22 23:52:49.7841 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-23 00:09:05.5899 Info Message Template Auto Format enabled
+2022-12-23 00:09:05.6239 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-23 00:09:05.6259 Info Loading assembly: NLog.Database
+2022-12-23 00:09:05.6477 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-23 00:09:05.9023 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-23 00:09:06.0473 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-23 00:09:07.3897 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-23 00:10:43.2094 Info Message Template Auto Format enabled
+2022-12-23 00:10:43.2420 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-23 00:10:43.2420 Info Loading assembly: NLog.Database
+2022-12-23 00:10:43.2640 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-23 00:10:43.4442 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-23 00:10:43.5278 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-23 00:10:44.2947 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-23 00:11:04.6151 Info Message Template Auto Format enabled
+2022-12-23 00:11:04.6852 Info Loading assembly: NLog.Web.AspNetCore
+2022-12-23 00:11:04.6946 Info Loading assembly: NLog.Database
+2022-12-23 00:11:04.7372 Info Loading assembly: NLog.Appsettings.Standard
+2022-12-23 00:11:04.9467 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2022-12-23 00:11:05.0623 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2022-12-23 00:11:05.9015 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
