@@ -598,6 +598,14 @@ public class AlamedasController : ControllerBase
             return BadRequest(response.Message);
         return Ok(response.Message);
     }
+    [HttpPost("Transactions/GenerarMoraMensual")]
+    public async Task<IActionResult> GenerarMoraMensual()
+    {
+        var response = await _transactionservices.InsertMoraMonthly();
+        if(response.Error==true)
+            return BadRequest(response.Error);
+        return Ok(response);
+    }
 
     [HttpPost("Transactions/InsertProdEntry")]
     public async Task<IActionResult> InsertProdEntry(ProductoIngresoCajaChica model)
