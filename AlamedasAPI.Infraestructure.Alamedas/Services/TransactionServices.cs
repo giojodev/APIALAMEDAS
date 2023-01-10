@@ -59,6 +59,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         Task<BaseResult> UpdateProdEntry(ProductoIngresoCajaChica model);
         Task<BaseResult> InsertProductoGasto(ProductoGasto model);
         Task<BaseResult> UpdateProductoGasto(ProductoGasto model);
+        Task<BaseResult> InsertMoraMonthly();
     }
 
     public class TransactionServices : ITransactionServices
@@ -1349,6 +1350,39 @@ namespace AlamedasAPI.Infraestructure.Alamedas
             _context.SaveChanges();
 
             return new BaseResult(){Message="Registro actualizado con exito",Error=false};
+        }
+        public async Task<BaseResult> InsertMoraMonthly()
+        {
+            try
+            {
+                    string concepto= new DateTime(DateTime.Now.Year,DateTime.Now.Month,1).ToString("MMMM");
+                    for(int i=1;i<=93;i++)
+                    {
+                        var result = await _context.Moras.Where(x=>x.Mes==DateTime.Now.Month.ToString() && x.Anio==DateTime.Now.Year.ToString() &&x.Condomino==i).FirstOrDefaultAsync();
+                        if(result==null)
+                        {
+                            Mora mora=new Mora(){
+                            Fecha=DateTime.Now,
+                            Condomino=i,
+                            Valor=100,
+                            Concepto=concepto.ToUpper(),
+                            Estado="Pendiente",
+                            DiasVencido=0,
+                            Mes=DateTime.Now.Month.ToString(),
+                            Anio=DateTime.Now.Year.ToString()
+                        };
+
+                        _context.Moras.Add(mora);
+                        await _context.SaveChangesAsync();
+                        }
+                    }
+                return new BaseResult(){Message="Mora generada con exito",Error=false};
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error with InsertMoraMonthly", ex);
+                return new BaseResult() { Error = true, Message = "Error al mora mensual"};
+            }
         }
 
     }
