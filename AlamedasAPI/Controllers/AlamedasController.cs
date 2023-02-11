@@ -180,9 +180,9 @@ public class AlamedasController : ControllerBase
 
     //OBTENER ICC
     [HttpGet("Catalog/IccList")]
-    public IActionResult GetICC(int IdConsecutive)
+    public IActionResult GetICC()
     {
-        var response = _catalogservices.GetICC(IdConsecutive); 
+        var response = _catalogservices.GetICC(); 
         return Ok(response);
     }
     
