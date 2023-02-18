@@ -26,8 +26,7 @@ namespace AlamedasAPI.Infraestructure.Alamedas
         dynamic ProductExpenseGrid();
         dynamic GetGridDetailExpenses(int consecutive);
         List<TblGastosCajaChica> GetGCC(int IdConsecutive);
-        List<TblIngresosCajaChica> GetICC(int IdConsecutive);
-        
+        dynamic GetICC();
         List<TipoGastoCajaChica> GetTGCC(int IdTGCC);
         List<TipoIngresoCajaChica> GetTICC(int IdTICC);
         List<TipoGasto> GetExpense();
@@ -263,17 +262,12 @@ namespace AlamedasAPI.Infraestructure.Alamedas
 
             return data;
         }
-        public List<TblIngresosCajaChica> GetICC(int IdConsecutive){
+        public dynamic GetICC(){
             
-            List<TblIngresosCajaChica> data = null;
-
-            if(IdConsecutive == 0){
-                data = _context.TblIngresosCajaChicas.ToList();
-            }else{
-                data = _context.TblIngresosCajaChicas.Where(x => x.Consecutivo == IdConsecutive).ToList();
-            };
-
-            return data;
+            var data = _context.TblIngresosCajaChicas
+            .Join(_context.TipoIngresoCajaChicas , x=>x.TipoIngresoC,y=>y.IdIngresoaCajaChica , (x,y) => new {x,y})
+            .Select(s => new{s.x.Consecutivo,s.x.IdUsuario,s.x.TipoIngresoC,s.y.NombreIngresoCajaChica,s.x.Fecha,s.x.Concepto,s.x.Total,s.x.Mes,s.x.Anio,s.x.Anulado});
+            return data; 
         }
         public List<TipoGastoCajaChica> GetTGCC(int IdTGCC){
             
