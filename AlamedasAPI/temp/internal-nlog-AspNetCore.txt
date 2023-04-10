@@ -2220,3 +2220,136 @@ Error Number:258,State:0,Class:20
 2023-01-25 09:06:55.4733 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
 2023-01-25 09:06:55.5459 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
 2023-01-25 09:06:57.0170 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-02-11 08:44:55.7449 Info Message Template Auto Format enabled
+2023-02-11 08:44:55.7719 Info Loading assembly: NLog.Web.AspNetCore
+2023-02-11 08:44:55.7719 Info Loading assembly: NLog.Database
+2023-02-11 08:44:55.9281 Info Loading assembly: NLog.Appsettings.Standard
+2023-02-11 08:44:56.1758 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-02-11 08:44:56.2925 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-02-11 08:44:57.6348 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 11:17:54.7562 Info Message Template Auto Format enabled
+2023-03-07 11:17:54.7832 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 11:17:54.7832 Info Loading assembly: NLog.Database
+2023-03-07 11:17:54.9388 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 11:17:55.1127 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 11:17:55.1748 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 11:17:56.1197 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 12:06:59.1697 Info Message Template Auto Format enabled
+2023-03-07 12:06:59.1968 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 12:06:59.1968 Info Loading assembly: NLog.Database
+2023-03-07 12:06:59.3864 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 12:06:59.5841 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 12:06:59.6592 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 12:07:00.6683 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 14:22:00.9116 Info Message Template Auto Format enabled
+2023-03-07 14:22:00.9382 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 14:22:00.9382 Info Loading assembly: NLog.Database
+2023-03-07 14:22:00.9707 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 14:22:01.1589 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 14:22:01.2348 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 14:22:02.1008 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:19:52.1395 Info Message Template Auto Format enabled
+2023-03-07 15:19:52.1762 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 15:19:52.1762 Info Loading assembly: NLog.Database
+2023-03-07 15:19:52.4091 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 15:19:52.6308 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 15:19:52.7220 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:19:53.9743 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:23:59.8658 Info Message Template Auto Format enabled
+2023-03-07 15:23:59.8979 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 15:23:59.8979 Info Loading assembly: NLog.Database
+2023-03-07 15:23:59.9224 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 15:24:00.2012 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 15:24:00.3316 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:24:01.2606 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:25:13.9828 Info Message Template Auto Format enabled
+2023-03-07 15:25:14.0047 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 15:25:14.0047 Info Loading assembly: NLog.Database
+2023-03-07 15:25:14.0238 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 15:25:14.1597 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 15:25:14.2197 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:25:14.9718 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:25:56.1684 Info Message Template Auto Format enabled
+2023-03-07 15:25:56.1919 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 15:25:56.1919 Info Loading assembly: NLog.Database
+2023-03-07 15:25:56.2126 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 15:25:56.3510 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 15:25:56.4158 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:25:57.1042 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:28:47.0751 Info Message Template Auto Format enabled
+2023-03-07 15:28:47.0977 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 15:28:47.0977 Info Loading assembly: NLog.Database
+2023-03-07 15:28:47.1177 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 15:28:47.2484 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 15:28:47.3036 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:28:47.9815 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:31:11.4524 Info Message Template Auto Format enabled
+2023-03-07 15:31:11.4767 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 15:31:11.4787 Info Loading assembly: NLog.Database
+2023-03-07 15:31:11.4965 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 15:31:11.6262 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 15:31:11.6828 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:31:12.2560 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:31:56.4148 Info Message Template Auto Format enabled
+2023-03-07 15:31:56.4409 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 15:31:56.4409 Info Loading assembly: NLog.Database
+2023-03-07 15:31:56.4610 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 15:31:56.5973 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 15:31:56.6718 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:31:57.5047 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:33:36.1762 Info Message Template Auto Format enabled
+2023-03-07 15:33:36.1966 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 15:33:36.1966 Info Loading assembly: NLog.Database
+2023-03-07 15:33:36.2138 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 15:33:36.3322 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 15:33:36.3867 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:33:36.9663 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:36:30.6167 Info Message Template Auto Format enabled
+2023-03-07 15:36:30.6408 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 15:36:30.6408 Info Loading assembly: NLog.Database
+2023-03-07 15:36:30.6615 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 15:36:30.8015 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 15:36:30.8620 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:36:31.5999 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:38:35.4948 Info Message Template Auto Format enabled
+2023-03-07 15:38:35.5169 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 15:38:35.5169 Info Loading assembly: NLog.Database
+2023-03-07 15:38:35.5353 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 15:38:35.6622 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 15:38:35.7184 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 15:38:36.2881 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 16:20:34.7527 Info Message Template Auto Format enabled
+2023-03-07 16:20:34.7799 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 16:20:34.7799 Info Loading assembly: NLog.Database
+2023-03-07 16:20:34.8041 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 16:20:34.9594 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 16:20:35.0231 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 16:20:35.8008 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 16:27:34.5604 Info Message Template Auto Format enabled
+2023-03-07 16:27:34.5985 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 16:27:34.5985 Info Loading assembly: NLog.Database
+2023-03-07 16:27:34.8240 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 16:27:35.1098 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 16:27:35.2138 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 16:27:36.5564 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 16:31:34.7964 Info Message Template Auto Format enabled
+2023-03-07 16:31:34.8193 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 16:31:34.8210 Info Loading assembly: NLog.Database
+2023-03-07 16:31:34.8394 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 16:31:34.9935 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 16:31:35.0684 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 16:31:35.8740 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 16:34:19.3454 Info Message Template Auto Format enabled
+2023-03-07 16:34:19.3811 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-07 16:34:19.3834 Info Loading assembly: NLog.Database
+2023-03-07 16:34:19.4954 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-07 16:34:19.6915 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-07 16:34:19.7656 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-07 16:34:20.4831 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-20 14:41:22.8217 Info Message Template Auto Format enabled
+2023-03-20 14:41:22.8957 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-20 14:41:22.8957 Info Loading assembly: NLog.Database
+2023-03-20 14:41:23.1208 Info Loading assembly: NLog.Appsettings.Standard
+2023-03-20 14:41:23.3959 Info Adding target AsyncTargetWrapper(Name=databaseTarget)
+2023-03-20 14:41:23.4696 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
+2023-03-20 14:41:25.2265 Info Validating config: TargetNames=databaseTarget, ConfigItems=32, FilePath=C:\Users\lopez\OneDrive\Documentos\CONTRIBUCIONES\APIALAMEDAS\AlamedasAPI\bin\Debug\net6.0\NLog.config
