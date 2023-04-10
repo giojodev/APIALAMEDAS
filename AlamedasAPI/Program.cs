@@ -90,6 +90,7 @@ try
 
     var app = builder.Build();
 
+   
     // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())
     {
@@ -97,7 +98,7 @@ try
         app.UseSwaggerUI(c => c.SwaggerEndpoint("v1/swagger.json", "AlamedasAPI v1"));
     }
     app.UseSwaggerUI(c => c.SwaggerEndpoint("v1/swagger.json","AlamedasAPI v1"));
-    app.UseHttpsRedirection();
+    //app.UseHttpsRedirection();
 
     app.UseCors(cors => cors.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
     app.UseAuthentication();
